@@ -947,10 +947,10 @@ function renderAssortment(){
     {label:'Ideal (Uniform)',data:pctSKU.map((_,i)=>(i+1)*5),borderColor:'rgba(96,165,250,.4)',borderDash:[5,5]}
   ]);
   // ch-a2: Category Revenue Doughnut
-  mkDoughnut('ch-a2',['Wedding','Daily Wear','Bridal','Men's','Solitaire','Kids','Chains','Custom'],
+  mkDoughnut('ch-a2',['Wedding','Daily Wear','Bridal',"Men's",'Solitaire','Kids','Chains','Custom'],
     [28,22,18,12,8,5,4,3],[G,'#C8962F','#B38429',BLU,PRP,GRN,TEL,ORG]);
   // ch-a3: City Demand vs Supply Gap
-  const cats=['Wedding','Daily Wear','Bridal','Men's','Solitaire','Chains'];
+  const cats=['Wedding','Daily Wear','Bridal',"Men's",'Solitaire','Chains'];
   mkBar('ch-a3',cats,[
     {label:'Market Demand',data:[85,78,72,42,38,44],backgroundColor:'rgba(96,165,250,.7)'},
     {label:'Current Supply',data:[78,62,68,48,42,38],backgroundColor:'rgba(212,168,67,.7)'}
@@ -963,7 +963,7 @@ function renderAssortment(){
     {label:'Daily Wear',data:[62,68,72,78,82,88],borderColor:G,backgroundColor:GA,fill:true},
     {label:'Solitaire',data:[44,48,52,58,62,68],borderColor:BLU},
     {label:'Wedding',data:[80,82,78,84,90,94],borderColor:PNK},
-    {label:'Men's',data:[30,34,38,42,44,48],borderColor:ORG}
+    {label:"Men's",data:[30,34,38,42,44,48],borderColor:ORG}
   ]);
   // ch-a6: Recommended SKUs by city
   mkBar('ch-a6',['Lucknow','Patna','Bhopal','Nagpur','Varanasi','Coimbatore','Visakhapatnam','Kochi'],[
@@ -1024,7 +1024,7 @@ function renderInventory(){
     {label:'Balanced',data:[{x:65,y:62},{x:70,y:68},{x:60,y:58},{x:72,y:70}],backgroundColor:GRN,pointRadius:7}
   ],{x:{title:{display:true,text:'Demand Score'}},y:{title:{display:true,text:'Inventory Score'}}});
   // ch-i2: Category Stock Weeks
-  mkBar('ch-i2',['Bridal','Daily Wear','Wedding','Men's','Solitaire','Kids','Chains','Custom'],[
+  mkBar('ch-i2',['Bridal','Daily Wear','Wedding',"Men's",'Solitaire','Kids','Chains','Custom'],[
     {label:'Weeks of Stock',data:[18,8,14,6,22,10,4,12],
      backgroundColor:['#2DB87A','#F4A435','#2DB87A','#D94545','#2DB87A','#F4A435','#D94545','#2DB87A']}
   ]);
@@ -1058,7 +1058,7 @@ function renderDeadstock(){
     {label:'Value (₹Cr)',data:[12,20,16],backgroundColor:[ORG,RED,'#8B0000']}
   ]);
   // ch-ds2: Category Composition
-  mkDoughnut('ch-ds2',['Bridal','Wedding','Solitaire','Men's','Daily Wear','Kids'],
+  mkDoughnut('ch-ds2',['Bridal','Wedding','Solitaire',"Men's",'Daily Wear','Kids'],
     [28,24,18,14,10,6],[RED,ORG,PRP,BLU,G,GRN]);
   // ch-ds3: Liquidation Scenario
   mkLine('ch-ds3',['60% Realisation','65% Realisation','70% Realisation','75% Realisation','80% Realisation'],[
@@ -1106,7 +1106,7 @@ function renderCrossSell(){
     backgroundColor:G,pointRadius:6
   }],{x:{title:{display:true,text:'Cross-Sell Rate %'}},y:{title:{display:true,text:'Revenue Uplift ₹L'}}});
   // ch-cs6: Bundle Effectiveness
-  mkBar('ch-cs6',['Wedding Bundle','Karwa Chauth','Valentine's','Birthday','Anniversary','Festival'],[
+  mkBar('ch-cs6',['Wedding Bundle','Karwa Chauth',"Valentine's",'Birthday','Anniversary','Festival'],[
     {label:'Acceptance Rate %',data:[68,58,44,38,34,48],backgroundColor:'rgba(212,168,67,.7)'},
     {label:'Avg Value (₹K)',data:[42,18,12,8,10,16],backgroundColor:'rgba(45,184,122,.6)'}
   ]);
