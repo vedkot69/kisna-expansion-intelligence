@@ -432,14 +432,19 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hc" style="--ac:#00B4D8"><div class="hc-num" style="color:#00B4D8" data-count="3.4" data-suf="×" data-dec="1">0×</div><div class="hc-lbl">Oct Peak Multiplier</div></div>
 <div class="hc" style="--ac:#00B4D8"><div class="hc-num" style="color:#00B4D8" data-count="72">0</div><div class="hc-lbl">Expansion Targets</div></div>
 </div>
+<div class="chart-row-lbl">Demand Signals</div>
+<div class="g-feat">
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">City Demand Index — Top 10 Ranking</div><div class="card-d">Composite demand score from footfall, search intent, and transaction data per city</div></div><span class="ctag cml">Demand Rank</span></div><canvas id="ch-d1" style="max-height:280px"></canvas></div>
+<div class="g-feat-r">
+<div class="card"><div class="card-hd"><div><div class="card-t">Google Search vs In-Store Sales</div><div class="card-d">6-month search intent vs physical store sales correlation</div></div><span class="ctag cml">Search Signal</span></div><canvas id="ch-d2" style="max-height:125px"></canvas></div>
+<div class="card"><div class="card-hd"><div><div class="card-t">Category Demand — Quarterly</div><div class="card-d">Bridal · Daily Wear · Investment · Gifting split Q1–Q4</div></div><span class="ctag cml">Category Mix</span></div><canvas id="ch-d3" style="max-height:125px"></canvas></div>
+</div>
+</div>
+<div class="chart-row-lbl">Seasonality &amp; Expansion</div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">City Demand Index — Top 10 Ranking</div><div class="card-d">Composite demand score from footfall, search intent, and transaction data per city</div></div><span class="ctag cml">Demand Rank</span></div><canvas id="ch-d1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Google Search vs In-Store Sales — 6 Months</div><div class="card-d">Online search intent correlation with physical store sales performance</div></div><span class="ctag cml">Search Signal</span></div><canvas id="ch-d2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Category Demand Forecast — Quarterly</div><div class="card-d">Stacked demand split: Bridal · Daily Wear · Investment · Gifting across Q1–Q4</div></div><span class="ctag cml">Category Mix</span></div><canvas id="ch-d3" style="max-height:210px"></canvas></div>
-</div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Demand vs Competition — City Scatter</div><div class="card-d">30 cities plotted: demand index (X) vs competition level (Y) — low-right = best opportunity</div></div><span class="ctag cml">Opportunity Map</span></div><canvas id="ch-d4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Seasonal Demand Multiplier — 12 Months</div><div class="card-d">Monthly demand multiplier vs annual baseline — Oct–Nov peak at 2.2–3.4×</div></div><span class="ctag cml">Seasonality</span></div><canvas id="ch-d5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Top Expansion Opportunities — New Cities</div><div class="card-d">Highest-scoring cities where KISNA has no presence yet — ranked by ML opportunity score</div></div><span class="ctag cml">Expansion</span></div><canvas id="ch-d6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Demand vs Competition — City Scatter</div><div class="card-d">30 cities: demand (X) vs competition (Y) — low-right = best opportunity</div></div><span class="ctag cml">Opportunity Map</span></div><canvas id="ch-d4" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Seasonal Demand Multiplier</div><div class="card-d">Monthly multiplier vs baseline — Oct–Nov at 2.2–3.4×</div></div><span class="ctag cml">Seasonality</span></div><canvas id="ch-d5" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Top Expansion Opportunities</div><div class="card-d">Highest-scoring cities with no KISNA presence yet</div></div><span class="ctag cml">Expansion</span></div><canvas id="ch-d6" style="max-height:240px"></canvas></div>
 </div>
 <div class="insight"><span class="ii">💡</span><span class="it"><strong>Patna spiked +45% in October</strong> — 3 new housing colonies + 2 large wedding clusters. This is a structural shift, not noise. Recommend stocking up and opening a second outlet.</span></div>
 </div>
@@ -451,14 +456,19 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hc" style="--ac:#FF6B35"><div class="hc-num" style="color:#FF6B35" data-count="34" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Revenue At Risk</div></div>
 <div class="hc" style="--ac:#FF6B35"><div class="hc-num" style="color:#FF6B35" data-count="90">0</div><div class="hc-lbl">Day Lookahead</div></div>
 </div>
+<div class="chart-row-lbl">Store Health Overview</div>
+<div class="g-feat">
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Health Score Distribution — All 82 Stores</div><div class="card-d">Random Forest composite: Revenue 35% · Footfall 15% · Conversion 15% · Retention 10% · Basket 10% · Competition 15%</div></div><span class="ctag cml">Random Forest</span></div><canvas id="ch-f1" style="max-height:280px"></canvas></div>
+<div class="g-feat-r">
+<div class="card"><div class="card-hd"><div><div class="card-t">Surat Central vs Top Average</div><div class="card-d">6-axis radar: most critical store vs benchmark</div></div><span class="ctag cml">Radar</span></div><canvas id="ch-f2" style="max-height:125px"></canvas></div>
+<div class="card"><div class="card-hd"><div><div class="card-t">90-Day Revenue Prediction</div><div class="card-d">Trajectory if no intervention — critical stores</div></div><span class="ctag cml">Lookahead</span></div><canvas id="ch-f3" style="max-height:125px"></canvas></div>
+</div>
+</div>
+<div class="chart-row-lbl">Trends &amp; Intervention</div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Health Score Distribution — All 82 Stores</div><div class="card-d">Random Forest composite: Revenue 35% · Footfall 15% · Conversion 15% · Retention 10% · Basket 10% · Competition 15%</div></div><span class="ctag cml">Random Forest</span></div><canvas id="ch-f1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">6-Axis Radar — Surat Central vs Top Avg</div><div class="card-d">Vital signs for the most critical store against top-performer benchmark</div></div><span class="ctag cml">Radar</span></div><canvas id="ch-f2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">90-Day Revenue Prediction — Critical Stores</div><div class="card-d">Extrapolated revenue trajectory if no intervention for bottom-12 stores</div></div><span class="ctag cml">Lookahead</span></div><canvas id="ch-f3" style="max-height:210px"></canvas></div>
-</div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Monthly Revenue Trend — Bottom 5 Stores</div><div class="card-d">6-month rolling revenue decline for critical franchises</div></div><span class="ctag cml">Trend</span></div><canvas id="ch-f4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Health Score by Zone</div><div class="card-d">Average composite health score across 4 geographic zones</div></div><span class="ctag cml">Zone Health</span></div><canvas id="ch-f5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Intervention Impact Estimate</div><div class="card-d">Projected score improvement from addressing top 2 failure axes per store</div></div><span class="ctag cml">What-If</span></div><canvas id="ch-f6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Revenue Trend — Bottom 5 Stores</div><div class="card-d">6-month rolling decline for critical franchises</div></div><span class="ctag cml">Trend</span></div><canvas id="ch-f4" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Health Score by Zone</div><div class="card-d">Average composite score across 4 zones</div></div><span class="ctag cml">Zone Health</span></div><canvas id="ch-f5" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Intervention Impact Estimate</div><div class="card-d">Score improvement from fixing top 2 failure axes</div></div><span class="ctag cml">What-If</span></div><canvas id="ch-f6" style="max-height:240px"></canvas></div>
 </div>
 <div class="alert alr"><span class="a-ic">🔴</span><div><div class="a-t">Surat Central — Score 32/100</div><div class="a-s">Revenue -18% · Footfall -22% · ₹8.2Cr at risk in 90 days. Immediate management review required.</div></div></div>
 </div>
@@ -470,14 +480,19 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hc" style="--ac:#A78BFA"><div class="hc-num" style="color:#A78BFA" data-count="87" data-suf="%">0%</div><div class="hc-lbl">Forecast Accuracy</div></div>
 <div class="hc" style="--ac:#A78BFA"><div class="hc-num" style="color:#A78BFA">3–5 PM</div><div class="hc-lbl">Daily Peak Window</div></div>
 </div>
+<div class="chart-row-lbl">Forecast &amp; Patterns</div>
+<div class="g-feat">
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">30-Day Footfall Forecast — Mumbai West</div><div class="card-d">XGBoost model · actual (solid) vs predicted (dashed) · festival surge zones</div></div><span class="ctag cml">XGBoost</span></div><canvas id="ch-ff1" style="max-height:280px"></canvas></div>
+<div class="g-feat-r">
+<div class="card"><div class="card-hd"><div><div class="card-t">Hourly Traffic — Weekday vs Weekend</div><div class="card-d">Walk-ins by hour · peak staffing optimization</div></div><span class="ctag cml">Hourly</span></div><canvas id="ch-ff2" style="max-height:125px"></canvas></div>
+<div class="card"><div class="card-hd"><div><div class="card-t">Festival Surge — 5 Key Events</div><div class="card-d">Footfall multiplier vs baseline per festival</div></div><span class="ctag cml">Event Impact</span></div><canvas id="ch-ff3" style="max-height:125px"></canvas></div>
+</div>
+</div>
+<div class="chart-row-lbl">Store Performance</div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">30-Day Footfall Forecast — Mumbai West</div><div class="card-d">XGBoost · festival surge zones highlighted · actual vs predicted overlay</div></div><span class="ctag cml">XGBoost</span></div><canvas id="ch-ff1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Hourly Traffic Pattern — Weekday vs Weekend</div><div class="card-d">Average walk-ins by hour · peak optimization for staffing</div></div><span class="ctag cml">Hourly</span></div><canvas id="ch-ff2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Festival Surge Comparison — 5 Key Festivals</div><div class="card-d">Footfall multiplier during each festival window vs baseline</div></div><span class="ctag cml">Event Impact</span></div><canvas id="ch-ff3" style="max-height:210px"></canvas></div>
-</div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Monthly Footfall Trend — Top 3 Stores</div><div class="card-d">YTD rolling monthly footfall with seasonal overlay</div></div><span class="ctag cml">Monthly</span></div><canvas id="ch-ff4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Footfall vs Conversion Rate (Scatter)</div><div class="card-d">Each store plotted: walk-ins vs conversion — quadrant analysis</div></div><span class="ctag cml">Efficiency</span></div><canvas id="ch-ff5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Store Footfall Ranking — Current Month</div><div class="card-d">All stores ranked by total footfall this month vs last month</div></div><span class="ctag cml">Ranking</span></div><canvas id="ch-ff6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Monthly Trend — Top 3 Stores</div><div class="card-d">YTD rolling monthly footfall with seasonal overlay</div></div><span class="ctag cml">Monthly</span></div><canvas id="ch-ff4" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Footfall vs Conversion Scatter</div><div class="card-d">Walk-ins (X) vs conversion % (Y) per store</div></div><span class="ctag cml">Efficiency</span></div><canvas id="ch-ff5" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Store Ranking — This Month</div><div class="card-d">All stores ranked: this month vs last month</div></div><span class="ctag cml">Ranking</span></div><canvas id="ch-ff6" style="max-height:240px"></canvas></div>
 </div>
 <div class="insight"><span class="ii">💡</span><span class="it"><strong>Saturday footfall is 2.5× weekday average</strong> — current uniform staffing policy loses ₹12L/year in Saturday conversion from understaffing and wastes ₹8L on Mon–Thu overstaffing.</span></div>
 </div>
@@ -489,14 +504,19 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hc" style="--ac:#F472B6"><div class="hc-num" style="color:#F472B6" data-count="45">0</div><div class="hc-lbl">Avg Repeat Cycle (Days)</div></div>
 <div class="hc" style="--ac:#F472B6"><div class="hc-num" style="color:#F472B6" data-count="3.2" data-suf="×" data-dec="1">0×</div><div class="hc-lbl">LTV vs One-Time Buyer</div></div>
 </div>
+<div class="chart-row-lbl">Customer Retention</div>
+<div class="g-feat">
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Repeat Purchase Decay Curve</div><div class="card-d">Logistic regression · probability of return vs days since last purchase · 3 segments</div></div><span class="ctag cml">RFM + Logistic</span></div><canvas id="ch-r1" style="max-height:280px"></canvas></div>
+<div class="g-feat-r">
+<div class="card"><div class="card-hd"><div><div class="card-t">RFM Segment Distribution</div><div class="card-d">Champions · Loyal · At-Risk · Lost</div></div><span class="ctag cml">RFM</span></div><canvas id="ch-r2" style="max-height:125px"></canvas></div>
+<div class="card"><div class="card-hd"><div><div class="card-t">City-Wise Repeat Rate</div><div class="card-d">Per city vs 22% national average</div></div><span class="ctag cml">City Analysis</span></div><canvas id="ch-r3" style="max-height:125px"></canvas></div>
+</div>
+</div>
+<div class="chart-row-lbl">Revenue &amp; Lifetime Value</div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Repeat Purchase Decay Curve</div><div class="card-d">Logistic regression · probability of return vs days since last purchase · 3 segments</div></div><span class="ctag cml">RFM + Logistic</span></div><canvas id="ch-r1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">RFM Segment Distribution</div><div class="card-d">Champions · Loyal · At-Risk · Lost · across 82-franchise customer base</div></div><span class="ctag cml">RFM</span></div><canvas id="ch-r2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">City-Wise Repeat Rate Comparison</div><div class="card-d">Repeat purchase rate per major city vs national average benchmark</div></div><span class="ctag cml">City Analysis</span></div><canvas id="ch-r3" style="max-height:210px"></canvas></div>
-</div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Revenue Split: Repeat vs New Customers</div><div class="card-d">Monthly revenue contribution by customer type · trend line</div></div><span class="ctag cml">Revenue Mix</span></div><canvas id="ch-r4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Upsell Value Distribution</div><div class="card-d">Average basket size lift per cross-sell rule by category pair</div></div><span class="ctag cml">Upsell Value</span></div><canvas id="ch-r5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">LTV Cohort Analysis — 6 Acquisition Months</div><div class="card-d">Cumulative lifetime value by cohort month · shows retention impact</div></div><span class="ctag cml">Cohort LTV</span></div><canvas id="ch-r6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Revenue: Repeat vs New</div><div class="card-d">Monthly contribution by customer type</div></div><span class="ctag cml">Revenue Mix</span></div><canvas id="ch-r4" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Upsell Value by Category Pair</div><div class="card-d">Basket size lift per cross-sell rule</div></div><span class="ctag cml">Upsell Value</span></div><canvas id="ch-r5" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">LTV Cohort Analysis</div><div class="card-d">Cumulative lifetime value by acquisition month</div></div><span class="ctag cml">Cohort LTV</span></div><canvas id="ch-r6" style="max-height:240px"></canvas></div>
 </div>
 <div class="insight"><span class="ii">💡</span><span class="it">The <strong>45-day window is make-or-break</strong>. Customers who receive a WhatsApp follow-up at day 40 show <strong>2.8× higher return probability</strong>. Automating this one touchpoint across 82 stores adds ₹4.2Cr/year.</span></div>
 </div>
@@ -510,14 +530,19 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hc" style="--ac:#34D399"><div class="hc-num" style="color:#34D399" data-count="4.8" data-suf="×" data-dec="1">0×</div><div class="hc-lbl">Best vs Worst Rev Ratio</div></div>
 <div class="hc" style="--ac:#34D399"><div class="hc-num" style="color:#34D399" data-count="23" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Untapped Revenue Potential</div></div>
 </div>
+<div class="chart-row-lbl">Archetype Clustering</div>
+<div class="g-feat">
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Store Archetype Clustering — K-Means</div><div class="card-d">5 clusters: Metro Flagship · Tier-2 Performer · Bridal Specialist · Volume Runner · Underperformer</div></div><span class="ctag cml">K-Means</span></div><canvas id="ch-p1" style="max-height:280px"></canvas></div>
+<div class="g-feat-r">
+<div class="card"><div class="card-hd"><div><div class="card-t">Revenue by Archetype</div><div class="card-d">Avg annual revenue across 5 archetypes</div></div><span class="ctag cml">Revenue</span></div><canvas id="ch-p2" style="max-height:125px"></canvas></div>
+<div class="card"><div class="card-hd"><div><div class="card-t">Store DNA Radar — All 5</div><div class="card-d">Revenue · Footfall · Conversion · Basket · Retention</div></div><span class="ctag cml">Radar</span></div><canvas id="ch-p3" style="max-height:125px"></canvas></div>
+</div>
+</div>
+<div class="chart-row-lbl">Efficiency &amp; Transition</div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Store Archetype Clustering — K-Means</div><div class="card-d">5 clusters: Metro Flagship · Tier-2 Performer · Bridal Specialist · Volume Runner · Underperformer</div></div><span class="ctag cml">K-Means</span></div><canvas id="ch-p1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Revenue Distribution by Archetype</div><div class="card-d">Box plot of annual revenue per store across 5 archetypes</div></div><span class="ctag cml">Revenue</span></div><canvas id="ch-p2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Store DNA Radar — 5 Archetype Profiles</div><div class="card-d">6-axis profile: Revenue · Footfall · Conversion · Basket · Retention · Competition</div></div><span class="ctag cml">Radar</span></div><canvas id="ch-p3" style="max-height:210px"></canvas></div>
-</div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Metric Heatmap — Top 20 Stores</div><div class="card-d">Normalized score grid: each store × 6 performance axes</div></div><span class="ctag cml">Heatmap</span></div><canvas id="ch-p4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Revenue vs Floor Area (Sq.Ft)</div><div class="card-d">Scatter: floor space efficiency — outliers = expansion or relocation candidates</div></div><span class="ctag cml">Efficiency</span></div><canvas id="ch-p5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Archetype Transition Potential</div><div class="card-d">Stores closest to cluster boundary — candidates for archetype upgrade with targeted investment</div></div><span class="ctag cml">Mobility</span></div><canvas id="ch-p6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Metric Heatmap — Top Stores</div><div class="card-d">Normalized score: store × 6 performance axes</div></div><span class="ctag cml">Heatmap</span></div><canvas id="ch-p4" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Revenue vs Floor Area</div><div class="card-d">Floor space efficiency — outliers = expansion candidates</div></div><span class="ctag cml">Efficiency</span></div><canvas id="ch-p5" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Archetype Transition Potential</div><div class="card-d">Stores nearest cluster boundary — upgrade candidates</div></div><span class="ctag cml">Mobility</span></div><canvas id="ch-p6" style="max-height:240px"></canvas></div>
 </div>
 <div class="insight"><span class="ii">💡</span><span class="it"><strong>14 stores are misclassified</strong> by current management. Six Tier-2 stores operating with Metro Flagship inventory mix are leaving ₹6.8Cr on the table annually. Three Volume Runners need bridal category injection.</span></div>
 </div>
@@ -531,14 +556,19 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hc" style="--ac:#FB923C"><div class="hc-num" style="color:#FB923C" data-count="19" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Lost Sales from Gaps</div></div>
 <div class="hc" style="--ac:#FB923C"><div class="hc-num" style="color:#FB923C" data-count="12" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Slow-Mover Liability</div></div>
 </div>
+<div class="chart-row-lbl">SKU Analysis</div>
+<div class="g-feat">
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">SKU Pareto — 80/20 Revenue Contribution</div><div class="card-d">Cumulative revenue curve across 2,400 active SKUs — dead zone highlighted</div></div><span class="ctag cml">Pareto</span></div><canvas id="ch-a1" style="max-height:280px"></canvas></div>
+<div class="g-feat-r">
+<div class="card"><div class="card-hd"><div><div class="card-t">Category Revenue Mix</div><div class="card-d">8 categories: Wedding · Daily Wear · Bridal · more</div></div><span class="ctag cml">Category</span></div><canvas id="ch-a2" style="max-height:125px"></canvas></div>
+<div class="card"><div class="card-hd"><div><div class="card-t">Demand vs Supply Gap</div><div class="card-d">Category demand vs assortment availability</div></div><span class="ctag cml">Gap Analysis</span></div><canvas id="ch-a3" style="max-height:125px"></canvas></div>
+</div>
+</div>
+<div class="chart-row-lbl">Pricing &amp; Recommendations</div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">SKU Pareto — 80/20 Revenue Contribution</div><div class="card-d">Cumulative revenue curve across 2,400 active SKUs — dead zone highlighted</div></div><span class="ctag cml">Pareto</span></div><canvas id="ch-a1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Category Revenue Mix — 8 Categories</div><div class="card-d">Wedding · Daily Wear · Bridal · Men's · Kids · Solitaire · Chains · Custom</div></div><span class="ctag cml">Category</span></div><canvas id="ch-a2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">City Demand vs Current Supply Gap</div><div class="card-d">Category demand score vs assortment availability per major city</div></div><span class="ctag cml">Gap Analysis</span></div><canvas id="ch-a3" style="max-height:210px"></canvas></div>
-</div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Price Band Distribution — Units Sold</div><div class="card-d">Revenue bracket: sub-₹50K · ₹50-150K · ₹150-300K · ₹300K+</div></div><span class="ctag cml">Price Bands</span></div><canvas id="ch-a4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Trend Score by Category — 6 Months</div><div class="card-d">Velocity index: sales acceleration or deceleration per category</div></div><span class="ctag cml">Velocity</span></div><canvas id="ch-a5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Recommended SKU Additions — Top 8 Cities</div><div class="card-d">ML-ranked new SKUs by projected demand × margin score</div></div><span class="ctag cml">ML Recommend</span></div><canvas id="ch-a6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Price Band Distribution</div><div class="card-d">Sub-₹50K · ₹50-150K · ₹150-300K · ₹300K+</div></div><span class="ctag cml">Price Bands</span></div><canvas id="ch-a4" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Category Trend Score — 6 Months</div><div class="card-d">Sales velocity: accelerating or decelerating</div></div><span class="ctag cml">Velocity</span></div><canvas id="ch-a5" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Recommended SKU Additions</div><div class="card-d">ML-ranked by projected demand × margin</div></div><span class="ctag cml">ML Recommend</span></div><canvas id="ch-a6" style="max-height:240px"></canvas></div>
 </div>
 <div class="insight"><span class="ii">💡</span><span class="it"><strong>Daily-wear gold chains under ₹80K</strong> are the single largest demand gap — 11 cities show search + footfall intent but zero matching inventory. Adding 40 SKUs in this band could recover ₹8.4Cr in lost walk-outs.</span></div>
 </div>
@@ -552,14 +582,19 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hc" style="--ac:#60A5FA"><div class="hc-num" style="color:#60A5FA" data-count="30" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Inter-Region Revenue Gap</div></div>
 <div class="hc" style="--ac:#60A5FA"><div class="hc-num" style="color:#60A5FA" data-count="71" data-suf="%">0%</div><div class="hc-lbl">West Zone Market Share Lead</div></div>
 </div>
+<div class="chart-row-lbl">Regional Performance</div>
+<div class="g-feat">
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Regional Revenue Comparison — 4 Zones</div><div class="card-d">North · South · East · West · quarterly vs target with variance</div></div><span class="ctag cml">Zones</span></div><canvas id="ch-sc1" style="max-height:280px"></canvas></div>
+<div class="g-feat-r">
+<div class="card"><div class="card-hd"><div><div class="card-t">Region Health Radar</div><div class="card-d">6 metrics across all 4 zones</div></div><span class="ctag cml">Radar</span></div><canvas id="ch-sc2" style="max-height:125px"></canvas></div>
+<div class="card"><div class="card-hd"><div><div class="card-t">YoY Growth by Zone</div><div class="card-d">4-quarter growth trajectory</div></div><span class="ctag cml">YoY</span></div><canvas id="ch-sc3" style="max-height:125px"></canvas></div>
+</div>
+</div>
+<div class="chart-row-lbl">Market &amp; KPIs</div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Regional Revenue Comparison — 4 Zones</div><div class="card-d">North · South · East · West · quarterly vs target with variance</div></div><span class="ctag cml">Zones</span></div><canvas id="ch-sc1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Radar — Region Health (6 Metrics)</div><div class="card-d">Revenue · Growth · Conversion · Repeat · Basket Size · Footfall for all 4 zones</div></div><span class="ctag cml">Radar</span></div><canvas id="ch-sc2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">YoY Growth Rate by Zone</div><div class="card-d">Last 4 quarters — growth trajectory with momentum indicator</div></div><span class="ctag cml">YoY</span></div><canvas id="ch-sc3" style="max-height:210px"></canvas></div>
-</div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">City-Level Revenue Map — Top 20 Cities</div><div class="card-d">Horizontal bar: top 20 revenue cities across all zones</div></div><span class="ctag cml">City Revenue</span></div><canvas id="ch-sc4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Market Penetration Rate by Zone</div><div class="card-d">KISNA's estimated share of organised jewellery market per zone</div></div><span class="ctag cml">Market Share</span></div><canvas id="ch-sc5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Region KPI Scorecard — Q4 vs Q3</div><div class="card-d">Colour-coded: Green ≥ target · Amber 80–99% · Red &lt;80% — 7 KPIs × 4 zones</div></div><span class="ctag cml">KPI Grid</span></div><canvas id="ch-sc6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">City-Level Revenue Map — Top 20 Cities</div><div class="card-d">Horizontal bar: top 20 revenue cities across all zones</div></div><span class="ctag cml">City Revenue</span></div><canvas id="ch-sc4" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Market Penetration Rate by Zone</div><div class="card-d">KISNA's estimated share of organised jewellery market per zone</div></div><span class="ctag cml">Market Share</span></div><canvas id="ch-sc5" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Region KPI Scorecard — Q4 vs Q3</div><div class="card-d">Colour-coded: Green ≥ target · Amber 80–99% · Red &lt;80% — 7 KPIs × 4 zones</div></div><span class="ctag cml">KPI Grid</span></div><canvas id="ch-sc6" style="max-height:240px"></canvas></div>
 </div>
 <div class="insight"><span class="ii">💡</span><span class="it"><strong>East Zone is chronically under-invested</strong> — 18 stores generate only ₹42Cr vs West Zone's ₹118Cr from 21 stores. East cities show comparable footfall intent but 40% lower store density. Fastest expansion ROI is East.</span></div>
 </div>
@@ -573,14 +608,19 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hc" style="--ac:#E879F9"><div class="hc-num" style="color:#E879F9" data-count="22">0</div><div class="hc-lbl">Understocked Stores</div></div>
 <div class="hc" style="--ac:#E879F9"><div class="hc-num" style="color:#E879F9" data-count="6.2" data-suf="×" data-dec="1">0×</div><div class="hc-lbl">Transfer ROI Potential</div></div>
 </div>
+<div class="chart-row-lbl">Mismatch Detection</div>
+<div class="g-feat">
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Demand vs Supply Mismatch — 88 Cities</div><div class="card-d">Scatter: Demand Score (X) vs Inventory Score (Y) — four quadrants reveal action priority</div></div><span class="ctag cml">Mismatch Map</span></div><canvas id="ch-i1" style="max-height:280px"></canvas></div>
+<div class="g-feat-r">
+<div class="card"><div class="card-hd"><div><div class="card-t">Category Stock Weeks</div><div class="card-d">Red &lt;4wk · Amber 4-12wk · Green &gt;12wk</div></div><span class="ctag cml">Stock Weeks</span></div><canvas id="ch-i2" style="max-height:125px"></canvas></div>
+<div class="card"><div class="card-hd"><div><div class="card-t">Transfer Opportunities</div><div class="card-d">Top pairs: overstocked → understocked</div></div><span class="ctag cml">Transfers</span></div><canvas id="ch-i3" style="max-height:125px"></canvas></div>
+</div>
+</div>
+<div class="chart-row-lbl">Turnover &amp; Reorder</div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Demand vs Supply Mismatch — 88 Cities</div><div class="card-d">Scatter: Demand Score (X) vs Inventory Score (Y) — four quadrants reveal action priority</div></div><span class="ctag cml">Mismatch Map</span></div><canvas id="ch-i1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Category Stock Weeks — 8 Categories</div><div class="card-d">Weeks of stock remaining per category — red &lt;4 weeks · green &gt;12 weeks</div></div><span class="ctag cml">Stock Weeks</span></div><canvas id="ch-i2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Inter-Store Transfer Opportunity Matrix</div><div class="card-d">Top 15 transfer pairs: overstocked → understocked with value at stake</div></div><span class="ctag cml">Transfer Matrix</span></div><canvas id="ch-i3" style="max-height:210px"></canvas></div>
-</div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Monthly Stock Turnover Trend — 6 Months</div><div class="card-d">Turnover ratio per category — slowdown indicates accumulation risk</div></div><span class="ctag cml">Turnover</span></div><canvas id="ch-i4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Overstock vs Understock Value by Region</div><div class="card-d">₹Cr of excess vs deficit inventory locked per zone</div></div><span class="ctag cml">Region Stock</span></div><canvas id="ch-i5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Reorder Alert — Critical SKUs</div><div class="card-d">Top 20 SKUs: days-of-stock remaining · velocity · recommended reorder qty</div></div><span class="ctag cml">Reorder</span></div><canvas id="ch-i6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Monthly Stock Turnover Trend — 6 Months</div><div class="card-d">Turnover ratio per category — slowdown indicates accumulation risk</div></div><span class="ctag cml">Turnover</span></div><canvas id="ch-i4" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Overstock vs Understock Value by Region</div><div class="card-d">₹Cr of excess vs deficit inventory locked per zone</div></div><span class="ctag cml">Region Stock</span></div><canvas id="ch-i5" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Reorder Alert — Critical SKUs</div><div class="card-d">Top 20 SKUs: days-of-stock remaining · velocity · recommended reorder qty</div></div><span class="ctag cml">Reorder</span></div><canvas id="ch-i6" style="max-height:240px"></canvas></div>
 </div>
 <div class="insight"><span class="ii">💡</span><span class="it"><strong>₹29Cr is frozen in misallocated inventory</strong> right now. Surat has 18 weeks of bridal stock while Delhi shows 3 weeks. A smart transfer engine pays for itself in &lt;60 days.</span></div>
 </div>
@@ -594,14 +634,19 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hc" style="--ac:#F87171"><div class="hc-num" style="color:#F87171" data-count="4.2" data-suf="%" data-dec="1">0%</div><div class="hc-lbl">Annual Capital Erosion</div></div>
 <div class="hc" style="--ac:#F87171"><div class="hc-num" style="color:#F87171" data-count="32" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Recoverable via Liquidation</div></div>
 </div>
+<div class="chart-row-lbl">Stock Aging</div>
+<div class="g-feat">
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Dead Stock Aging Buckets — Value at Risk</div><div class="card-d">90–180 days · 180–365 days · 365+ days · value in ₹Cr per bucket</div></div><span class="ctag cml">Aging</span></div><canvas id="ch-ds1" style="max-height:280px"></canvas></div>
+<div class="g-feat-r">
+<div class="card"><div class="card-hd"><div><div class="card-t">Category Composition</div><div class="card-d">Where dormant capital is locked</div></div><span class="ctag cml">Category Mix</span></div><canvas id="ch-ds2" style="max-height:125px"></canvas></div>
+<div class="card"><div class="card-hd"><div><div class="card-t">Liquidation Recovery Curve</div><div class="card-d">60-80% realisation × 3 timelines</div></div><span class="ctag cml">Liquidation</span></div><canvas id="ch-ds3" style="max-height:125px"></canvas></div>
+</div>
+</div>
+<div class="chart-row-lbl">Trends &amp; Root Cause</div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Dead Stock Aging Buckets — Value at Risk</div><div class="card-d">90–180 days · 180–365 days · 365+ days · value in ₹Cr per bucket</div></div><span class="ctag cml">Aging</span></div><canvas id="ch-ds1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Category-Wise Dead Stock Composition</div><div class="card-d">Which categories hold the most dormant capital</div></div><span class="ctag cml">Category Mix</span></div><canvas id="ch-ds2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Liquidation Scenario — Value Recovery Curve</div><div class="card-d">Recovery % at 60%, 70%, 80% realisation × 3 urgency timelines</div></div><span class="ctag cml">Liquidation</span></div><canvas id="ch-ds3" style="max-height:210px"></canvas></div>
-</div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Dead Stock Accumulation Trend — 12 Months</div><div class="card-d">Monthly growth of dormant inventory value — seasonal spikes visible</div></div><span class="ctag cml">Trend</span></div><canvas id="ch-ds4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Store-Wise Dead Stock Concentration</div><div class="card-d">Top 15 stores by dead stock value — operational vs structural risk</div></div><span class="ctag cml">Store Risk</span></div><canvas id="ch-ds5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Root Cause Analysis — Why Items Die</div><div class="card-d">Trend miss · Over-buy · Wrong city · Wrong price band · No promotion</div></div><span class="ctag cml">Root Cause</span></div><canvas id="ch-ds6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Dead Stock Accumulation Trend — 12 Months</div><div class="card-d">Monthly growth of dormant inventory value — seasonal spikes visible</div></div><span class="ctag cml">Trend</span></div><canvas id="ch-ds4" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Store-Wise Dead Stock Concentration</div><div class="card-d">Top 15 stores by dead stock value — operational vs structural risk</div></div><span class="ctag cml">Store Risk</span></div><canvas id="ch-ds5" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Root Cause Analysis — Why Items Die</div><div class="card-d">Trend miss · Over-buy · Wrong city · Wrong price band · No promotion</div></div><span class="ctag cml">Root Cause</span></div><canvas id="ch-ds6" style="max-height:240px"></canvas></div>
 </div>
 <div class="insight"><span class="ii">💡</span><span class="it"><strong>₹48Cr sitting still costs ₹2Cr/year in opportunity cost.</strong> ML-ranked liquidation route (festival bundling → inter-store transfer → outlet → melt) recovers 67% average — ₹32Cr back in working capital within 90 days.</span></div>
 </div>
@@ -615,14 +660,19 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hc" style="--ac:#4ADE80"><div class="hc-num" style="color:#4ADE80" data-count="34" data-suf="%">0%</div><div class="hc-lbl">Avg Basket Lift</div></div>
 <div class="hc" style="--ac:#4ADE80"><div class="hc-num" style="color:#4ADE80" data-count="92" data-suf="%">0%</div><div class="hc-lbl">Rule Confidence (Top 50)</div></div>
 </div>
+<div class="chart-row-lbl">Association Rules</div>
+<div class="g-feat">
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Top Category Pair Associations — Apriori</div><div class="card-d">Lift scores for top 12 category pairs — Rings+Chains · Bangles+Earrings · etc.</div></div><span class="ctag cml">Apriori</span></div><canvas id="ch-cs1" style="max-height:280px"></canvas></div>
+<div class="g-feat-r">
+<div class="card"><div class="card-hd"><div><div class="card-t">Basket Uplift per Rule</div><div class="card-d">Additional revenue per triggered transaction</div></div><span class="ctag cml">Basket Lift</span></div><canvas id="ch-cs2" style="max-height:125px"></canvas></div>
+<div class="card"><div class="card-hd"><div><div class="card-t">Uplift by Customer Segment</div><div class="card-d">Champions respond 4.2× better</div></div><span class="ctag cml">Segment</span></div><canvas id="ch-cs3" style="max-height:125px"></canvas></div>
+</div>
+</div>
+<div class="chart-row-lbl">Performance &amp; Bundles</div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Top Category Pair Associations — Apriori</div><div class="card-d">Lift scores for top 12 category pairs — Rings+Chains · Bangles+Earrings · etc.</div></div><span class="ctag cml">Apriori</span></div><canvas id="ch-cs1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Basket Uplift by Cross-Sell Trigger</div><div class="card-d">Average additional revenue per transaction when rule is applied</div></div><span class="ctag cml">Basket Lift</span></div><canvas id="ch-cs2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Cross-Sell Revenue by Customer Segment</div><div class="card-d">Uplift per RFM segment — Champions respond 4.2× better than Average</div></div><span class="ctag cml">Segment</span></div><canvas id="ch-cs3" style="max-height:210px"></canvas></div>
-</div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Monthly Cross-Sell Revenue Trend</div><div class="card-d">12-month tracked uplift from rules applied at POS — growing adoption curve</div></div><span class="ctag cml">Monthly</span></div><canvas id="ch-cs4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Store-Wise Cross-Sell Performance</div><div class="card-d">Top 15 stores: % of transactions with cross-sell vs revenue uplift</div></div><span class="ctag cml">Store Perf</span></div><canvas id="ch-cs5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Occasion-Based Bundle Effectiveness</div><div class="card-d">Bundle acceptance rate and avg value: Wedding · Karwa Chauth · Valentine · Birthday</div></div><span class="ctag cml">Bundles</span></div><canvas id="ch-cs6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Monthly Cross-Sell Revenue Trend</div><div class="card-d">12-month tracked uplift from rules applied at POS — growing adoption curve</div></div><span class="ctag cml">Monthly</span></div><canvas id="ch-cs4" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Store-Wise Cross-Sell Performance</div><div class="card-d">Top 15 stores: % of transactions with cross-sell vs revenue uplift</div></div><span class="ctag cml">Store Perf</span></div><canvas id="ch-cs5" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Occasion-Based Bundle Effectiveness</div><div class="card-d">Bundle acceptance rate and avg value: Wedding · Karwa Chauth · Valentine · Birthday</div></div><span class="ctag cml">Bundles</span></div><canvas id="ch-cs6" style="max-height:240px"></canvas></div>
 </div>
 <div class="insight"><span class="ii">💡</span><span class="it"><strong>The Ring + Chain pair fires 840 times/month</strong> with a 92% confidence and ₹4,200 average uplift. Training all 82 stores' staff on just this one rule adds ₹4.2Cr annually — with zero inventory investment.</span></div>
 </div>
@@ -636,14 +686,19 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hc" style="--ac:#FBBF24"><div class="hc-num" style="color:#FBBF24" data-count="14">0</div><div class="hc-lbl">Franchises in Critical Zone</div></div>
 <div class="hc" style="--ac:#FBBF24"><div class="hc-num" style="color:#FBBF24" data-count="28" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Revenue Gap vs Full Potential</div></div>
 </div>
+<div class="chart-row-lbl">Franchise Rankings</div>
+<div class="g-feat">
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Top 15 Franchises — Revenue Ranking</div><div class="card-d">Annual revenue with YoY growth indicator — Champions vs Challengers</div></div><span class="ctag cml">Revenue Rank</span></div><canvas id="ch-lb1" style="max-height:280px"></canvas></div>
+<div class="g-feat-r">
+<div class="card"><div class="card-hd"><div><div class="card-t">Score Distribution — All 82</div><div class="card-d">Revenue 40% · Growth 30% · Retention 15%</div></div><span class="ctag cml">Score Dist</span></div><canvas id="ch-lb2" style="max-height:125px"></canvas></div>
+<div class="card"><div class="card-hd"><div><div class="card-t">Growth Ranking — Q4 YoY</div><div class="card-d">Fastest growing vs declining</div></div><span class="ctag cml">Growth</span></div><canvas id="ch-lb3" style="max-height:125px"></canvas></div>
+</div>
+</div>
+<div class="chart-row-lbl">Tiers &amp; Risk</div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Top 15 Franchises — Revenue Ranking</div><div class="card-d">Annual revenue with YoY growth indicator — Champions vs Challengers</div></div><span class="ctag cml">Revenue Rank</span></div><canvas id="ch-lb1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Composite Score Distribution — All 82</div><div class="card-d">Histogram: Revenue 40% · Growth 30% · Retention 15% · Operations 15%</div></div><span class="ctag cml">Score Dist</span></div><canvas id="ch-lb2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Growth Rate Ranking — Q4 YoY</div><div class="card-d">Fastest growing vs declining franchises this quarter</div></div><span class="ctag cml">Growth</span></div><canvas id="ch-lb3" style="max-height:210px"></canvas></div>
-</div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Franchise Tier Movement — Quarterly</div><div class="card-d">Sankey-style: Gold → Silver → Bronze tier migrations this quarter</div></div><span class="ctag cml">Tier Moves</span></div><canvas id="ch-lb4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Retention Rate vs Revenue per Franchise</div><div class="card-d">Scatter: retention drives LTV — top-right quadrant = investment priority</div></div><span class="ctag cml">Retention</span></div><canvas id="ch-lb5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Bottom 15 — Risk Intervention Map</div><div class="card-d">Lowest performers with primary failure axis and recommended action</div></div><span class="ctag cml">Risk Map</span></div><canvas id="ch-lb6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Franchise Tier Movement — Quarterly</div><div class="card-d">Sankey-style: Gold → Silver → Bronze tier migrations this quarter</div></div><span class="ctag cml">Tier Moves</span></div><canvas id="ch-lb4" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Retention Rate vs Revenue per Franchise</div><div class="card-d">Scatter: retention drives LTV — top-right quadrant = investment priority</div></div><span class="ctag cml">Retention</span></div><canvas id="ch-lb5" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Bottom 15 — Risk Intervention Map</div><div class="card-d">Lowest performers with primary failure axis and recommended action</div></div><span class="ctag cml">Risk Map</span></div><canvas id="ch-lb6" style="max-height:240px"></canvas></div>
 </div>
 <div class="insight"><span class="ii">💡</span><span class="it"><strong>Mumbai Andheri is the #1 franchise</strong> at ₹18.4Cr but Pune Koregaon shows 68% YoY growth — the fastest riser. The bottom 14 franchises share one pattern: single-category dependency. Diversification coaching adds ₹6.2Cr.</span></div>
 </div>
@@ -657,14 +712,19 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hc" style="--ac:#C084FC"><div class="hc-num" style="color:#C084FC" data-count="34" data-suf="%">0%</div><div class="hc-lbl">Revenue Lift from Local Assortment</div></div>
 <div class="hc" style="--ac:#C084FC"><div class="hc-num" style="color:#C084FC" data-count="14" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Localisation Upside</div></div>
 </div>
+<div class="chart-row-lbl">Cultural Clusters</div>
+<div class="g-feat">
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Cultural Jewellery Preference Map — 6 Clusters</div><div class="card-d">NLP + Survey clustering: Traditional Heavy · Modern Minimalist · Bridal Maximalist · Office Daily · Religious Motif · Investment Buyer</div></div><span class="ctag cml">NLP Cluster</span></div><canvas id="ch-dna1" style="max-height:280px"></canvas></div>
+<div class="g-feat-r">
+<div class="card"><div class="card-hd"><div><div class="card-t">Regional Style Radar</div><div class="card-d">N vs S vs W vs E: purity · stone · weight</div></div><span class="ctag cml">Radar</span></div><canvas id="ch-dna2" style="max-height:125px"></canvas></div>
+<div class="card"><div class="card-hd"><div><div class="card-t">Festival-Product Affinity</div><div class="card-d">Category peaks at each festival</div></div><span class="ctag cml">Affinity</span></div><canvas id="ch-dna3" style="max-height:125px"></canvas></div>
+</div>
+</div>
+<div class="chart-row-lbl">Regional Preferences</div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Cultural Jewellery Preference Map — 6 Clusters</div><div class="card-d">NLP + Survey clustering: Traditional Heavy · Modern Minimalist · Bridal Maximalist · Office Daily · Religious Motif · Investment Buyer</div></div><span class="ctag cml">NLP Cluster</span></div><canvas id="ch-dna1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Regional Style Preference Radar</div><div class="card-d">North vs South vs West vs East: gold purity · stone preference · design weight · filigree</div></div><span class="ctag cml">Radar</span></div><canvas id="ch-dna2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Festival-Product Affinity Heatmap</div><div class="card-d">Which product categories peak at which festivals across regions</div></div><span class="ctag cml">Affinity</span></div><canvas id="ch-dna3" style="max-height:210px"></canvas></div>
-</div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Gold Purity Preference by State</div><div class="card-d">22K vs 18K vs 14K preference split per major state</div></div><span class="ctag cml">Purity</span></div><canvas id="ch-dna4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Religion × Purchase Occasion Matrix</div><div class="card-d">Hindu · Muslim · Sikh · Christian occasion-based purchase triggers per cluster</div></div><span class="ctag cml">Occasion</span></div><canvas id="ch-dna5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Localisation ROI — Top 10 City Pairs</div><div class="card-d">Revenue lift from local-assortment pilot stores vs generic-assortment peers</div></div><span class="ctag cml">Localisation</span></div><canvas id="ch-dna6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Gold Purity Preference by State</div><div class="card-d">22K vs 18K vs 14K preference split per major state</div></div><span class="ctag cml">Purity</span></div><canvas id="ch-dna4" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Religion × Purchase Occasion Matrix</div><div class="card-d">Hindu · Muslim · Sikh · Christian occasion-based purchase triggers per cluster</div></div><span class="ctag cml">Occasion</span></div><canvas id="ch-dna5" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Localisation ROI — Top 10 City Pairs</div><div class="card-d">Revenue lift from local-assortment pilot stores vs generic-assortment peers</div></div><span class="ctag cml">Localisation</span></div><canvas id="ch-dna6" style="max-height:240px"></canvas></div>
 </div>
 <div class="insight"><span class="ii">💡</span><span class="it"><strong>South India shops 22K, North prefers 18K.</strong> KISNA currently stocks a uniform 70/30 mix everywhere — causing ₹6Cr in lost sales in Tamil Nadu and Andhra where 22K demand is unmet. Region-specific stocking adds ₹14Cr.</span></div>
 </div>
@@ -678,14 +738,19 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hc" style="--ac:#F9A8D4"><div class="hc-num" style="color:#F9A8D4" data-count="4.2" data-pre="₹" data-suf="L" data-dec="1">₹0L</div><div class="hc-lbl">Avg Wedding Basket</div></div>
 <div class="hc" style="--ac:#F9A8D4"><div class="hc-num" style="color:#F9A8D4" data-count="22" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Untapped Bridal Pipeline</div></div>
 </div>
+<div class="chart-row-lbl">Bridal Revenue</div>
+<div class="g-feat">
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Wedding Season Revenue Calendar</div><div class="card-d">Monthly wedding-attributed revenue vs non-bridal — season peaks + troughs</div></div><span class="ctag cml">Seasonal</span></div><canvas id="ch-w1" style="max-height:280px"></canvas></div>
+<div class="g-feat-r">
+<div class="card"><div class="card-hd"><div><div class="card-t">Bridal Set Breakdown</div><div class="card-d">Necklace · Bangles · Earrings · more</div></div><span class="ctag cml">Category</span></div><canvas id="ch-w2" style="max-height:125px"></canvas></div>
+<div class="card"><div class="card-hd"><div><div class="card-t">Pre-Wedding Purchase Timeline</div><div class="card-d">90% of sales within 45 days of wedding</div></div><span class="ctag cml">Timeline</span></div><canvas id="ch-w3" style="max-height:125px"></canvas></div>
+</div>
+</div>
+<div class="chart-row-lbl">City &amp; Referral Analysis</div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Wedding Season Revenue Calendar</div><div class="card-d">Monthly wedding-attributed revenue vs non-bridal — season peaks + troughs</div></div><span class="ctag cml">Seasonal</span></div><canvas id="ch-w1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Bridal Set Category Breakdown</div><div class="card-d">Necklace · Bangles · Earrings · Maang Tikka · Nose Ring · Ring · Anklets — avg value</div></div><span class="ctag cml">Category</span></div><canvas id="ch-w2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Pre-Wedding Purchase Timeline</div><div class="card-d">Days before wedding: jewellery purchase window — 90% of sales in day 0–45</div></div><span class="ctag cml">Timeline</span></div><canvas id="ch-w3" style="max-height:210px"></canvas></div>
-</div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">City Bridal Revenue Ranking</div><div class="card-d">Top 15 cities by bridal revenue — with penetration vs total wedding market estimate</div></div><span class="ctag cml">City Rank</span></div><canvas id="ch-w4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Bridal Budget Distribution — 3 Tiers</div><div class="card-d">Sub-₹2L · ₹2–5L · ₹5L+ — units and value split across 12 months</div></div><span class="ctag cml">Budget Tiers</span></div><canvas id="ch-w5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Bridal Referral Chain Analysis</div><div class="card-d">What % of bridal buyers came via referral — store-wise referral rate + revenue attribution</div></div><span class="ctag cml">Referral</span></div><canvas id="ch-w6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">City Bridal Revenue Ranking</div><div class="card-d">Top 15 cities by bridal revenue — with penetration vs total wedding market estimate</div></div><span class="ctag cml">City Rank</span></div><canvas id="ch-w4" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Bridal Budget Distribution — 3 Tiers</div><div class="card-d">Sub-₹2L · ₹2–5L · ₹5L+ — units and value split across 12 months</div></div><span class="ctag cml">Budget Tiers</span></div><canvas id="ch-w5" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Bridal Referral Chain Analysis</div><div class="card-d">What % of bridal buyers came via referral — store-wise referral rate + revenue attribution</div></div><span class="ctag cml">Referral</span></div><canvas id="ch-w6" style="max-height:240px"></canvas></div>
 </div>
 <div class="insight"><span class="ii">💡</span><span class="it"><strong>₹22Cr in identifiable bridal prospects</strong> go to competitors due to discovery gap. A dedicated bridal consultation module with CRM pipeline tracking converts 28% of walkaways — the single highest-ROI initiative in the roadmap.</span></div>
 </div>
@@ -699,14 +764,19 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hc" style="--ac:#FCD34D"><div class="hc-num" style="color:#FCD34D" data-count="3.4" data-suf="×" data-dec="1">0×</div><div class="hc-lbl">Dhanteras Revenue Multiplier</div></div>
 <div class="hc" style="--ac:#FCD34D"><div class="hc-num" style="color:#FCD34D" data-count="21" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Pre-Order Opportunity</div></div>
 </div>
+<div class="chart-row-lbl">Revenue Calendar</div>
+<div class="g-feat">
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Festival Revenue Timeline — Annual View</div><div class="card-d">12-month revenue waterfall with festival peaks labelled — Dhanteras · Dussehra · Akha Teej · Gudi Padwa · Navratri</div></div><span class="ctag cml">Calendar</span></div><canvas id="ch-fes1" style="max-height:280px"></canvas></div>
+<div class="g-feat-r">
+<div class="card"><div class="card-hd"><div><div class="card-t">Festival Multiplier by Region</div><div class="card-d">Revenue boost per zone per festival</div></div><span class="ctag cml">Multiplier</span></div><canvas id="ch-fes2" style="max-height:125px"></canvas></div>
+<div class="card"><div class="card-hd"><div><div class="card-t">Inventory Readiness</div><div class="card-d">Stock vs demand 30 days before festivals</div></div><span class="ctag cml">Readiness</span></div><canvas id="ch-fes3" style="max-height:125px"></canvas></div>
+</div>
+</div>
+<div class="chart-row-lbl">Category Surge &amp; Staffing</div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Festival Revenue Timeline — Annual View</div><div class="card-d">12-month revenue waterfall with festival peaks labelled — Dhanteras · Dussehra · Akha Teej · Gudi Padwa · Navratri</div></div><span class="ctag cml">Calendar</span></div><canvas id="ch-fes1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Festival Revenue Multiplier by Region</div><div class="card-d">How much each festival boosts revenue in each zone — regional festival index</div></div><span class="ctag cml">Multiplier</span></div><canvas id="ch-fes2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Pre-Festival Inventory Readiness</div><div class="card-d">Stock readiness score vs demand forecast 30-days before top 5 festivals</div></div><span class="ctag cml">Readiness</span></div><canvas id="ch-fes3" style="max-height:210px"></canvas></div>
-</div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Category Surge by Festival</div><div class="card-d">Which categories spike at which festival — Chains at Dhanteras · Earrings at Navratri</div></div><span class="ctag cml">Category Surge</span></div><canvas id="ch-fes4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">YoY Festival Revenue Comparison</div><div class="card-d">Last 3 years: same festival · revenue · growth — trend direction per festival</div></div><span class="ctag cml">YoY Festival</span></div><canvas id="ch-fes5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Staff Surge Requirement — Festival Weeks</div><div class="card-d">Additional staff hours needed per store per festival window vs current plan</div></div><span class="ctag cml">Staffing</span></div><canvas id="ch-fes6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Category Surge by Festival</div><div class="card-d">Which categories spike at which festival — Chains at Dhanteras · Earrings at Navratri</div></div><span class="ctag cml">Category Surge</span></div><canvas id="ch-fes4" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">YoY Festival Revenue Comparison</div><div class="card-d">Last 3 years: same festival · revenue · growth — trend direction per festival</div></div><span class="ctag cml">YoY Festival</span></div><canvas id="ch-fes5" style="max-height:240px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Staff Surge Requirement — Festival Weeks</div><div class="card-d">Additional staff hours needed per store per festival window vs current plan</div></div><span class="ctag cml">Staffing</span></div><canvas id="ch-fes6" style="max-height:240px"></canvas></div>
 </div>
 <div class="insight"><span class="ii">💡</span><span class="it"><strong>Dhanteras accounts for 18% of annual revenue in just 3 days</strong>, yet 28 stores were understocked last year. A festival pre-order system capturing intent 45 days early generates ₹21Cr in guaranteed revenue — zero walk-outs during peak.</span></div>
 </div>
