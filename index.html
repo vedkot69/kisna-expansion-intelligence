@@ -230,6 +230,69 @@ tr:hover td{background:rgba(212,168,67,.04)}
   .mc{padding:12px 10px}
   .card{padding:14px}
 }
+/* DASHBOARD HERO */
+.dash-hero{margin-bottom:24px;padding:28px 32px;background:linear-gradient(135deg,rgba(212,168,67,.08) 0%,rgba(212,168,67,.02) 40%,rgba(96,165,250,.03) 100%);border:1px solid rgba(212,168,67,.12);border-radius:20px;position:relative;overflow:hidden}
+.dash-hero::before{content:'';position:absolute;top:-50%;right:-20%;width:300px;height:300px;background:radial-gradient(circle,rgba(212,168,67,.06) 0%,transparent 60%);pointer-events:none}
+.dash-hero h1{font-size:26px;font-weight:800;letter-spacing:-.04em;color:var(--t0);margin-bottom:4px}
+.dash-hero h1 span{background:linear-gradient(135deg,#D4A843,#F4D88E);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.dash-hero-sub{font-size:13px;color:var(--t2);margin-bottom:20px}
+.dash-hero-stats{display:flex;gap:32px;flex-wrap:wrap}
+.dash-stat{display:flex;flex-direction:column}
+.dash-stat-num{font-size:22px;font-weight:800;color:var(--t0);letter-spacing:-.02em;line-height:1}
+.dash-stat-lbl{font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:.6px;margin-top:4px}
+.dash-stat-chg{font-size:10px;font-weight:600;margin-top:2px}
+.dash-stat-chg.up{color:var(--green)}.dash-stat-chg.dn{color:var(--red)}
+/* DASHBOARD ALERTS STRIP */
+.dash-alerts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:24px}
+.dash-alert{display:flex;align-items:flex-start;gap:10px;padding:14px 16px;border-radius:14px;cursor:pointer;transition:all .2s}
+.dash-alert:hover{transform:translateY(-2px)}
+.dash-alert.crit{background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.15)}
+.dash-alert.warn{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.15)}
+.dash-alert.opp{background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.15)}
+.dash-alert-ic{font-size:20px;flex-shrink:0}
+.dash-alert-t{font-size:12px;font-weight:600;color:var(--t0);margin-bottom:2px}
+.dash-alert-s{font-size:10.5px;color:var(--t2);line-height:1.5}
+/* SECTION HEADER */
+.sec-hd{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--t3);margin:24px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--brd);display:flex;align-items:center;gap:8px}
+.sec-hd::before{content:'';width:3px;height:14px;border-radius:2px;background:var(--g0)}
+.sec-hd:first-of-type{margin-top:0}
+/* FEATURED CHART (larger first chart) */
+.g-feat{display:grid;grid-template-columns:2fr 1fr;gap:16px;margin-bottom:16px}
+.g-feat .card canvas{max-height:280px !important}
+.g-feat-r{display:flex;flex-direction:column;gap:16px}
+.g-feat-r .card{flex:1;margin-bottom:0}
+/* MODULE HEADER */
+.mod-hd{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.mod-hd-back{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.04);border:1px solid var(--brd);color:var(--t2);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;transition:all .2s;flex-shrink:0}
+.mod-hd-back:hover{border-color:var(--gbrd);color:var(--g0);background:rgba(212,168,67,.08)}
+.mod-hd-info{flex:1}
+.mod-hd-title{font-size:15px;font-weight:700;color:var(--t0);letter-spacing:-.02em}
+.mod-hd-desc{font-size:11px;color:var(--t2);margin-top:2px}
+/* CHART ROW LABEL */
+.chart-row-lbl{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--t3);margin:4px 0 10px;display:flex;align-items:center;gap:6px}
+.chart-row-lbl::after{content:'';flex:1;height:1px;background:var(--brd)}
+/* RESPONSIVE ADDITIONS */
+@media(max-width:1024px){
+  .dash-alerts{grid-template-columns:1fr}
+  .g-feat{grid-template-columns:1fr}
+  .g-feat-r{flex-direction:row}
+  .dash-hero h1{font-size:22px}
+  .dash-hero-stats{gap:20px}
+}
+@media(max-width:768px){
+  .dash-alerts{grid-template-columns:1fr}
+  .g-feat{grid-template-columns:1fr}
+  .g-feat-r{flex-direction:column}
+  .dash-hero{padding:20px}
+  .dash-hero h1{font-size:20px}
+  .dash-stat-num{font-size:18px}
+  .mod-hd-title{font-size:14px}
+}
+@media(max-width:480px){
+  .dash-hero{padding:16px}
+  .dash-hero h1{font-size:18px}
+  .dash-hero-stats{gap:16px}
+}
 </style>
 </head>
 <body>
@@ -324,20 +387,32 @@ tr:hover td{background:rgba(212,168,67,.04)}
 
 <!-- ===== HOME / DASHBOARD ===== -->
 <div class="view active" id="view-home">
-<div class="welcome">
-  <div class="welcome-row">
-    <div>
-      <h2>Good <span id="greeting-time">morning</span>, Commander</h2>
-      <p>All systems operational. 15 intelligence modules active across 88 cities. 3 alerts require your attention today.</p>
-    </div>
-    <div class="welcome-stats">
-      <div class="welcome-stat"><div class="welcome-stat-num" data-count="88">0</div><div class="welcome-stat-lbl">Cities Live</div></div>
-      <div class="welcome-stat"><div class="welcome-stat-num" data-count="15">0</div><div class="welcome-stat-lbl">Modules</div></div>
-      <div class="welcome-stat"><div class="welcome-stat-num" data-count="247" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="welcome-stat-lbl">Revenue</div></div>
-    </div>
+<!-- HERO -->
+<div class="dash-hero">
+  <h1>Welcome to <span>KISNA Intelligence</span></h1>
+  <div class="dash-hero-sub">AI-powered retail expansion across 88 Indian cities · 82 franchise stores · 15 live ML modules</div>
+  <div class="dash-hero-stats">
+    <div class="dash-stat"><div class="dash-stat-num" data-count="247" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="dash-stat-lbl">Network Revenue (FY24)</div><div class="dash-stat-chg up">+18% YoY</div></div>
+    <div class="dash-stat"><div class="dash-stat-num" data-count="82">0</div><div class="dash-stat-lbl">Active Stores</div><div class="dash-stat-chg up">+6 this quarter</div></div>
+    <div class="dash-stat"><div class="dash-stat-num" data-count="88">0</div><div class="dash-stat-lbl">Cities Mapped</div><div class="dash-stat-chg">72 expansion targets</div></div>
+    <div class="dash-stat"><div class="dash-stat-num" data-count="47" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="dash-stat-lbl">Untapped Potential</div><div class="dash-stat-chg up">ML-identified</div></div>
   </div>
 </div>
-<div class="mgrid stagger">
+<!-- CRITICAL ALERTS -->
+<div class="dash-alerts stagger">
+  <div class="dash-alert crit" onclick="nav('franchise')"><div class="dash-alert-ic">🔴</div><div><div class="dash-alert-t">12 Stores Critical</div><div class="dash-alert-s">Surat Central at 32/100 — ₹34Cr revenue at risk in 90 days. Immediate review needed.</div></div></div>
+  <div class="dash-alert warn" onclick="nav('inventory')"><div class="dash-alert-ic">🟡</div><div><div class="dash-alert-t">₹28Cr Inventory Mismatch</div><div class="dash-alert-s">34 overstocked + 22 understocked stores. Smart transfers recover capital in 60 days.</div></div></div>
+  <div class="dash-alert opp" onclick="nav('demand')"><div class="dash-alert-ic">🟢</div><div><div class="dash-alert-t">34 Cities Trending Up</div><div class="dash-alert-s">Patna spiked +45% — structural shift from new housing. Recommend second outlet.</div></div></div>
+</div>
+<!-- OVERVIEW CHARTS -->
+<div class="g3" style="margin-bottom:20px">
+  <div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Revenue Trend — 12 Months</div><div class="card-d">Network-wide monthly revenue with growth trajectory</div></div></div><canvas id="ch-home1" style="max-height:180px"></canvas></div>
+  <div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Zone Revenue Split</div><div class="card-d">Q4 revenue contribution by zone</div></div></div><canvas id="ch-home2" style="max-height:180px"></canvas></div>
+  <div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Expansion Pipeline</div><div class="card-d">Top opportunity cities not yet served</div></div></div><canvas id="ch-home3" style="max-height:180px"></canvas></div>
+</div>
+<!-- ML INTELLIGENCE -->
+<div class="sec-hd">ML Intelligence — 7 modules</div>
+<div class="mgrid stagger" style="margin-bottom:8px">
   <div class="mc" style="--ac:#00E5A0" onclick="nav('stone')"><div class="mc-ic">💎</div><div class="mc-nm">Stone-to-Store</div><div class="mc-big" style="color:#00E5A0">₹47Cr</div><div class="mc-hook">Category-city matching via gradient boost</div><div class="mc-go">→ Open</div></div>
   <div class="mc" style="--ac:#00B4D8" onclick="nav('demand')"><div class="mc-ic">🌊</div><div class="mc-nm">Demand Pulse</div><div class="mc-big" style="color:#00B4D8">₹890Cr</div><div class="mc-hook">12-month LSTM forecast + anomaly alerts</div><div class="mc-go">→ Open</div></div>
   <div class="mc" style="--ac:#FF6B35" onclick="nav('franchise')"><div class="mc-ic">📡</div><div class="mc-nm">Franchise Health</div><div class="mc-big" style="color:#FF6B35">12 🚨</div><div class="mc-hook">6-axis vital signs · 90-day lookahead</div><div class="mc-go">→ Open</div></div>
@@ -345,41 +420,61 @@ tr:hover td{background:rgba(212,168,67,.04)}
   <div class="mc" style="--ac:#F472B6" onclick="nav('repeat')"><div class="mc-ic">🔁</div><div class="mc-nm">Repeat Buyer</div><div class="mc-big" style="color:#F472B6">3.2×</div><div class="mc-hook">RFM scoring · upsell mapping</div><div class="mc-go">→ Open</div></div>
   <div class="mc" style="--ac:#34D399" onclick="nav('profiler')"><div class="mc-ic">🏪</div><div class="mc-nm">Store Profiler</div><div class="mc-big" style="color:#34D399">4 DNA</div><div class="mc-hook">K-Means archetype cloning</div><div class="mc-go">→ Open</div></div>
   <div class="mc" style="--ac:#FBBF24" onclick="nav('assortment')"><div class="mc-ic">📐</div><div class="mc-nm">Assortment Engine</div><div class="mc-big" style="color:#FBBF24">+15%</div><div class="mc-hook">LP-optimized SKU mix per city</div><div class="mc-go">→ Open</div></div>
+</div>
+<!-- MIS OPERATIONS -->
+<div class="sec-hd">MIS Operations — 3 modules</div>
+<div class="mgrid stagger" style="margin-bottom:8px">
   <div class="mc" style="--ac:#60A5FA" onclick="nav('scorecard')"><div class="mc-ic">📋</div><div class="mc-nm">Regional Scorecard</div><div class="mc-big" style="color:#60A5FA">94/100</div><div class="mc-hook">29 states · target vs actual</div><div class="mc-go">→ Open</div></div>
   <div class="mc" style="--ac:#EF4444" onclick="nav('inventory')"><div class="mc-ic">🚨</div><div class="mc-nm">Inventory Radar</div><div class="mc-big" style="color:#EF4444">₹8.5Cr</div><div class="mc-hook">Z-score mismatch · rebalancing engine</div><div class="mc-go">→ Open</div></div>
   <div class="mc" style="--ac:#F97316" onclick="nav('deadstock')"><div class="mc-ic">📦</div><div class="mc-nm">Dead Stock</div><div class="mc-big" style="color:#F97316">₹47Cr</div><div class="mc-hook">Survival analysis · 5-action board</div><div class="mc-go">→ Open</div></div>
+</div>
+<!-- SALES STRATEGY -->
+<div class="sec-hd">Sales Strategy — 2 modules</div>
+<div class="mgrid stagger" style="margin-bottom:8px">
   <div class="mc" style="--ac:#C084FC" onclick="nav('crosssell')"><div class="mc-ic">🎁</div><div class="mc-nm">Cross-Sell Playbook</div><div class="mc-big" style="color:#C084FC">2.3×</div><div class="mc-hook">Apriori association rules + scripts</div><div class="mc-go">→ Open</div></div>
   <div class="mc" style="--ac:#FCD34D" onclick="nav('leaderboard')"><div class="mc-ic">🏆</div><div class="mc-nm">Dealer Leaderboard</div><div class="mc-big" style="color:#FCD34D">82</div><div class="mc-hook">ELO-style live rankings + badges</div><div class="mc-go">→ Open</div></div>
+</div>
+<!-- CREATIVE INTEL -->
+<div class="sec-hd">Creative Intel — 3 modules</div>
+<div class="mgrid stagger" style="margin-bottom:8px">
   <div class="mc" style="--ac:#FB923C" onclick="nav('cultural')"><div class="mc-ic">🎭</div><div class="mc-nm">Cultural DNA</div><div class="mc-big" style="color:#FB923C">5 🧬</div><div class="mc-hook">Cosine clustering · 12 ad templates</div><div class="mc-go">→ Open</div></div>
   <div class="mc" style="--ac:#F9A8D4" onclick="nav('wedding')"><div class="mc-ic">👰</div><div class="mc-nm">Wedding Graph</div><div class="mc-big" style="color:#F9A8D4">₹1200Cr</div><div class="mc-hook">Wedding economy · city × month</div><div class="mc-go">→ Open</div></div>
   <div class="mc" style="--ac:#818CF8" onclick="nav('festival')"><div class="mc-ic">🌙</div><div class="mc-nm">Festival Calendar</div><div class="mc-big" style="color:#818CF8">47 🎉</div><div class="mc-hook">90-day promo planning · zone impact</div><div class="mc-go">→ Open</div></div>
-</div></div>
-<div class="view" id="view-stone">
-<div class="hrow">
-<div class="hc" style="--ac:#34D399"><div class="hc-num" style="color:#34D399" data-count="88">0</div><div class="hc-lbl">Cities Mapped</div><svg class="hc-spark" width="48" height="20" data-spark="60,65,70,75,80,84,88"></svg></div>
-<div class="hc" style="--ac:#34D399"><div class="hc-num" style="color:#34D399" data-count="12">0</div><div class="hc-lbl">Product Categories</div></div>
-<div class="hc" style="--ac:#34D399"><div class="hc-num" style="color:#34D399" data-count="47" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Revenue Potential</div><svg class="hc-spark" width="48" height="20" data-spark="20,26,31,36,40,44,47"></svg></div>
-<div class="hc" style="--ac:#34D399"><div class="hc-num" style="color:#34D399" data-count="92" data-suf="%">0%</div><div class="hc-lbl">Model Accuracy</div></div>
 </div>
+</div>
+<div class="view" id="view-stone">
+<div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Stone-to-Store Intelligence</div><div class="mod-hd-desc">Gradient boost category-city matching across 88 cities × 12 product categories</div></div></div>
+<div class="hrow stagger">
+<div class="hc" style="--ac:#00E5A0"><div class="hc-num" style="color:#00E5A0" data-count="88">0</div><div class="hc-lbl">Cities Mapped</div></div>
+<div class="hc" style="--ac:#00E5A0"><div class="hc-num" style="color:#00E5A0" data-count="12">0</div><div class="hc-lbl">Product Categories</div></div>
+<div class="hc" style="--ac:#00E5A0"><div class="hc-num" style="color:#00E5A0" data-count="47" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Revenue Potential</div></div>
+<div class="hc" style="--ac:#00E5A0"><div class="hc-num" style="color:#00E5A0" data-count="23" data-suf="%">0%</div><div class="hc-lbl">Better Sell-Through</div></div>
+</div>
+<div class="chart-row-lbl">Primary Analysis</div>
+<div class="g-feat">
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Category Match Score — Top 8 Cities</div><div class="card-d">Gradient boost: how well each category fits city demand profile</div></div><span class="ctag cml">Gradient Boost</span></div><canvas id="ch-s1" style="max-height:280px"></canvas></div>
+<div class="g-feat-r">
+<div class="card"><div class="card-hd"><div><div class="card-t">Allocation Gap (Optimal − Current %)</div><div class="card-d">Cities most under/over allocated per category</div></div><span class="ctag cml">Opportunity</span></div><canvas id="ch-s2" style="max-height:120px"></canvas></div>
+<div class="card"><div class="card-hd"><div><div class="card-t">Revenue Uplift by City (₹Cr)</div><div class="card-d">Monthly revenue lift from ML-optimal allocation</div></div><span class="ctag cml">LP Model</span></div><canvas id="ch-s3" style="max-height:120px"></canvas></div>
+</div>
+</div>
+<div class="chart-row-lbl">Deep Dive</div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Gold Rate vs Revenue Correlation</div><div class="card-d">12-month dual axis &middot; gold price index vs revenue index</div></div><span class="ctag cml">Correlation</span></div><canvas id="ch-s1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Source State Supply Volume</div><div class="card-d">Rajasthan &middot; Gujarat &middot; Maharashtra &middot; TN &middot; Karnataka &middot; WB</div></div><span class="ctag cml">Supply</span></div><canvas id="ch-s2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Margin by Gold Type</div><div class="card-d">22K &middot; 18K &middot; 14K &middot; Diamond &middot; Solitaire</div></div><span class="ctag cml">Margin</span></div><canvas id="ch-s3" style="max-height:210px"></canvas></div>
-</div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Supply Lead Time Trend</div><div class="card-d">Avg lead days vs 14-day target &middot; last 6 months</div></div><span class="ctag cml">Lead Time</span></div><canvas id="ch-s4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Vendor Performance Score</div><div class="card-d">6 key vendors ranked by composite quality score</div></div><span class="ctag cml">Vendor</span></div><canvas id="ch-s5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Stone Demand vs Supply</div><div class="card-d">Diamond &middot; Ruby &middot; Emerald &middot; Sapphire &middot; Pearl &middot; Coral</div></div><span class="ctag cml">Gap</span></div><canvas id="ch-s6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Sell-Through Rate: Current vs Optimal</div><div class="card-d">12-month weighted sell-through across all categories</div></div><span class="ctag cml">Trend</span></div><canvas id="ch-s4" style="max-height:220px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Category Penetration Index</div><div class="card-d">KISNA category share vs total jewellery market demand</div></div><span class="ctag cml">Market Share</span></div><canvas id="ch-s5" style="max-height:220px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">City Deep Dive — Match Profile</div><div class="card-d">All 12 categories scored for selected city</div></div><span class="ctag cml">Radar</span></div><select class="sel" onchange="updateStoneCity(this.value)" style="width:100%;margin-bottom:10px"><option>Mumbai</option><option>Surat</option><option>Jaipur</option><option>Kochi</option><option>Delhi NCR</option><option>Bangalore</option></select><canvas id="ch-s6" style="max-height:180px"></canvas></div>
 </div>
 <div class="insight"><span class="ii">&#x1F4A1;</span><span class="it"><strong>Surat is 41% under-allocated on solitaires</strong> — model scores it 88/100 for solitaire affinity but only 12% of inventory is solitaires. Reallocating adds <strong>&#x20B9;2.1Cr/month</strong>.</span></div>
 </div>
 
 <!-- MODULE 2: DEMAND PULSE -->
 <div class="view" id="view-demand">
-<div class="hrow">
-<div class="hc" style="--ac:#60A5FA"><div class="hc-num" style="color:#60A5FA" data-count="34">0</div><div class="hc-lbl">Cities Trending &#x2191;</div><svg class="hc-spark" width="48" height="20" data-spark="18,22,24,26,28,31,34"></svg></div>
-<div class="hc" style="--ac:#60A5FA"><div class="hc-num" style="color:#60A5FA" data-count="890" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Q4 Projected Demand</div></div>
-<div class="hc" style="--ac:#60A5FA"><div class="hc-num" style="color:#60A5FA" data-count="7">0</div><div class="hc-lbl">Anomaly Alerts</div></div>
-<div class="hc" style="--ac:#60A5FA"><div class="hc-num" style="color:#60A5FA" data-count="94" data-suf="%">0%</div><div class="hc-lbl">Forecast Accuracy</div></div>
+<div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Demand Pulse Engine</div><div class="mod-hd-desc">LSTM-powered 12-month demand forecasting with anomaly detection across all zones</div></div></div>
+<div class="hrow stagger">
+<div class="hc" style="--ac:#00B4D8"><div class="hc-num" style="color:#00B4D8" data-count="34">0</div><div class="hc-lbl">Cities Trending ↑</div></div>
+<div class="hc" style="--ac:#00B4D8"><div class="hc-num" style="color:#00B4D8" data-count="890" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Q4 Projected Demand</div></div>
+<div class="hc" style="--ac:#00B4D8"><div class="hc-num" style="color:#00B4D8" data-count="7">0</div><div class="hc-lbl">Anomaly Alerts</div></div>
+<div class="hc" style="--ac:#00B4D8"><div class="hc-num" style="color:#00B4D8" data-count="91" data-suf="%">0%</div><div class="hc-lbl">Forecast Accuracy</div></div>
 </div>
 <div class="g3">
 <div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Top City Demand Index</div><div class="card-d">ML-ranked demand scores for top 10 expansion cities</div></div><span class="ctag cml">Demand Map</span></div><canvas id="ch-d1" style="max-height:210px"></canvas></div>
@@ -395,11 +490,12 @@ tr:hover td{background:rgba(212,168,67,.04)}
 
 <!-- MODULE 3: FRANCHISE HEALTH -->
 <div class="view" id="view-franchise">
-<div class="hrow">
-<div class="hc" style="--ac:#F87171"><div class="hc-num" style="color:#F87171" data-count="82">0</div><div class="hc-lbl">Stores Scanned</div></div>
-<div class="hc" style="--ac:#F87171"><div class="hc-num" style="color:#F87171" data-count="12">0</div><div class="hc-lbl">Critical Alerts</div><div class="hc-sub">Score &lt; 40</div></div>
-<div class="hc" style="--ac:#F87171"><div class="hc-num" style="color:#F87171" data-count="34" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Revenue At Risk</div></div>
-<div class="hc" style="--ac:#F87171"><div class="hc-num" style="color:#F87171" data-count="72" data-suf="/100">/100</div><div class="hc-lbl">Avg Health Score</div></div>
+<div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Franchise Health Monitor</div><div class="mod-hd-desc">Random Forest 6-axis health scoring with 90-day lookahead for all 82 franchise stores</div></div></div>
+<div class="hrow stagger">
+<div class="hc" style="--ac:#FF6B35"><div class="hc-num" style="color:#FF6B35" data-count="82">0</div><div class="hc-lbl">Stores Scanned</div></div>
+<div class="hc" style="--ac:#FF6B35"><div class="hc-num" style="color:#FF6B35" data-count="12">0</div><div class="hc-lbl">Critical Alerts</div><div class="hc-sub">Score &lt; 40</div></div>
+<div class="hc" style="--ac:#FF6B35"><div class="hc-num" style="color:#FF6B35" data-count="34" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Revenue At Risk</div></div>
+<div class="hc" style="--ac:#FF6B35"><div class="hc-num" style="color:#FF6B35" data-count="90">0</div><div class="hc-lbl">Day Lookahead</div></div>
 </div>
 <div class="g3">
 <div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Health Score Distribution</div><div class="card-d">Histogram of 82 stores by health band</div></div><span class="ctag cml">Distribution</span></div><canvas id="ch-f1" style="max-height:210px"></canvas></div>
@@ -415,7 +511,8 @@ tr:hover td{background:rgba(212,168,67,.04)}
 
 <!-- MODULE 4: FOOTFALL -->
 <div class="view" id="view-footfall">
-<div class="hrow">
+<div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Footfall Predictor</div><div class="mod-hd-desc">XGBoost 30-day forecasting with festival surge modeling and staffing optimization</div></div></div>
+<div class="hrow stagger">
 <div class="hc" style="--ac:#A78BFA"><div class="hc-num" style="color:#A78BFA" data-count="30">0</div><div class="hc-lbl">Day Forecast Window</div></div>
 <div class="hc" style="--ac:#A78BFA"><div class="hc-num" style="color:#A78BFA" data-count="12" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Annual Staffing Savings</div></div>
 <div class="hc" style="--ac:#A78BFA"><div class="hc-num" style="color:#A78BFA" data-count="87" data-suf="%">0%</div><div class="hc-lbl">Forecast Accuracy</div></div>
@@ -435,7 +532,8 @@ tr:hover td{background:rgba(212,168,67,.04)}
 
 <!-- MODULE 5: REPEAT BUYER -->
 <div class="view" id="view-repeat">
-<div class="hrow">
+<div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Repeat Buyer Intelligence</div><div class="mod-hd-desc">RFM segmentation + logistic decay curves with LTV cohort tracking</div></div></div>
+<div class="hrow stagger">
 <div class="hc" style="--ac:#F472B6"><div class="hc-num" style="color:#F472B6" data-count="22" data-suf="%">0%</div><div class="hc-lbl">Avg Repeat Rate</div><div class="hc-sub">Industry avg: 14%</div></div>
 <div class="hc" style="--ac:#F472B6"><div class="hc-num" style="color:#F472B6" data-count="28" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Repeat Revenue / Year</div></div>
 <div class="hc" style="--ac:#F472B6"><div class="hc-num" style="color:#F472B6" data-count="45">0</div><div class="hc-lbl">Avg Repeat Cycle (Days)</div></div>
@@ -455,7 +553,8 @@ tr:hover td{background:rgba(212,168,67,.04)}
 
 <!-- MODULE 6: STORE PROFILER -->
 <div class="view" id="view-profiler">
-<div class="hrow">
+<div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Store Profiler</div><div class="mod-hd-desc">K-Means archetype clustering — 5 store DNA profiles across 82 franchise locations</div></div></div>
+<div class="hrow stagger">
 <div class="hc" style="--ac:#34D399"><div class="hc-num" style="color:#34D399" data-count="82">0</div><div class="hc-lbl">Stores Profiled</div></div>
 <div class="hc" style="--ac:#34D399"><div class="hc-num" style="color:#34D399" data-count="5">0</div><div class="hc-lbl">Store Archetypes</div></div>
 <div class="hc" style="--ac:#34D399"><div class="hc-num" style="color:#34D399" data-count="4.8" data-suf="x" data-dec="1">0x</div><div class="hc-lbl">Best vs Worst Rev Ratio</div></div>
@@ -475,11 +574,12 @@ tr:hover td{background:rgba(212,168,67,.04)}
 
 <!-- MODULE 7: ASSORTMENT ENGINE -->
 <div class="view" id="view-assortment">
-<div class="hrow">
-<div class="hc" style="--ac:#FBBF24"><div class="hc-num" style="color:#FBBF24" data-count="38" data-suf="%">0%</div><div class="hc-lbl">SKU Contribution (Top 20%)</div></div>
-<div class="hc" style="--ac:#FBBF24"><div class="hc-num" style="color:#FBBF24" data-count="2400">0</div><div class="hc-lbl">Active SKUs Analysed</div></div>
-<div class="hc" style="--ac:#FBBF24"><div class="hc-num" style="color:#FBBF24" data-count="19" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Lost Sales from Gaps</div></div>
-<div class="hc" style="--ac:#FBBF24"><div class="hc-num" style="color:#FBBF24" data-count="15" data-pre="+" data-suf="%">+0%</div><div class="hc-lbl">Revenue Uplift Potential</div></div>
+<div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Assortment Engine</div><div class="mod-hd-desc">LP-optimized SKU mix analysis across 2,400 active SKUs and 8 product categories</div></div></div>
+<div class="hrow stagger">
+<div class="hc" style="--ac:#FB923C"><div class="hc-num" style="color:#FB923C" data-count="38" data-suf="%">0%</div><div class="hc-lbl">SKU Contribution (Top 20%)</div></div>
+<div class="hc" style="--ac:#FB923C"><div class="hc-num" style="color:#FB923C" data-count="2400">0</div><div class="hc-lbl">Active SKUs Analysed</div></div>
+<div class="hc" style="--ac:#FB923C"><div class="hc-num" style="color:#FB923C" data-count="19" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Lost Sales from Gaps</div></div>
+<div class="hc" style="--ac:#FB923C"><div class="hc-num" style="color:#FB923C" data-count="12" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Slow-Mover Liability</div></div>
 </div>
 <div class="g3">
 <div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">SKU Pareto &mdash; 80/20 Revenue Contribution</div><div class="card-d">Cumulative revenue curve across 2,400 active SKUs &mdash; dead zone highlighted</div></div><span class="ctag cml">Pareto</span></div><canvas id="ch-a1" style="max-height:210px"></canvas></div>
@@ -495,7 +595,8 @@ tr:hover td{background:rgba(212,168,67,.04)}
 
 <!-- MODULE 8: REGIONAL SCORECARD -->
 <div class="view" id="view-scorecard">
-<div class="hrow">
+<div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Regional Scorecard</div><div class="mod-hd-desc">4-zone performance tracking — revenue, growth, conversion across 29 states</div></div></div>
+<div class="hrow stagger">
 <div class="hc" style="--ac:#60A5FA"><div class="hc-num" style="color:#60A5FA" data-count="4">0</div><div class="hc-lbl">Regions Monitored</div></div>
 <div class="hc" style="--ac:#60A5FA"><div class="hc-num" style="color:#60A5FA" data-count="82">0</div><div class="hc-lbl">Stores Scored</div></div>
 <div class="hc" style="--ac:#60A5FA"><div class="hc-num" style="color:#60A5FA" data-count="18" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Inter-Region Revenue Gap</div></div>
@@ -515,8 +616,9 @@ tr:hover td{background:rgba(212,168,67,.04)}
 
 <!-- MODULE 9: INVENTORY RADAR -->
 <div class="view" id="view-inventory">
-<div class="hrow">
-<div class="hc" style="--ac:#E879F9"><div class="hc-num" style="color:#E879F9" data-count="28" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Inventory Mismatch Value</div></div>
+<div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Inventory Mismatch Radar</div><div class="mod-hd-desc">Z-score demand-supply mismatch detection with inter-store transfer optimization</div></div></div>
+<div class="hrow stagger">
+<div class="hc" style="--ac:#E879F9"><div class="hc-num" style="color:#E879F9" data-count="28" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Inventory Mismatch Value</div></div>
 <div class="hc" style="--ac:#E879F9"><div class="hc-num" style="color:#E879F9" data-count="34">0</div><div class="hc-lbl">Overstocked Stores</div></div>
 <div class="hc" style="--ac:#E879F9"><div class="hc-num" style="color:#E879F9" data-count="22">0</div><div class="hc-lbl">Understocked Stores</div></div>
 <div class="hc" style="--ac:#E879F9"><div class="hc-num" style="color:#E879F9" data-count="5" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Transfer Savings Potential</div></div>
@@ -535,8 +637,9 @@ tr:hover td{background:rgba(212,168,67,.04)}
 
 <!-- MODULE 10: DEAD STOCK -->
 <div class="view" id="view-deadstock">
-<div class="hrow">
-<div class="hc" style="--ac:#F87171"><div class="hc-num" style="color:#F87171" data-count="48" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Dead Stock Value</div></div>
+<div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Dead Stock Liquidator</div><div class="mod-hd-desc">Survival analysis with 5-action liquidation board — ₹48Cr dormant inventory tracked</div></div></div>
+<div class="hrow stagger">
+<div class="hc" style="--ac:#F87171"><div class="hc-num" style="color:#F87171" data-count="48" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Dead Stock Value</div></div>
 <div class="hc" style="--ac:#F87171"><div class="hc-num" style="color:#F87171" data-count="180" data-suf="+">0+</div><div class="hc-lbl">Days Since Last Sale (Avg)</div></div>
 <div class="hc" style="--ac:#F87171"><div class="hc-num" style="color:#F87171" data-count="4.2" data-suf="%" data-dec="1">0%</div><div class="hc-lbl">Annual Capital Erosion</div></div>
 <div class="hc" style="--ac:#F87171"><div class="hc-num" style="color:#F87171" data-count="32" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Recoverable via Liquidation</div></div>
@@ -555,7 +658,8 @@ tr:hover td{background:rgba(212,168,67,.04)}
 
 <!-- MODULE 11: CROSS-SELL -->
 <div class="view" id="view-crosssell">
-<div class="hrow">
+<div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Cross-Sell Playbook</div><div class="mod-hd-desc">Apriori association rules — 840 active rules with 92% confidence driving ₹8.4Cr uplift</div></div></div>
+<div class="hrow stagger">
 <div class="hc" style="--ac:#4ADE80"><div class="hc-num" style="color:#4ADE80" data-count="840">0</div><div class="hc-lbl">Cross-Sell Rules Active</div></div>
 <div class="hc" style="--ac:#4ADE80"><div class="hc-num" style="color:#4ADE80" data-count="8.4" data-pre="&#x20B9;" data-suf="Cr" data-dec="1">&#x20B9;0Cr</div><div class="hc-lbl">Annual Uplift Potential</div></div>
 <div class="hc" style="--ac:#4ADE80"><div class="hc-num" style="color:#4ADE80" data-count="34" data-suf="%">0%</div><div class="hc-lbl">Avg Basket Lift</div></div>
@@ -575,7 +679,8 @@ tr:hover td{background:rgba(212,168,67,.04)}
 
 <!-- MODULE 12: DEALER LEADERBOARD -->
 <div class="view" id="view-leaderboard">
-<div class="hrow">
+<div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Dealer Leaderboard</div><div class="mod-hd-desc">ELO-style competitive ranking across 82 franchises with tier migration tracking</div></div></div>
+<div class="hrow stagger">
 <div class="hc" style="--ac:#FBBF24"><div class="hc-num" style="color:#FBBF24" data-count="82">0</div><div class="hc-lbl">Franchises Ranked</div></div>
 <div class="hc" style="--ac:#FBBF24"><div class="hc-num" style="color:#FBBF24" data-count="3.8" data-suf="x" data-dec="1">0x</div><div class="hc-lbl">Top vs Bottom Revenue Gap</div></div>
 <div class="hc" style="--ac:#FBBF24"><div class="hc-num" style="color:#FBBF24" data-count="14">0</div><div class="hc-lbl">Franchises in Critical Zone</div></div>
@@ -595,7 +700,8 @@ tr:hover td{background:rgba(212,168,67,.04)}
 
 <!-- MODULE 13: CULTURAL DNA -->
 <div class="view" id="view-cultural">
-<div class="hrow">
+<div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Cultural DNA Engine</div><div class="mod-hd-desc">NLP + cosine clustering of 6 buying personas across India's diverse cultural zones</div></div></div>
+<div class="hrow stagger">
 <div class="hc" style="--ac:#C084FC"><div class="hc-num" style="color:#C084FC" data-count="88">0</div><div class="hc-lbl">Cities Profiled</div></div>
 <div class="hc" style="--ac:#C084FC"><div class="hc-num" style="color:#C084FC" data-count="6">0</div><div class="hc-lbl">Cultural Clusters</div></div>
 <div class="hc" style="--ac:#C084FC"><div class="hc-num" style="color:#C084FC" data-count="34" data-suf="%">0%</div><div class="hc-lbl">Revenue Lift from Localisation</div></div>
@@ -615,11 +721,12 @@ tr:hover td{background:rgba(212,168,67,.04)}
 
 <!-- MODULE 14: WEDDING GRAPH -->
 <div class="view" id="view-wedding">
-<div class="hrow">
-<div class="hc" style="--ac:#F9A8D4"><div class="hc-num" style="color:#F9A8D4" data-count="82" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Annual Wedding Revenue</div></div>
-<div class="hc" style="--ac:#F9A8D4"><div class="hc-num" style="color:#F9A8D4" data-count="38" data-suf="%">0%</div><div class="hc-lbl">Revenue Share &mdash; Bridal</div></div>
-<div class="hc" style="--ac:#F9A8D4"><div class="hc-num" style="color:#F9A8D4" data-count="4.2" data-pre="&#x20B9;" data-suf="L" data-dec="1">&#x20B9;0L</div><div class="hc-lbl">Avg Wedding Basket</div></div>
-<div class="hc" style="--ac:#F9A8D4"><div class="hc-num" style="color:#F9A8D4" data-count="22" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Untapped Bridal Pipeline</div></div>
+<div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Wedding Graph Intelligence</div><div class="mod-hd-desc">₹1200Cr bridal economy — seasonality mapping, purchase timelines, referral chains</div></div></div>
+<div class="hrow stagger">
+<div class="hc" style="--ac:#F9A8D4"><div class="hc-num" style="color:#F9A8D4" data-count="82" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Annual Wedding Revenue</div></div>
+<div class="hc" style="--ac:#F9A8D4"><div class="hc-num" style="color:#F9A8D4" data-count="38" data-suf="%">0%</div><div class="hc-lbl">Revenue Share — Bridal</div></div>
+<div class="hc" style="--ac:#F9A8D4"><div class="hc-num" style="color:#F9A8D4" data-count="4.2" data-pre="₹" data-suf="L" data-dec="1">₹0L</div><div class="hc-lbl">Avg Wedding Basket</div></div>
+<div class="hc" style="--ac:#F9A8D4"><div class="hc-num" style="color:#F9A8D4" data-count="22" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Untapped Bridal Pipeline</div></div>
 </div>
 <div class="g3">
 <div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Wedding Season Revenue Calendar</div><div class="card-d">Monthly bridal vs non-bridal revenue curve</div></div><span class="ctag csal">Seasonal</span></div><canvas id="ch-w1" style="max-height:210px"></canvas></div>
@@ -635,7 +742,8 @@ tr:hover td{background:rgba(212,168,67,.04)}
 
 <!-- MODULE 15: FESTIVAL CALENDAR -->
 <div class="view" id="view-festival">
-<div class="hrow">
+<div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Festival Revenue Calendar</div><div class="mod-hd-desc">18 major festivals tracked — surge modeling, inventory readiness, staff planning</div></div></div>
+<div class="hrow stagger">
 <div class="hc" style="--ac:#FCD34D"><div class="hc-num" style="color:#FCD34D" data-count="18">0</div><div class="hc-lbl">Major Festivals Tracked</div></div>
 <div class="hc" style="--ac:#FCD34D"><div class="hc-num" style="color:#FCD34D" data-count="54" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Festival-Attributed Revenue</div></div>
 <div class="hc" style="--ac:#FCD34D"><div class="hc-num" style="color:#FCD34D" data-count="3.4" data-suf="x" data-dec="1">0x</div><div class="hc-lbl">Dhanteras Revenue Multiplier</div></div>
@@ -1035,27 +1143,45 @@ function renderFestival(){
 }
 
 // ============================================================
-// NAVIGATION + FEATURES
+// DASHBOARD HOME CHARTS
 // ============================================================
-const NAV_ORDER=['home','stone','demand','franchise','footfall','repeat','profiler','assortment','scorecard','inventory','deadstock','crosssell','leaderboard','cultural','wedding','festival','city'];
-const VIEWS={
-  stone:{fn:renderStone,title:'Stone-to-Store Intelligence',sub:'ML Intelligence'},
-  demand:{fn:renderDemand,title:'Demand Signal Engine',sub:'ML Intelligence'},
-  franchise:{fn:renderFranchise,title:'Franchise Fitness Monitor',sub:'ML Intelligence'},
-  footfall:{fn:renderFootfall,title:'Footfall Forecast',sub:'ML Intelligence'},
-  repeat:{fn:renderRepeat,title:'Repeat Buyer Intelligence',sub:'ML Intelligence'},
-  profiler:{fn:renderProfiler,title:'Store Profiler',sub:'ML Intelligence'},
-  assortment:{fn:renderAssortment,title:'Assortment Intelligence Engine',sub:'ML Intelligence'},
-  scorecard:{fn:renderScorecard,title:'Regional Scorecard',sub:'MIS Operations'},
-  inventory:{fn:renderInventory,title:'Inventory Mismatch Radar',sub:'MIS Operations'},
-  deadstock:{fn:renderDeadstock,title:'Dead Stock Liquidator',sub:'MIS Operations'},
-  crosssell:{fn:renderCrossSell,title:'Cross-Sell Recommendation Engine',sub:'Sales Strategy'},
-  leaderboard:{fn:renderLeaderboard,title:'Dealer Leaderboard',sub:'Sales Strategy'},
-  cultural:{fn:renderCultural,title:'Cultural DNA Engine',sub:'Creative Intel'},
-  wedding:{fn:renderWedding,title:'Wedding Graph Intelligence',sub:'Creative Intel'},
-  festival:{fn:renderFestival,title:'Festival Revenue Calendar',sub:'Creative Intel'},
-  home:{fn:()=>{},title:'KISNA Intelligence',sub:'Dashboard'},
-  city:{fn:()=>renderCityTable(),title:'City Expansion Intelligence',sub:'Tools'}
+function renderHome(){
+  // Revenue trend — 12 months
+  mkLine('ch-home1',['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],[
+    {label:'Revenue (₹Cr)',data:[16.4,15.8,18.2,20.8,19.2,16.8,15.4,17.8,22.4,32.2,28.6,24.8],borderColor:G,backgroundColor:GA,fill:true,pointRadius:3},
+    {label:'Target',data:[18,18,19,20,20,18,17,19,22,28,26,24],borderColor:'rgba(255,255,255,.15)',borderDash:[4,4],pointRadius:0}
+  ]);
+  // Zone revenue doughnut
+  mkDoughnut('ch-home2',['West (48₹Cr)','North (35₹Cr)','South (30₹Cr)','East (18₹Cr)'],
+    [48,35,30,18],[G,BLU,GRN,ORG]);
+  // Top expansion cities
+  const topOpp=CITIES.filter(c=>!c.present).slice(0,8);
+  mkHBar('ch-home3',topOpp.map(c=>c.city),[
+    {label:'Opportunity Score',data:topOpp.map(c=>c.opp),backgroundColor:topOpp.map(c=>c.opp>70?GRN:c.opp>50?G:ORG)}
+  ]);
+}
+
+// ============================================================
+// NAV ROUTER + COUNTER ANIMATION
+// ============================================================
+const VIEWS = {
+  stone:{fn:renderStone,title:'Stone-to-Store Intelligence'},
+  demand:{fn:renderDemand,title:'Demand Signal Engine'},
+  franchise:{fn:renderFranchise,title:'Franchise Fitness Monitor'},
+  footfall:{fn:renderFootfall,title:'Footfall Forecast'},
+  repeat:{fn:renderRepeat,title:'Repeat Buyer Intelligence'},
+  profiler:{fn:renderProfiler,title:'Store Profiler'},
+  assortment:{fn:renderAssortment,title:'Assortment Intelligence Engine'},
+  scorecard:{fn:renderScorecard,title:'Regional Scorecard'},
+  inventory:{fn:renderInventory,title:'Inventory Mismatch Radar'},
+  deadstock:{fn:renderDeadstock,title:'Dead Stock Liquidator'},
+  crosssell:{fn:renderCrossSell,title:'Cross-Sell Recommendation Engine'},
+  leaderboard:{fn:renderLeaderboard,title:'Dealer Leaderboard'},
+  cultural:{fn:renderCultural,title:'Cultural DNA Engine'},
+  wedding:{fn:renderWedding,title:'Wedding Graph Intelligence'},
+  festival:{fn:renderFestival,title:'Festival Revenue Calendar'},
+  home:{fn:renderHome,title:'KISNA Intelligence Platform'},
+  city:{fn:()=>renderCityTable(),title:'City Expansion Intelligence'}
 };
 
 let currentView='home';
