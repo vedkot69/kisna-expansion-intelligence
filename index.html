@@ -92,12 +92,11 @@ tr:hover td{background:rgba(212,168,67,.04)}
 .b{display:inline-flex;align-items:center;padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600}
 .bg{background:var(--grnd);color:var(--green)}.br{background:var(--redd);color:var(--red)}
 .ba{background:var(--amberd);color:var(--amber)}.bb{background:var(--blued);color:#60A5FA}
-.bgld{background:var(--gdim);color:var(--g0)}.bpur{background:rgba(192,132,252,.1);color:#C084FC}
-
-/* ===== PROGRESS ===== */
+.bgld{background:var(--gdim);color:var(--g0)}.bpur{background:rgba(192,132,252,.13);color:#C084FC}
+/* PROGRESS */
 .pw{margin-bottom:9px}.ph{display:flex;justify-content:space-between;margin-bottom:4px}
-.pn{font-size:11px;color:var(--t1)}.pv{font-size:11px;font-weight:600;color:var(--t0)}
-.pb{height:4px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden}
+.pn{font-size:11.5px;color:var(--t1)}.pv{font-size:11.5px;font-weight:600;color:var(--t0)}
+.pb{height:5px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden}
 .pf{height:100%;border-radius:3px}
 /* INSIGHT */
 .insight{background:rgba(212,168,67,.06);border:1px solid rgba(212,168,67,.14);border-radius:var(--rs);padding:12px 14px;margin-top:14px;display:flex;gap:9px;transition:transform .2s}
@@ -115,17 +114,15 @@ tr:hover td{background:rgba(212,168,67,.04)}
 /* SEARCH */
 .sb-in{width:100%;padding:8px 12px;background:var(--bgr);border:1px solid var(--brd);border-radius:var(--rs);color:var(--t0);font-size:12.5px;font-family:'Inter',sans-serif;outline:none;margin-bottom:12px;transition:border-color .2s}
 .sb-in:focus{border-color:var(--gbrd)}.sb-in::placeholder{color:var(--t3)}
-
-/* ===== PAGINATION ===== */
+/* PAG */
 .pag{display:flex;gap:5px;justify-content:center;margin-top:12px;align-items:center}
 .pg{padding:5px 10px;border-radius:var(--rx);font-size:11px;background:var(--bgr);border:1px solid var(--brd);color:var(--t2);cursor:pointer;transition:all .15s}
 .pg:hover{border-color:var(--gbrd);color:var(--g0)}.pg.active{background:var(--gdim);border-color:var(--gbrd);color:var(--g0);font-weight:600}
 .pg-info{font-size:11px;color:var(--t3);margin:0 6px}
-
-/* ===== KANBAN ===== */
+/* KANBAN */
 .kan{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:14px}
 .kc{background:var(--bgr);border-radius:var(--rs);padding:10px}
-.kh{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--t2);margin-bottom:8px;display:flex;justify-content:space-between}
+.kh{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--t2);margin-bottom:8px;display:flex;justify-content:space-between}
 .ki{background:var(--bgc);border:1px solid var(--brd);border-radius:var(--rx);padding:6px 8px;margin-bottom:4px}
 .ki-n{font-size:10.5px;color:var(--t1);font-weight:500}.ki-s{font-size:9.5px;color:var(--t3);margin-top:1px}
 /* ARCH CARD */
@@ -338,54 +335,15 @@ tr:hover td{background:rgba(212,168,67,.04)}
   <div class="ni" data-view="city" onclick="nav('city')"><span class="ni-ic">🔍</span>City Explorer</div></div>
 </div>
 
-<!-- APP -->
-<div class="app" id="app">
-
-<!-- SIDEBAR -->
-<div class="sb" id="sidebar">
-<div class="sb-logo">
-  <div class="sb-mark">K</div>
-  <div><div class="sb-name">KISNA</div><div class="sb-tag">Intelligence Platform</div></div>
-  <div class="sb-toggle" id="sb-toggle" title="Collapse sidebar">&#9664;</div>
-</div>
-<div class="sb-sec"><div class="sb-lbl">Overview</div>
-  <div class="ni active" data-view="home" onclick="nav('home')"><span class="ni-ic">&#x1F3E0;</span><span>Dashboard</span></div></div>
-<div class="sb-sec"><div class="sb-lbl">ML Intelligence</div>
-  <div class="ni" data-view="stone" onclick="nav('stone')"><span class="ni-ic">&#x1F48E;</span><span>Stone-to-Store</span></div>
-  <div class="ni" data-view="demand" onclick="nav('demand')"><span class="ni-ic">&#x1F30A;</span><span>Demand Pulse</span></div>
-  <div class="ni" data-view="franchise" onclick="nav('franchise')"><span class="ni-ic">&#x1F4E1;</span><span>Franchise Health</span><span class="ni-badge">12</span></div>
-  <div class="ni" data-view="footfall" onclick="nav('footfall')"><span class="ni-ic">&#x1F441;</span><span>Footfall Predictor</span></div>
-  <div class="ni" data-view="repeat" onclick="nav('repeat')"><span class="ni-ic">&#x1F501;</span><span>Repeat Buyer</span></div>
-  <div class="ni" data-view="profiler" onclick="nav('profiler')"><span class="ni-ic">&#x1F3EA;</span><span>Store Profiler</span></div>
-  <div class="ni" data-view="assortment" onclick="nav('assortment')"><span class="ni-ic">&#x1F4D0;</span><span>Assortment Engine</span></div></div>
-<div class="sb-sec"><div class="sb-lbl">MIS Operations</div>
-  <div class="ni" data-view="scorecard" onclick="nav('scorecard')"><span class="ni-ic">&#x1F4CB;</span><span>Regional Scorecard</span></div>
-  <div class="ni" data-view="inventory" onclick="nav('inventory')"><span class="ni-ic">&#x1F6A8;</span><span>Inventory Radar</span><span class="ni-badge">23</span></div>
-  <div class="ni" data-view="deadstock" onclick="nav('deadstock')"><span class="ni-ic">&#x1F4E6;</span><span>Dead Stock</span></div></div>
-<div class="sb-sec"><div class="sb-lbl">Sales Strategy</div>
-  <div class="ni" data-view="crosssell" onclick="nav('crosssell')"><span class="ni-ic">&#x1F381;</span><span>Cross-Sell Playbook</span></div>
-  <div class="ni" data-view="leaderboard" onclick="nav('leaderboard')"><span class="ni-ic">&#x1F3C6;</span><span>Dealer Leaderboard</span></div></div>
-<div class="sb-sec"><div class="sb-lbl">Creative Intel</div>
-  <div class="ni" data-view="cultural" onclick="nav('cultural')"><span class="ni-ic">&#x1F3AD;</span><span>Cultural DNA</span></div>
-  <div class="ni" data-view="wedding" onclick="nav('wedding')"><span class="ni-ic">&#x1F470;</span><span>Wedding Graph</span></div>
-  <div class="ni" data-view="festival" onclick="nav('festival')"><span class="ni-ic">&#x1F319;</span><span>Festival Calendar</span></div></div>
-<div class="sb-sec"><div class="sb-lbl">Tools</div>
-  <div class="ni" data-view="city" onclick="nav('city')"><span class="ni-ic">&#x1F50D;</span><span>City Explorer</span></div></div>
-</div>
-
-<!-- MAIN AREA -->
 <div class="main">
 <div class="topbar">
-  <div class="tb-t" id="tb-title">KISNA Intelligence</div><span class="tb-sep">/</span>
-  <div class="tb-s" id="tb-sub">Dashboard</div>
+  <div class="tb-t" id="tb-title">KISNA Intelligence</div><span class="tb-sep">·</span>
+  <div class="tb-s" id="tb-sub">AI-Powered Retail Platform</div>
   <div class="tb-sp"></div>
   <button class="tb-search" onclick="openCmd()">Search modules... <kbd>⌘K</kbd></button>
   <div class="tb-pill"><div class="tb-dot"></div>88 Cities · Live</div>
 </div>
-
-<div class="content" id="content-area">
-
-<!-- ===== HOME / DASHBOARD ===== -->
+<div class="content">
 <div class="view active" id="view-home">
 <!-- HERO -->
 <div class="dash-hero">
@@ -464,10 +422,8 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Category Penetration Index</div><div class="card-d">KISNA category share vs total jewellery market demand</div></div><span class="ctag cml">Market Share</span></div><canvas id="ch-s5" style="max-height:220px"></canvas></div>
 <div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">City Deep Dive — Match Profile</div><div class="card-d">All 12 categories scored for selected city</div></div><span class="ctag cml">Radar</span></div><select class="sel" onchange="updateStoneCity(this.value)" style="width:100%;margin-bottom:10px"><option>Mumbai</option><option>Surat</option><option>Jaipur</option><option>Kochi</option><option>Delhi NCR</option><option>Bangalore</option></select><canvas id="ch-s6" style="max-height:180px"></canvas></div>
 </div>
-<div class="insight"><span class="ii">&#x1F4A1;</span><span class="it"><strong>Surat is 41% under-allocated on solitaires</strong> — model scores it 88/100 for solitaire affinity but only 12% of inventory is solitaires. Reallocating adds <strong>&#x20B9;2.1Cr/month</strong>.</span></div>
+<div class="insight"><span class="ii">💡</span><span class="it"><strong>Surat is 41% under-allocated on solitaires</strong> — model scores it 88/100 for solitaire affinity but only 12% of inventory is solitaires. Reallocating adds <strong>₹2.1Cr/month</strong>.</span></div>
 </div>
-
-<!-- MODULE 2: DEMAND PULSE -->
 <div class="view" id="view-demand">
 <div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Demand Pulse Engine</div><div class="mod-hd-desc">LSTM-powered 12-month demand forecasting with anomaly detection across all zones</div></div></div>
 <div class="hrow stagger">
@@ -477,18 +433,16 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hc" style="--ac:#00B4D8"><div class="hc-num" style="color:#00B4D8" data-count="91" data-suf="%">0%</div><div class="hc-lbl">Forecast Accuracy</div></div>
 </div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Top City Demand Index</div><div class="card-d">ML-ranked demand scores for top 10 expansion cities</div></div><span class="ctag cml">Demand Map</span></div><canvas id="ch-d1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Search Trend vs In-Store Sales</div><div class="card-d">Google search index leading indicator vs actual sales</div></div><span class="ctag cml">Search-Sales</span></div><canvas id="ch-d2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Category Demand Forecast</div><div class="card-d">Bridal &middot; Daily Wear &middot; Investment &middot; Gifting by quarter</div></div><span class="ctag cml">Category Q</span></div><canvas id="ch-d3" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">12-Month Demand Forecast — Top 6 Cities</div><div class="card-d">LSTM model · shaded bands = confidence intervals · red dots = anomalies</div></div><span class="ctag cml">LSTM</span></div><canvas id="ch-d1" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Zone-Wise Demand Split (₹Cr)</div><div class="card-d">Quarterly demand breakdown by geographic zone</div></div><span class="ctag cml">Zone Analysis</span></div><canvas id="ch-d2" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Demand Growth YoY — City Ranking</div><div class="card-d">Top 20 cities by year-over-year demand growth percentage</div></div><span class="ctag cml">YoY Growth</span></div><canvas id="ch-d3" style="max-height:210px"></canvas></div>
 </div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Demand vs Competition Scatter</div><div class="card-d">City-wise demand index vs competition intensity</div></div><span class="ctag cml">Scatter</span></div><canvas id="ch-d4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Seasonal Demand Multiplier</div><div class="card-d">12-month demand wave &middot; festival peaks visible</div></div><span class="ctag cml">Seasonal</span></div><canvas id="ch-d5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">New City Opportunity Score</div><div class="card-d">Top 10 cities ranked by ML opportunity index</div></div><span class="ctag cml">Opportunity</span></div><canvas id="ch-d6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Seasonal Index by Month</div><div class="card-d">Demand multiplier vs annual baseline across all 88 cities</div></div><span class="ctag cml">Seasonality</span></div><canvas id="ch-d4" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Anomaly Scatter — Magnitude vs Z-Score</div><div class="card-d">Each dot = one city-month anomaly · size = revenue impact</div></div><span class="ctag cml">Anomaly Map</span></div><canvas id="ch-d5" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Moving Average Convergence — 6 Cities</div><div class="card-d">30-day moving average smoothed demand signal with deviation</div></div><span class="ctag cml">MA Signal</span></div><canvas id="ch-d6" style="max-height:200px"></canvas></div>
 </div>
-<div class="insight"><span class="ii">&#x1F4A1;</span><span class="it"><strong>Patna spiked +45% in October</strong> — 3 new housing colonies + 2 large wedding clusters. This is a structural shift, not noise. Recommend stocking up and opening a second outlet.</span></div>
+<div class="insight"><span class="ii">💡</span><span class="it"><strong>Patna spiked +45% in October</strong> — 3 new housing colonies + 2 large wedding clusters. This is a structural shift, not noise. Recommend stocking up and opening a second outlet.</span></div>
 </div>
-
-<!-- MODULE 3: FRANCHISE HEALTH -->
 <div class="view" id="view-franchise">
 <div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Franchise Health Monitor</div><div class="mod-hd-desc">Random Forest 6-axis health scoring with 90-day lookahead for all 82 franchise stores</div></div></div>
 <div class="hrow stagger">
@@ -498,57 +452,53 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hc" style="--ac:#FF6B35"><div class="hc-num" style="color:#FF6B35" data-count="90">0</div><div class="hc-lbl">Day Lookahead</div></div>
 </div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Health Score Distribution</div><div class="card-d">Histogram of 82 stores by health band</div></div><span class="ctag cml">Distribution</span></div><canvas id="ch-f1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">6-Axis Radar &mdash; Surat Central vs Top Avg</div><div class="card-d">Revenue &middot; Footfall &middot; Conversion &middot; Retention &middot; Basket &middot; Competition</div></div><span class="ctag cml">Radar</span></div><canvas id="ch-f2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">90-Day Revenue Prediction &mdash; Critical Stores</div><div class="card-d">ML extrapolation for bottom 2 stores</div></div><span class="ctag cml">Prediction</span></div><canvas id="ch-f3" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Health Score Distribution — All 82 Stores</div><div class="card-d">Random Forest composite: Revenue 35% · Footfall 15% · Conversion 15% · Retention 10% · Basket 10% · Competition 15%</div></div><span class="ctag cml">Random Forest</span></div><canvas id="ch-f1" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">6-Axis Radar — Surat Central vs Top Avg</div><div class="card-d">Vital signs for the most critical store against top-performer benchmark</div></div><span class="ctag cml">Radar</span></div><canvas id="ch-f2" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">90-Day Revenue Prediction — Critical Stores</div><div class="card-d">Extrapolated revenue trajectory if no intervention for bottom-12 stores</div></div><span class="ctag cml">Lookahead</span></div><canvas id="ch-f3" style="max-height:210px"></canvas></div>
 </div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Monthly Revenue &mdash; Bottom 5 vs Network</div><div class="card-d">6-month trend showing divergence from average</div></div><span class="ctag cml">Trend</span></div><canvas id="ch-f4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Health Score by Zone</div><div class="card-d">Avg composite health per region</div></div><span class="ctag cml">Zone</span></div><canvas id="ch-f5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Intervention Impact Estimate</div><div class="card-d">Current score vs predicted post-intervention</div></div><span class="ctag cml">Impact</span></div><canvas id="ch-f6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Monthly Revenue Trend — Bottom 5 Stores</div><div class="card-d">6-month rolling revenue decline for critical franchises</div></div><span class="ctag cml">Trend</span></div><canvas id="ch-f4" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Health Score by Zone</div><div class="card-d">Average composite health score across 4 geographic zones</div></div><span class="ctag cml">Zone Health</span></div><canvas id="ch-f5" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Intervention Impact Estimate</div><div class="card-d">Projected score improvement from addressing top 2 failure axes per store</div></div><span class="ctag cml">What-If</span></div><canvas id="ch-f6" style="max-height:200px"></canvas></div>
 </div>
-<div class="alert alr"><span class="a-ic">&#x1F534;</span><div><div class="a-t">Surat Central &mdash; Score 32/100</div><div class="a-s">Revenue -18% &middot; Footfall -22% &middot; &#x20B9;8.2Cr at risk in 90 days. Immediate management review required.</div></div></div>
+<div class="alert alr"><span class="a-ic">🔴</span><div><div class="a-t">Surat Central — Score 32/100</div><div class="a-s">Revenue -18% · Footfall -22% · ₹8.2Cr at risk in 90 days. Immediate management review required.</div></div></div>
 </div>
-
-<!-- MODULE 4: FOOTFALL -->
 <div class="view" id="view-footfall">
 <div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Footfall Predictor</div><div class="mod-hd-desc">XGBoost 30-day forecasting with festival surge modeling and staffing optimization</div></div></div>
 <div class="hrow stagger">
 <div class="hc" style="--ac:#A78BFA"><div class="hc-num" style="color:#A78BFA" data-count="30">0</div><div class="hc-lbl">Day Forecast Window</div></div>
-<div class="hc" style="--ac:#A78BFA"><div class="hc-num" style="color:#A78BFA" data-count="12" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Annual Staffing Savings</div></div>
+<div class="hc" style="--ac:#A78BFA"><div class="hc-num" style="color:#A78BFA" data-count="12" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Annual Staffing Savings</div></div>
 <div class="hc" style="--ac:#A78BFA"><div class="hc-num" style="color:#A78BFA" data-count="87" data-suf="%">0%</div><div class="hc-lbl">Forecast Accuracy</div></div>
-<div class="hc" style="--ac:#A78BFA"><div class="hc-num" style="color:#A78BFA" data-count="2.5" data-suf="x" data-dec="1">0x</div><div class="hc-lbl">Weekend vs Weekday</div></div>
+<div class="hc" style="--ac:#A78BFA"><div class="hc-num" style="color:#A78BFA">3–5 PM</div><div class="hc-lbl">Daily Peak Window</div></div>
 </div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">30-Day Footfall Forecast</div><div class="card-d">Mumbai West &middot; actual vs predicted with confidence band</div></div><span class="ctag cml">Forecast</span></div><canvas id="ch-ff1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Hourly Traffic Pattern</div><div class="card-d">Weekday vs weekend hourly footfall distribution</div></div><span class="ctag cml">Hourly</span></div><canvas id="ch-ff2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Festival Surge Multiplier</div><div class="card-d">Top 5 festivals ranked by footfall impact</div></div><span class="ctag cml">Festival</span></div><canvas id="ch-ff3" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">30-Day Footfall Forecast — Mumbai West</div><div class="card-d">XGBoost · festival surge zones highlighted · actual vs predicted overlay</div></div><span class="ctag cml">XGBoost</span></div><canvas id="ch-ff1" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Hourly Traffic Pattern — Weekday vs Weekend</div><div class="card-d">Average walk-ins by hour · peak optimization for staffing</div></div><span class="ctag cml">Hourly</span></div><canvas id="ch-ff2" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Festival Surge Comparison — 5 Key Festivals</div><div class="card-d">Footfall multiplier during each festival window vs baseline</div></div><span class="ctag cml">Event Impact</span></div><canvas id="ch-ff3" style="max-height:210px"></canvas></div>
 </div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Monthly Footfall &mdash; Top 3</div><div class="card-d">Mumbai Andheri &middot; Surat Main &middot; Delhi Karol Bagh</div></div><span class="ctag cml">Top Stores</span></div><canvas id="ch-ff4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Footfall vs Conversion</div><div class="card-d">Store-level scatter &middot; high footfall low conversion = training gap</div></div><span class="ctag cml">Scatter</span></div><canvas id="ch-ff5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Store Footfall Ranking</div><div class="card-d">This month vs last month comparison</div></div><span class="ctag cml">Ranking</span></div><canvas id="ch-ff6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Monthly Footfall Trend — Top 5 Stores</div><div class="card-d">YTD rolling monthly footfall with seasonal overlay</div></div><span class="ctag cml">Monthly</span></div><canvas id="ch-ff4" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Footfall vs Conversion Rate (Scatter)</div><div class="card-d">Each store plotted: walk-ins vs conversion — quadrant analysis</div></div><span class="ctag cml">Efficiency</span></div><canvas id="ch-ff5" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Store Footfall Ranking — Current Month</div><div class="card-d">All stores ranked by total footfall this month vs last month</div></div><span class="ctag cml">Ranking</span></div><canvas id="ch-ff6" style="max-height:200px"></canvas></div>
 </div>
-<div class="insight"><span class="ii">&#x1F4A1;</span><span class="it"><strong>Saturday footfall is 2.5x weekday average</strong> &mdash; current uniform staffing policy loses &#x20B9;12L/year in Saturday conversion from understaffing and wastes &#x20B9;8L on Mon&ndash;Thu overstaffing.</span></div>
+<div class="insight"><span class="ii">💡</span><span class="it"><strong>Saturday footfall is 2.5× weekday average</strong> — current uniform staffing policy loses ₹12L/year in Saturday conversion from understaffing and wastes ₹8L on Mon–Thu overstaffing.</span></div>
 </div>
-
-<!-- MODULE 5: REPEAT BUYER -->
 <div class="view" id="view-repeat">
 <div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Repeat Buyer Intelligence</div><div class="mod-hd-desc">RFM segmentation + logistic decay curves with LTV cohort tracking</div></div></div>
 <div class="hrow stagger">
 <div class="hc" style="--ac:#F472B6"><div class="hc-num" style="color:#F472B6" data-count="22" data-suf="%">0%</div><div class="hc-lbl">Avg Repeat Rate</div><div class="hc-sub">Industry avg: 14%</div></div>
-<div class="hc" style="--ac:#F472B6"><div class="hc-num" style="color:#F472B6" data-count="28" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Repeat Revenue / Year</div></div>
+<div class="hc" style="--ac:#F472B6"><div class="hc-num" style="color:#F472B6" data-count="28" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Repeat Revenue / Year</div></div>
 <div class="hc" style="--ac:#F472B6"><div class="hc-num" style="color:#F472B6" data-count="45">0</div><div class="hc-lbl">Avg Repeat Cycle (Days)</div></div>
-<div class="hc" style="--ac:#F472B6"><div class="hc-num" style="color:#F472B6" data-count="3.2" data-suf="x" data-dec="1">0x</div><div class="hc-lbl">Champion LTV vs Average</div></div>
+<div class="hc" style="--ac:#F472B6"><div class="hc-num" style="color:#F472B6" data-count="3.2" data-suf="×" data-dec="1">0×</div><div class="hc-lbl">LTV vs One-Time Buyer</div></div>
 </div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Repeat Decay Curve by Segment</div><div class="card-d">Champions &middot; Loyal &middot; At-Risk survival curves</div></div><span class="ctag cml">Decay</span></div><canvas id="ch-r1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">RFM Segment Distribution</div><div class="card-d">Champions &middot; Loyal &middot; Potential &middot; At-Risk &middot; Lost</div></div><span class="ctag cml">RFM</span></div><canvas id="ch-r2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">City Repeat Rate Ranking</div><div class="card-d">Top 8 cities vs national average benchmark</div></div><span class="ctag cml">City</span></div><canvas id="ch-r3" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Repeat Purchase Decay Curve</div><div class="card-d">Logistic regression · probability of return vs days since last purchase · 3 segments</div></div><span class="ctag cml">RFM + Logistic</span></div><canvas id="ch-r1" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">RFM Segment Distribution</div><div class="card-d">Champions · Loyal · At-Risk · Lost · across 82-franchise customer base</div></div><span class="ctag cml">RFM</span></div><canvas id="ch-r2" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">City-Wise Repeat Rate Comparison</div><div class="card-d">Repeat purchase rate per major city vs national average benchmark</div></div><span class="ctag cml">City Analysis</span></div><canvas id="ch-r3" style="max-height:210px"></canvas></div>
 </div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Revenue Split &mdash; Repeat vs New</div><div class="card-d">6-month stacked view showing growing repeat share</div></div><span class="ctag cml">Revenue</span></div><canvas id="ch-r4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Top Upsell Pair Values</div><div class="card-d">Avg basket lift per cross-category combination</div></div><span class="ctag cml">Upsell</span></div><canvas id="ch-r5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">LTV Cohort Curves</div><div class="card-d">Jan &middot; Jul &middot; Oct cohort lifetime value trajectories</div></div><span class="ctag cml">LTV</span></div><canvas id="ch-r6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Revenue Split: Repeat vs New Customers</div><div class="card-d">Monthly revenue contribution by customer type · trend line</div></div><span class="ctag cml">Revenue Mix</span></div><canvas id="ch-r4" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Upsell Value Distribution</div><div class="card-d">Average basket size lift per cross-sell rule by category pair</div></div><span class="ctag cml">Upsell Value</span></div><canvas id="ch-r5" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">LTV Cohort Analysis — 6 Acquisition Months</div><div class="card-d">Cumulative lifetime value by cohort month · shows retention impact</div></div><span class="ctag cml">Cohort LTV</span></div><canvas id="ch-r6" style="max-height:200px"></canvas></div>
 </div>
-<div class="insight"><span class="ii">&#x1F4A1;</span><span class="it"><strong>Surat has the highest repeat rate at 34%</strong> vs national average of 22%. Key driver: personalised WhatsApp follow-ups within 30 days of purchase. Scaling this to all cities adds &#x20B9;8Cr annually.</span></div>
+<div class="insight"><span class="ii">💡</span><span class="it">The <strong>45-day window is make-or-break</strong>. Customers who receive a WhatsApp follow-up at day 40 show <strong>2.8× higher return probability</strong>. Automating this one touchpoint across 82 stores adds ₹4.2Cr/year.</span></div>
 </div>
 
 <!-- MODULE 6: STORE PROFILER -->
@@ -557,19 +507,19 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hrow stagger">
 <div class="hc" style="--ac:#34D399"><div class="hc-num" style="color:#34D399" data-count="82">0</div><div class="hc-lbl">Stores Profiled</div></div>
 <div class="hc" style="--ac:#34D399"><div class="hc-num" style="color:#34D399" data-count="5">0</div><div class="hc-lbl">Store Archetypes</div></div>
-<div class="hc" style="--ac:#34D399"><div class="hc-num" style="color:#34D399" data-count="4.8" data-suf="x" data-dec="1">0x</div><div class="hc-lbl">Best vs Worst Rev Ratio</div></div>
-<div class="hc" style="--ac:#34D399"><div class="hc-num" style="color:#34D399" data-count="62" data-suf="%">0%</div><div class="hc-lbl">Stores Above Benchmark</div></div>
+<div class="hc" style="--ac:#34D399"><div class="hc-num" style="color:#34D399" data-count="4.8" data-suf="×" data-dec="1">0×</div><div class="hc-lbl">Best vs Worst Rev Ratio</div></div>
+<div class="hc" style="--ac:#34D399"><div class="hc-num" style="color:#34D399" data-count="23" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Untapped Revenue Potential</div></div>
 </div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">K-Means Cluster Scatter</div><div class="card-d">Revenue score vs footfall score &middot; 5 archetype clusters</div></div><span class="ctag cml">Cluster</span></div><canvas id="ch-p1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Revenue by Archetype</div><div class="card-d">Metro Flagship &middot; Bridal Specialist &middot; Tier-2 Performer &middot; Volume Runner &middot; Underperformer</div></div><span class="ctag cml">Revenue</span></div><canvas id="ch-p2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Archetype Radar Comparison</div><div class="card-d">Metro Flagship vs Bridal Specialist vs Volume Runner</div></div><span class="ctag cml">Radar</span></div><canvas id="ch-p3" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Store Archetype Clustering — K-Means</div><div class="card-d">5 clusters: Metro Flagship · Tier-2 Performer · Bridal Specialist · Volume Runner · Underperformer</div></div><span class="ctag cml">K-Means</span></div><canvas id="ch-p1" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Revenue Distribution by Archetype</div><div class="card-d">Box plot of annual revenue per store across 5 archetypes</div></div><span class="ctag cml">Revenue</span></div><canvas id="ch-p2" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Store DNA Radar — 5 Archetype Profiles</div><div class="card-d">6-axis profile: Revenue · Footfall · Conversion · Basket · Retention · Competition</div></div><span class="ctag cml">Radar</span></div><canvas id="ch-p3" style="max-height:210px"></canvas></div>
 </div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Top 3 Stores &mdash; 6 Axis Comparison</div><div class="card-d">Mumbai Andheri &middot; Pune FC Road &middot; Surat Main</div></div><span class="ctag cml">Compare</span></div><canvas id="ch-p4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Revenue vs Floor Area</div><div class="card-d">Revenue per sq.ft efficiency scatter</div></div><span class="ctag cml">Efficiency</span></div><canvas id="ch-p5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Archetype Upgrade Potential</div><div class="card-d">5 cities with highest upgrade potential score</div></div><span class="ctag cml">Upgrade</span></div><canvas id="ch-p6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Metric Heatmap — Top 20 Stores</div><div class="card-d">Normalized score grid: each store × 6 performance axes</div></div><span class="ctag cml">Heatmap</span></div><canvas id="ch-p4" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Revenue vs Floor Area (Sq.Ft)</div><div class="card-d">Scatter: floor space efficiency — outliers = expansion or relocation candidates</div></div><span class="ctag cml">Efficiency</span></div><canvas id="ch-p5" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Archetype Transition Potential</div><div class="card-d">Stores closest to cluster boundary — candidates for archetype upgrade with targeted investment</div></div><span class="ctag cml">Mobility</span></div><canvas id="ch-p6" style="max-height:200px"></canvas></div>
 </div>
-<div class="insight"><span class="ii">&#x1F4A1;</span><span class="it"><strong>Mumbai Andheri generates &#x20B9;8,400/sq.ft &mdash; 4.8x the worst performer.</strong> The DNA report shows 3 replicable factors: corner location, bridal specialist staff, and evening-heavy traffic. Cloning this archetype adds &#x20B9;12Cr.</span></div>
+<div class="insight"><span class="ii">💡</span><span class="it"><strong>14 stores are misclassified</strong> by current management. Six Tier-2 stores operating with Metro Flagship inventory mix are leaving ₹6.8Cr on the table annually. Three Volume Runners need bridal category injection.</span></div>
 </div>
 
 <!-- MODULE 7: ASSORTMENT ENGINE -->
@@ -582,15 +532,15 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hc" style="--ac:#FB923C"><div class="hc-num" style="color:#FB923C" data-count="12" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Slow-Mover Liability</div></div>
 </div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">SKU Pareto &mdash; 80/20 Revenue Contribution</div><div class="card-d">Cumulative revenue curve across 2,400 active SKUs &mdash; dead zone highlighted</div></div><span class="ctag cml">Pareto</span></div><canvas id="ch-a1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Category Revenue Mix</div><div class="card-d">Wedding &middot; Daily Wear &middot; Bridal &middot; Men &middot; Kids &middot; Solitaire &middot; Chains &middot; Custom</div></div><span class="ctag cml">Category</span></div><canvas id="ch-a2" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">SKU Pareto — 80/20 Revenue Contribution</div><div class="card-d">Cumulative revenue curve across 2,400 active SKUs — dead zone highlighted</div></div><span class="ctag cml">Pareto</span></div><canvas id="ch-a1" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Category Revenue Mix — 8 Categories</div><div class="card-d">Wedding · Daily Wear · Bridal · Men's · Kids · Solitaire · Chains · Custom</div></div><span class="ctag cml">Category</span></div><canvas id="ch-a2" style="max-height:210px"></canvas></div>
 <div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">City Demand vs Current Supply Gap</div><div class="card-d">Category demand score vs assortment availability per major city</div></div><span class="ctag cml">Gap Analysis</span></div><canvas id="ch-a3" style="max-height:210px"></canvas></div>
 </div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Price Band Distribution</div><div class="card-d">&lt;&#x20B9;50K &middot; &#x20B9;50-150K &middot; &#x20B9;150-300K &middot; &#x20B9;300K+</div></div><span class="ctag cml">Price Band</span></div><canvas id="ch-a4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Category Trend Score &mdash; 6 Months</div><div class="card-d">Daily Wear &middot; Solitaire &middot; Wedding &middot; Mens rising trajectories</div></div><span class="ctag cml">Trend</span></div><canvas id="ch-a5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Recommended SKUs by City</div><div class="card-d">Projected monthly units per new-entry city</div></div><span class="ctag cml">Recommendation</span></div><canvas id="ch-a6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Price Band Distribution — Units Sold</div><div class="card-d">Revenue bracket: sub-₹50K · ₹50-150K · ₹150-300K · ₹300K+</div></div><span class="ctag cml">Price Bands</span></div><canvas id="ch-a4" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Trend Score by Category — 6 Months</div><div class="card-d">Velocity index: sales acceleration or deceleration per category</div></div><span class="ctag cml">Velocity</span></div><canvas id="ch-a5" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Recommended SKU Additions — Top 8 Cities</div><div class="card-d">ML-ranked new SKUs by projected demand × margin score</div></div><span class="ctag cml">ML Recommend</span></div><canvas id="ch-a6" style="max-height:200px"></canvas></div>
 </div>
-<div class="insight"><span class="ii">&#x1F4A1;</span><span class="it"><strong>Top 20% of SKUs drive 80% of revenue</strong> &mdash; classic Pareto. But 340 SKUs in the bottom 10% haven't sold in 90+ days. LP optimization recommends replacing these with region-specific bestsellers for +15% revenue.</span></div>
+<div class="insight"><span class="ii">💡</span><span class="it"><strong>Daily-wear gold chains under ₹80K</strong> are the single largest demand gap — 11 cities show search + footfall intent but zero matching inventory. Adding 40 SKUs in this band could recover ₹8.4Cr in lost walk-outs.</span></div>
 </div>
 
 <!-- MODULE 8: REGIONAL SCORECARD -->
@@ -599,19 +549,19 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hrow stagger">
 <div class="hc" style="--ac:#60A5FA"><div class="hc-num" style="color:#60A5FA" data-count="4">0</div><div class="hc-lbl">Regions Monitored</div></div>
 <div class="hc" style="--ac:#60A5FA"><div class="hc-num" style="color:#60A5FA" data-count="82">0</div><div class="hc-lbl">Stores Scored</div></div>
-<div class="hc" style="--ac:#60A5FA"><div class="hc-num" style="color:#60A5FA" data-count="18" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Inter-Region Revenue Gap</div></div>
-<div class="hc" style="--ac:#60A5FA"><div class="hc-num" style="color:#60A5FA" data-count="94" data-suf="/100">/100</div><div class="hc-lbl">Best Region Score</div></div>
+<div class="hc" style="--ac:#60A5FA"><div class="hc-num" style="color:#60A5FA" data-count="18" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Inter-Region Revenue Gap</div></div>
+<div class="hc" style="--ac:#60A5FA"><div class="hc-num" style="color:#60A5FA" data-count="71" data-suf="%">0%</div><div class="hc-lbl">West Zone Market Share Lead</div></div>
 </div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Regional Revenue Comparison</div><div class="card-d">North &middot; South &middot; East &middot; West &mdash; quarterly</div></div><span class="ctag cmis">Revenue</span></div><canvas id="ch-sc1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Region Health Radar</div><div class="card-d">Revenue &middot; Growth &middot; Conversion &middot; Repeat &middot; Basket &middot; Footfall</div></div><span class="ctag cmis">Radar</span></div><canvas id="ch-sc2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">YoY Growth by Zone</div><div class="card-d">8-quarter growth trajectory per zone</div></div><span class="ctag cmis">Growth</span></div><canvas id="ch-sc3" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Regional Revenue Comparison — 4 Zones</div><div class="card-d">North · South · East · West · quarterly vs target with variance</div></div><span class="ctag cml">Zones</span></div><canvas id="ch-sc1" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Radar — Region Health (6 Metrics)</div><div class="card-d">Revenue · Growth · Conversion · Repeat · Basket Size · Footfall for all 4 zones</div></div><span class="ctag cml">Radar</span></div><canvas id="ch-sc2" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">YoY Growth Rate by Zone</div><div class="card-d">Last 4 quarters — growth trajectory with momentum indicator</div></div><span class="ctag cml">YoY</span></div><canvas id="ch-sc3" style="max-height:210px"></canvas></div>
 </div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">City Revenue Top 12</div><div class="card-d">Annual revenue ranking across active cities</div></div><span class="ctag cmis">Top Cities</span></div><canvas id="ch-sc4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Market Penetration</div><div class="card-d">KISNA share vs competitors across 4 zones</div></div><span class="ctag cmis">Market</span></div><canvas id="ch-sc5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">KPI Scorecard by Zone</div><div class="card-d">Revenue &middot; Footfall &middot; Conversion &middot; Repeat &middot; Basket &middot; Margin</div></div><span class="ctag cmis">KPI</span></div><canvas id="ch-sc6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">City-Level Revenue Map — Top 20 Cities</div><div class="card-d">Horizontal bar: top 20 revenue cities across all zones</div></div><span class="ctag cml">City Revenue</span></div><canvas id="ch-sc4" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Market Penetration Rate by Zone</div><div class="card-d">KISNA's estimated share of organised jewellery market per zone</div></div><span class="ctag cml">Market Share</span></div><canvas id="ch-sc5" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Region KPI Scorecard — Q4 vs Q3</div><div class="card-d">Colour-coded: Green ≥ target · Amber 80–99% · Red &lt;80% — 7 KPIs × 4 zones</div></div><span class="ctag cml">KPI Grid</span></div><canvas id="ch-sc6" style="max-height:200px"></canvas></div>
 </div>
-<div class="insight"><span class="ii">&#x1F4A1;</span><span class="it"><strong>West zone leads at 94/100</strong> while East trails at 62/100. The &#x20B9;18Cr inter-region gap is driven by 3 factors: store density, category depth, and staffing quality. Targeted investment in East adds &#x20B9;8Cr.</span></div>
+<div class="insight"><span class="ii">💡</span><span class="it"><strong>East Zone is chronically under-invested</strong> — 18 stores generate only ₹42Cr vs West Zone's ₹118Cr from 21 stores. East cities show comparable footfall intent but 40% lower store density. Fastest expansion ROI is East.</span></div>
 </div>
 
 <!-- MODULE 9: INVENTORY RADAR -->
@@ -621,18 +571,18 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hc" style="--ac:#E879F9"><div class="hc-num" style="color:#E879F9" data-count="28" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Inventory Mismatch Value</div></div>
 <div class="hc" style="--ac:#E879F9"><div class="hc-num" style="color:#E879F9" data-count="34">0</div><div class="hc-lbl">Overstocked Stores</div></div>
 <div class="hc" style="--ac:#E879F9"><div class="hc-num" style="color:#E879F9" data-count="22">0</div><div class="hc-lbl">Understocked Stores</div></div>
-<div class="hc" style="--ac:#E879F9"><div class="hc-num" style="color:#E879F9" data-count="5" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Transfer Savings Potential</div></div>
+<div class="hc" style="--ac:#E879F9"><div class="hc-num" style="color:#E879F9" data-count="6.2" data-suf="×" data-dec="1">0×</div><div class="hc-lbl">Transfer ROI Potential</div></div>
 </div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Demand vs Supply Mismatch</div><div class="card-d">Overstocked &middot; Understocked &middot; Balanced clusters</div></div><span class="ctag cml">Mismatch</span></div><canvas id="ch-i1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Category Stock Weeks</div><div class="card-d">Weeks of stock per category &mdash; green/amber/red bands</div></div><span class="ctag cml">Stock Weeks</span></div><canvas id="ch-i2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Transfer Opportunity Map</div><div class="card-d">Top 5 inter-store transfer routes by value</div></div><span class="ctag cml">Transfer</span></div><canvas id="ch-i3" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Demand vs Supply Mismatch — 88 Cities</div><div class="card-d">Scatter: Demand Score (X) vs Inventory Score (Y) — four quadrants reveal action priority</div></div><span class="ctag cml">Mismatch Map</span></div><canvas id="ch-i1" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Category Stock Weeks — 8 Categories</div><div class="card-d">Weeks of stock remaining per category — red &lt;4 weeks · green &gt;12 weeks</div></div><span class="ctag cml">Stock Weeks</span></div><canvas id="ch-i2" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Inter-Store Transfer Opportunity Matrix</div><div class="card-d">Top 15 transfer pairs: overstocked → understocked with value at stake</div></div><span class="ctag cml">Transfer Matrix</span></div><canvas id="ch-i3" style="max-height:210px"></canvas></div>
 </div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Stock Turnover Trend</div><div class="card-d">Bridal &middot; Daily Wear &middot; Wedding turnover rates</div></div><span class="ctag cml">Turnover</span></div><canvas id="ch-i4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Overstock vs Understock by Region</div><div class="card-d">Zone-wise mismatch in &#x20B9;Cr</div></div><span class="ctag cml">Regional</span></div><canvas id="ch-i5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Reorder Alert &mdash; Critical Items</div><div class="card-d">Items with &lt;7 days of remaining stock</div></div><span class="ctag cml">Reorder</span></div><canvas id="ch-i6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Monthly Stock Turnover Trend — 6 Months</div><div class="card-d">Turnover ratio per category — slowdown indicates accumulation risk</div></div><span class="ctag cml">Turnover</span></div><canvas id="ch-i4" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Overstock vs Understock Value by Region</div><div class="card-d">₹Cr of excess vs deficit inventory locked per zone</div></div><span class="ctag cml">Region Stock</span></div><canvas id="ch-i5" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Reorder Alert — Critical SKUs</div><div class="card-d">Top 20 SKUs: days-of-stock remaining · velocity · recommended reorder qty</div></div><span class="ctag cml">Reorder</span></div><canvas id="ch-i6" style="max-height:200px"></canvas></div>
 </div>
-<div class="insight"><span class="ii">&#x1F4A1;</span><span class="it"><strong>&#x20B9;28Cr in inventory is misallocated.</strong> Surat has 3x more bridal stock than demand, while Patna is understocked by 40%. The rebalancing engine identifies 5 high-value transfers worth &#x20B9;5Cr in saved capital.</span></div>
+<div class="insight"><span class="ii">💡</span><span class="it"><strong>₹28Cr is frozen in misallocated inventory</strong> right now. Surat has 18 weeks of bridal stock while Delhi shows 3 weeks. A smart transfer engine pays for itself in &lt;60 days.</span></div>
 </div>
 
 <!-- MODULE 10: DEAD STOCK -->
@@ -642,18 +592,18 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hc" style="--ac:#F87171"><div class="hc-num" style="color:#F87171" data-count="48" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Dead Stock Value</div></div>
 <div class="hc" style="--ac:#F87171"><div class="hc-num" style="color:#F87171" data-count="180" data-suf="+">0+</div><div class="hc-lbl">Days Since Last Sale (Avg)</div></div>
 <div class="hc" style="--ac:#F87171"><div class="hc-num" style="color:#F87171" data-count="4.2" data-suf="%" data-dec="1">0%</div><div class="hc-lbl">Annual Capital Erosion</div></div>
-<div class="hc" style="--ac:#F87171"><div class="hc-num" style="color:#F87171" data-count="32" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Recoverable via Liquidation</div></div>
+<div class="hc" style="--ac:#F87171"><div class="hc-num" style="color:#F87171" data-count="32" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Recoverable via Liquidation</div></div>
 </div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Dead Stock Aging Buckets</div><div class="card-d">90&ndash;180 days &middot; 180&ndash;365 days &middot; 365+ days</div></div><span class="ctag cml">Aging</span></div><canvas id="ch-ds1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Category-Wise Dead Stock</div><div class="card-d">Which categories hold the most dormant capital</div></div><span class="ctag cml">Category</span></div><canvas id="ch-ds2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Liquidation Scenario &mdash; Recovery Curve</div><div class="card-d">Recovery % at 60&ndash;80% realisation across 3 timelines</div></div><span class="ctag cml">Liquidation</span></div><canvas id="ch-ds3" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Dead Stock Aging Buckets — Value at Risk</div><div class="card-d">90–180 days · 180–365 days · 365+ days · value in ₹Cr per bucket</div></div><span class="ctag cml">Aging</span></div><canvas id="ch-ds1" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Category-Wise Dead Stock Composition</div><div class="card-d">Which categories hold the most dormant capital</div></div><span class="ctag cml">Category Mix</span></div><canvas id="ch-ds2" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Liquidation Scenario — Value Recovery Curve</div><div class="card-d">Recovery % at 60%, 70%, 80% realisation × 3 urgency timelines</div></div><span class="ctag cml">Liquidation</span></div><canvas id="ch-ds3" style="max-height:210px"></canvas></div>
 </div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Dead Stock Accumulation &mdash; 12 Months</div><div class="card-d">Monthly growth of dormant inventory value</div></div><span class="ctag cml">Trend</span></div><canvas id="ch-ds4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Store-Wise Concentration</div><div class="card-d">Top 5 stores by dead stock value</div></div><span class="ctag cml">Store Risk</span></div><canvas id="ch-ds5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Root Cause Analysis</div><div class="card-d">Trend miss &middot; Over-buy &middot; Wrong city &middot; Wrong price &middot; No promotion</div></div><span class="ctag cml">Root Cause</span></div><canvas id="ch-ds6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Dead Stock Accumulation Trend — 12 Months</div><div class="card-d">Monthly growth of dormant inventory value — seasonal spikes visible</div></div><span class="ctag cml">Trend</span></div><canvas id="ch-ds4" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Store-Wise Dead Stock Concentration</div><div class="card-d">Top 15 stores by dead stock value — operational vs structural risk</div></div><span class="ctag cml">Store Risk</span></div><canvas id="ch-ds5" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Root Cause Analysis — Why Items Die</div><div class="card-d">Trend miss · Over-buy · Wrong city · Wrong price band · No promotion</div></div><span class="ctag cml">Root Cause</span></div><canvas id="ch-ds6" style="max-height:200px"></canvas></div>
 </div>
-<div class="insight"><span class="ii">&#x1F4A1;</span><span class="it"><strong>&#x20B9;48Cr sitting still costs &#x20B9;2Cr/year in opportunity cost.</strong> ML-ranked liquidation route (festival bundling &rarr; inter-store transfer &rarr; outlet &rarr; melt) recovers 67% average &mdash; &#x20B9;32Cr back in working capital within 90 days.</span></div>
+<div class="insight"><span class="ii">💡</span><span class="it"><strong>₹48Cr sitting still costs ₹2Cr/year in opportunity cost.</strong> ML-ranked liquidation route (festival bundling → inter-store transfer → outlet → melt) recovers 67% average — ₹32Cr back in working capital within 90 days.</span></div>
 </div>
 
 <!-- MODULE 11: CROSS-SELL -->
@@ -661,20 +611,20 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Cross-Sell Playbook</div><div class="mod-hd-desc">Apriori association rules — 840 active rules with 92% confidence driving ₹8.4Cr uplift</div></div></div>
 <div class="hrow stagger">
 <div class="hc" style="--ac:#4ADE80"><div class="hc-num" style="color:#4ADE80" data-count="840">0</div><div class="hc-lbl">Cross-Sell Rules Active</div></div>
-<div class="hc" style="--ac:#4ADE80"><div class="hc-num" style="color:#4ADE80" data-count="8.4" data-pre="&#x20B9;" data-suf="Cr" data-dec="1">&#x20B9;0Cr</div><div class="hc-lbl">Annual Uplift Potential</div></div>
+<div class="hc" style="--ac:#4ADE80"><div class="hc-num" style="color:#4ADE80" data-count="8.4" data-pre="₹" data-suf="Cr" data-dec="1">₹0Cr</div><div class="hc-lbl">Annual Uplift Potential</div></div>
 <div class="hc" style="--ac:#4ADE80"><div class="hc-num" style="color:#4ADE80" data-count="34" data-suf="%">0%</div><div class="hc-lbl">Avg Basket Lift</div></div>
 <div class="hc" style="--ac:#4ADE80"><div class="hc-num" style="color:#4ADE80" data-count="92" data-suf="%">0%</div><div class="hc-lbl">Rule Confidence (Top 50)</div></div>
 </div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Top Category Pair Associations</div><div class="card-d">Lift scores for top 8 category pairs</div></div><span class="ctag cml">Apriori</span></div><canvas id="ch-cs1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Basket Uplift by Trigger</div><div class="card-d">Avg additional revenue per transaction when rule applied</div></div><span class="ctag cml">Basket Lift</span></div><canvas id="ch-cs2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Uplift by Customer Segment</div><div class="card-d">Champions respond 4.2x better than Average</div></div><span class="ctag cml">Segment</span></div><canvas id="ch-cs3" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Top Category Pair Associations — Apriori</div><div class="card-d">Lift scores for top 12 category pairs — Rings+Chains · Bangles+Earrings · etc.</div></div><span class="ctag cml">Apriori</span></div><canvas id="ch-cs1" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Basket Uplift by Cross-Sell Trigger</div><div class="card-d">Average additional revenue per transaction when rule is applied</div></div><span class="ctag cml">Basket Lift</span></div><canvas id="ch-cs2" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Cross-Sell Revenue by Customer Segment</div><div class="card-d">Uplift per RFM segment — Champions respond 4.2× better than Average</div></div><span class="ctag cml">Segment</span></div><canvas id="ch-cs3" style="max-height:210px"></canvas></div>
 </div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Monthly Cross-Sell Revenue Trend</div><div class="card-d">12-month uplift from rules applied at POS</div></div><span class="ctag cml">Monthly</span></div><canvas id="ch-cs4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Store Cross-Sell Performance</div><div class="card-d">Cross-sell rate % vs revenue uplift scatter</div></div><span class="ctag cml">Store Perf</span></div><canvas id="ch-cs5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Occasion-Based Bundle Effectiveness</div><div class="card-d">Wedding &middot; Karwa Chauth &middot; Valentine &middot; Birthday bundles</div></div><span class="ctag cml">Bundles</span></div><canvas id="ch-cs6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Monthly Cross-Sell Revenue Trend</div><div class="card-d">12-month tracked uplift from rules applied at POS — growing adoption curve</div></div><span class="ctag cml">Monthly</span></div><canvas id="ch-cs4" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Store-Wise Cross-Sell Performance</div><div class="card-d">Top 15 stores: % of transactions with cross-sell vs revenue uplift</div></div><span class="ctag cml">Store Perf</span></div><canvas id="ch-cs5" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Occasion-Based Bundle Effectiveness</div><div class="card-d">Bundle acceptance rate and avg value: Wedding · Karwa Chauth · Valentine · Birthday</div></div><span class="ctag cml">Bundles</span></div><canvas id="ch-cs6" style="max-height:200px"></canvas></div>
 </div>
-<div class="insight"><span class="ii">&#x1F4A1;</span><span class="it"><strong>The Ring + Chain pair fires 840 times/month</strong> with a 92% confidence and &#x20B9;4,200 average uplift. Training all 82 stores on just this one rule adds &#x20B9;4.2Cr annually &mdash; with zero inventory investment.</span></div>
+<div class="insight"><span class="ii">💡</span><span class="it"><strong>The Ring + Chain pair fires 840 times/month</strong> with a 92% confidence and ₹4,200 average uplift. Training all 82 stores' staff on just this one rule adds ₹4.2Cr annually — with zero inventory investment.</span></div>
 </div>
 
 <!-- MODULE 12: DEALER LEADERBOARD -->
@@ -682,20 +632,20 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Dealer Leaderboard</div><div class="mod-hd-desc">ELO-style competitive ranking across 82 franchises with tier migration tracking</div></div></div>
 <div class="hrow stagger">
 <div class="hc" style="--ac:#FBBF24"><div class="hc-num" style="color:#FBBF24" data-count="82">0</div><div class="hc-lbl">Franchises Ranked</div></div>
-<div class="hc" style="--ac:#FBBF24"><div class="hc-num" style="color:#FBBF24" data-count="3.8" data-suf="x" data-dec="1">0x</div><div class="hc-lbl">Top vs Bottom Revenue Gap</div></div>
+<div class="hc" style="--ac:#FBBF24"><div class="hc-num" style="color:#FBBF24" data-count="3.8" data-suf="×" data-dec="1">0×</div><div class="hc-lbl">Top vs Bottom Revenue Gap</div></div>
 <div class="hc" style="--ac:#FBBF24"><div class="hc-num" style="color:#FBBF24" data-count="14">0</div><div class="hc-lbl">Franchises in Critical Zone</div></div>
-<div class="hc" style="--ac:#FBBF24"><div class="hc-num" style="color:#FBBF24" data-count="28" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Revenue Gap vs Full Potential</div></div>
+<div class="hc" style="--ac:#FBBF24"><div class="hc-num" style="color:#FBBF24" data-count="28" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Revenue Gap vs Full Potential</div></div>
 </div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Top 15 Franchises &mdash; Revenue Ranking</div><div class="card-d">Annual revenue with YoY growth indicator</div></div><span class="ctag cml">Revenue Rank</span></div><canvas id="ch-lb1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Composite Score Distribution</div><div class="card-d">Revenue 40% &middot; Growth 30% &middot; Retention 15% &middot; Ops 15%</div></div><span class="ctag cml">Score Dist</span></div><canvas id="ch-lb2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Growth Rate Ranking &mdash; Q4 YoY</div><div class="card-d">Fastest growing vs declining franchises</div></div><span class="ctag cml">Growth</span></div><canvas id="ch-lb3" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Top 15 Franchises — Revenue Ranking</div><div class="card-d">Annual revenue with YoY growth indicator — Champions vs Challengers</div></div><span class="ctag cml">Revenue Rank</span></div><canvas id="ch-lb1" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Composite Score Distribution — All 82</div><div class="card-d">Histogram: Revenue 40% · Growth 30% · Retention 15% · Operations 15%</div></div><span class="ctag cml">Score Dist</span></div><canvas id="ch-lb2" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Growth Rate Ranking — Q4 YoY</div><div class="card-d">Fastest growing vs declining franchises this quarter</div></div><span class="ctag cml">Growth</span></div><canvas id="ch-lb3" style="max-height:210px"></canvas></div>
 </div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Franchise Tier Movement</div><div class="card-d">Gold &rarr; Silver &rarr; Bronze migrations this quarter</div></div><span class="ctag cml">Tier Moves</span></div><canvas id="ch-lb4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Retention Rate vs Revenue</div><div class="card-d">Top-right quadrant = investment priority</div></div><span class="ctag cml">Retention</span></div><canvas id="ch-lb5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Bottom 15 &mdash; Risk Intervention Map</div><div class="card-d">Lowest performers with failure axis</div></div><span class="ctag cml">Risk Map</span></div><canvas id="ch-lb6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Franchise Tier Movement — Quarterly</div><div class="card-d">Sankey-style: Gold → Silver → Bronze tier migrations this quarter</div></div><span class="ctag cml">Tier Moves</span></div><canvas id="ch-lb4" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Retention Rate vs Revenue per Franchise</div><div class="card-d">Scatter: retention drives LTV — top-right quadrant = investment priority</div></div><span class="ctag cml">Retention</span></div><canvas id="ch-lb5" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Bottom 15 — Risk Intervention Map</div><div class="card-d">Lowest performers with primary failure axis and recommended action</div></div><span class="ctag cml">Risk Map</span></div><canvas id="ch-lb6" style="max-height:200px"></canvas></div>
 </div>
-<div class="insight"><span class="ii">&#x1F4A1;</span><span class="it"><strong>Mumbai Andheri is #1</strong> at &#x20B9;18.4Cr but Pune Koregaon shows 68% YoY growth &mdash; the fastest riser. The bottom 14 share one pattern: single-category dependency. Diversification coaching adds &#x20B9;6.2Cr.</span></div>
+<div class="insight"><span class="ii">💡</span><span class="it"><strong>Mumbai Andheri is the #1 franchise</strong> at ₹18.4Cr but Pune Koregaon shows 68% YoY growth — the fastest riser. The bottom 14 franchises share one pattern: single-category dependency. Diversification coaching adds ₹6.2Cr.</span></div>
 </div>
 
 <!-- MODULE 13: CULTURAL DNA -->
@@ -703,20 +653,20 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Cultural DNA Engine</div><div class="mod-hd-desc">NLP + cosine clustering of 6 buying personas across India's diverse cultural zones</div></div></div>
 <div class="hrow stagger">
 <div class="hc" style="--ac:#C084FC"><div class="hc-num" style="color:#C084FC" data-count="88">0</div><div class="hc-lbl">Cities Profiled</div></div>
-<div class="hc" style="--ac:#C084FC"><div class="hc-num" style="color:#C084FC" data-count="6">0</div><div class="hc-lbl">Cultural Clusters</div></div>
-<div class="hc" style="--ac:#C084FC"><div class="hc-num" style="color:#C084FC" data-count="34" data-suf="%">0%</div><div class="hc-lbl">Revenue Lift from Localisation</div></div>
-<div class="hc" style="--ac:#C084FC"><div class="hc-num" style="color:#C084FC" data-count="14" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Localisation Upside</div></div>
+<div class="hc" style="--ac:#C084FC"><div class="hc-num" style="color:#C084FC" data-count="6">0</div><div class="hc-lbl">Cultural Clusters Identified</div></div>
+<div class="hc" style="--ac:#C084FC"><div class="hc-num" style="color:#C084FC" data-count="34" data-suf="%">0%</div><div class="hc-lbl">Revenue Lift from Local Assortment</div></div>
+<div class="hc" style="--ac:#C084FC"><div class="hc-num" style="color:#C084FC" data-count="14" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Localisation Upside</div></div>
 </div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Cultural Preference Map &mdash; 6 Clusters</div><div class="card-d">Traditional Heavy &middot; Modern Minimalist &middot; Bridal Maximalist &middot; more</div></div><span class="ctag ccre">NLP Cluster</span></div><canvas id="ch-dna1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Regional Style Preference Radar</div><div class="card-d">North vs South vs West vs East style preferences</div></div><span class="ctag ccre">Radar</span></div><canvas id="ch-dna2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Festival-Product Affinity</div><div class="card-d">Which categories peak at which festivals</div></div><span class="ctag ccre">Affinity</span></div><canvas id="ch-dna3" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Cultural Jewellery Preference Map — 6 Clusters</div><div class="card-d">NLP + Survey clustering: Traditional Heavy · Modern Minimalist · Bridal Maximalist · Office Daily · Religious Motif · Investment Buyer</div></div><span class="ctag cml">NLP Cluster</span></div><canvas id="ch-dna1" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Regional Style Preference Radar</div><div class="card-d">North vs South vs West vs East: gold purity · stone preference · design weight · filigree</div></div><span class="ctag cml">Radar</span></div><canvas id="ch-dna2" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Festival-Product Affinity Heatmap</div><div class="card-d">Which product categories peak at which festivals across regions</div></div><span class="ctag cml">Affinity</span></div><canvas id="ch-dna3" style="max-height:210px"></canvas></div>
 </div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Gold Purity Preference by State</div><div class="card-d">22K vs 18K vs 14K preference per major state</div></div><span class="ctag ccre">Purity</span></div><canvas id="ch-dna4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Religion x Purchase Occasion</div><div class="card-d">Hindu &middot; Muslim &middot; Sikh &middot; Christian occasion triggers</div></div><span class="ctag ccre">Occasion</span></div><canvas id="ch-dna5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Localisation ROI &mdash; Top 5 Pairs</div><div class="card-d">Revenue lift from local-assortment pilot stores</div></div><span class="ctag ccre">Localisation</span></div><canvas id="ch-dna6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Gold Purity Preference by State</div><div class="card-d">22K vs 18K vs 14K preference split per major state</div></div><span class="ctag cml">Purity</span></div><canvas id="ch-dna4" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Religion × Purchase Occasion Matrix</div><div class="card-d">Hindu · Muslim · Sikh · Christian occasion-based purchase triggers per cluster</div></div><span class="ctag cml">Occasion</span></div><canvas id="ch-dna5" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Localisation ROI — Top 10 City Pairs</div><div class="card-d">Revenue lift from local-assortment pilot stores vs generic-assortment peers</div></div><span class="ctag cml">Localisation</span></div><canvas id="ch-dna6" style="max-height:200px"></canvas></div>
 </div>
-<div class="insight"><span class="ii">&#x1F4A1;</span><span class="it"><strong>South India shops 22K, North prefers 18K.</strong> KISNA stocks a uniform 70/30 mix everywhere &mdash; causing &#x20B9;6Cr in lost sales in Tamil Nadu. Region-specific stocking adds &#x20B9;14Cr.</span></div>
+<div class="insight"><span class="ii">💡</span><span class="it"><strong>South India shops 22K, North prefers 18K.</strong> KISNA currently stocks a uniform 70/30 mix everywhere — causing ₹6Cr in lost sales in Tamil Nadu and Andhra where 22K demand is unmet. Region-specific stocking adds ₹14Cr.</span></div>
 </div>
 
 <!-- MODULE 14: WEDDING GRAPH -->
@@ -729,15 +679,15 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="hc" style="--ac:#F9A8D4"><div class="hc-num" style="color:#F9A8D4" data-count="22" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Untapped Bridal Pipeline</div></div>
 </div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Wedding Season Revenue Calendar</div><div class="card-d">Monthly bridal vs non-bridal revenue curve</div></div><span class="ctag csal">Seasonal</span></div><canvas id="ch-w1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Bridal Set Category Breakdown</div><div class="card-d">Necklace &middot; Bangles &middot; Earrings &middot; Maang Tikka &middot; Ring &middot; Anklets</div></div><span class="ctag csal">Category</span></div><canvas id="ch-w2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Pre-Wedding Purchase Timeline</div><div class="card-d">Days before wedding purchase window &mdash; 90% in 0&ndash;45 days</div></div><span class="ctag csal">Timeline</span></div><canvas id="ch-w3" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Wedding Season Revenue Calendar</div><div class="card-d">Monthly wedding-attributed revenue vs non-bridal — season peaks + troughs</div></div><span class="ctag cml">Seasonal</span></div><canvas id="ch-w1" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Bridal Set Category Breakdown</div><div class="card-d">Necklace · Bangles · Earrings · Maang Tikka · Nose Ring · Ring · Anklets — avg value</div></div><span class="ctag cml">Category</span></div><canvas id="ch-w2" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Pre-Wedding Purchase Timeline</div><div class="card-d">Days before wedding: jewellery purchase window — 90% of sales in day 0–45</div></div><span class="ctag cml">Timeline</span></div><canvas id="ch-w3" style="max-height:210px"></canvas></div>
 </div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">City Bridal Revenue Ranking</div><div class="card-d">Top 8 cities by bridal revenue</div></div><span class="ctag csal">City Rank</span></div><canvas id="ch-w4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Bridal Budget Distribution</div><div class="card-d">Sub-&#x20B9;2L &middot; &#x20B9;2&ndash;5L &middot; &#x20B9;5L+ tier split</div></div><span class="ctag csal">Budget Tiers</span></div><canvas id="ch-w5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Bridal Referral Chain Analysis</div><div class="card-d">Referral rate % and revenue attribution</div></div><span class="ctag csal">Referral</span></div><canvas id="ch-w6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">City Bridal Revenue Ranking</div><div class="card-d">Top 15 cities by bridal revenue — with penetration vs total wedding market estimate</div></div><span class="ctag cml">City Rank</span></div><canvas id="ch-w4" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Bridal Budget Distribution — 3 Tiers</div><div class="card-d">Sub-₹2L · ₹2–5L · ₹5L+ — units and value split across 12 months</div></div><span class="ctag cml">Budget Tiers</span></div><canvas id="ch-w5" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Bridal Referral Chain Analysis</div><div class="card-d">What % of bridal buyers came via referral — store-wise referral rate + revenue attribution</div></div><span class="ctag cml">Referral</span></div><canvas id="ch-w6" style="max-height:200px"></canvas></div>
 </div>
-<div class="insight"><span class="ii">&#x1F4A1;</span><span class="it"><strong>&#x20B9;22Cr in identifiable bridal prospects</strong> go to competitors due to discovery gap. A dedicated bridal consultation module converts 28% of walkaways &mdash; the single highest-ROI initiative.</span></div>
+<div class="insight"><span class="ii">💡</span><span class="it"><strong>₹22Cr in identifiable bridal prospects</strong> go to competitors due to discovery gap. A dedicated bridal consultation module with CRM pipeline tracking converts 28% of walkaways — the single highest-ROI initiative in the roadmap.</span></div>
 </div>
 
 <!-- MODULE 15: FESTIVAL CALENDAR -->
@@ -745,20 +695,20 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div class="mod-hd"><div class="mod-hd-back" onclick="nav('home')">←</div><div class="mod-hd-info"><div class="mod-hd-title">Festival Revenue Calendar</div><div class="mod-hd-desc">18 major festivals tracked — surge modeling, inventory readiness, staff planning</div></div></div>
 <div class="hrow stagger">
 <div class="hc" style="--ac:#FCD34D"><div class="hc-num" style="color:#FCD34D" data-count="18">0</div><div class="hc-lbl">Major Festivals Tracked</div></div>
-<div class="hc" style="--ac:#FCD34D"><div class="hc-num" style="color:#FCD34D" data-count="54" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Festival-Attributed Revenue</div></div>
-<div class="hc" style="--ac:#FCD34D"><div class="hc-num" style="color:#FCD34D" data-count="3.4" data-suf="x" data-dec="1">0x</div><div class="hc-lbl">Dhanteras Revenue Multiplier</div></div>
-<div class="hc" style="--ac:#FCD34D"><div class="hc-num" style="color:#FCD34D" data-count="21" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Pre-Order Opportunity</div></div>
+<div class="hc" style="--ac:#FCD34D"><div class="hc-num" style="color:#FCD34D" data-count="54" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Festival-Attributed Revenue</div></div>
+<div class="hc" style="--ac:#FCD34D"><div class="hc-num" style="color:#FCD34D" data-count="3.4" data-suf="×" data-dec="1">0×</div><div class="hc-lbl">Dhanteras Revenue Multiplier</div></div>
+<div class="hc" style="--ac:#FCD34D"><div class="hc-num" style="color:#FCD34D" data-count="21" data-pre="₹" data-suf="Cr">₹0Cr</div><div class="hc-lbl">Pre-Order Opportunity</div></div>
 </div>
 <div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Festival Revenue Timeline</div><div class="card-d">12-month revenue with festival peaks labelled</div></div><span class="ctag ccre">Calendar</span></div><canvas id="ch-fes1" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Festival Multiplier by Region</div><div class="card-d">How much each festival boosts revenue per zone</div></div><span class="ctag ccre">Multiplier</span></div><canvas id="ch-fes2" style="max-height:210px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Pre-Festival Inventory Readiness</div><div class="card-d">Stock readiness vs demand forecast</div></div><span class="ctag ccre">Readiness</span></div><canvas id="ch-fes3" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Festival Revenue Timeline — Annual View</div><div class="card-d">12-month revenue waterfall with festival peaks labelled — Dhanteras · Dussehra · Akha Teej · Gudi Padwa · Navratri</div></div><span class="ctag cml">Calendar</span></div><canvas id="ch-fes1" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Festival Revenue Multiplier by Region</div><div class="card-d">How much each festival boosts revenue in each zone — regional festival index</div></div><span class="ctag cml">Multiplier</span></div><canvas id="ch-fes2" style="max-height:210px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Pre-Festival Inventory Readiness</div><div class="card-d">Stock readiness score vs demand forecast 30-days before top 5 festivals</div></div><span class="ctag cml">Readiness</span></div><canvas id="ch-fes3" style="max-height:210px"></canvas></div>
 </div><div class="g3">
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Category Surge by Festival</div><div class="card-d">Which categories spike at which festival</div></div><span class="ctag ccre">Category Surge</span></div><canvas id="ch-fes4" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">YoY Festival Revenue Comparison</div><div class="card-d">Last 3 years same festival comparison</div></div><span class="ctag ccre">YoY Festival</span></div><canvas id="ch-fes5" style="max-height:200px"></canvas></div>
-<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Staff Surge Requirement</div><div class="card-d">Additional staff hours needed per festival window</div></div><span class="ctag ccre">Staffing</span></div><canvas id="ch-fes6" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Category Surge by Festival</div><div class="card-d">Which categories spike at which festival — Chains at Dhanteras · Earrings at Navratri</div></div><span class="ctag cml">Category Surge</span></div><canvas id="ch-fes4" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">YoY Festival Revenue Comparison</div><div class="card-d">Last 3 years: same festival · revenue · growth — trend direction per festival</div></div><span class="ctag cml">YoY Festival</span></div><canvas id="ch-fes5" style="max-height:200px"></canvas></div>
+<div class="card" style="margin-bottom:0"><div class="card-hd"><div><div class="card-t">Staff Surge Requirement — Festival Weeks</div><div class="card-d">Additional staff hours needed per store per festival window vs current plan</div></div><span class="ctag cml">Staffing</span></div><canvas id="ch-fes6" style="max-height:200px"></canvas></div>
 </div>
-<div class="insight"><span class="ii">&#x1F4A1;</span><span class="it"><strong>Dhanteras accounts for 18% of annual revenue in just 3 days</strong>, yet 28 stores were understocked last year. A festival pre-order system capturing intent 45 days early generates &#x20B9;21Cr in guaranteed revenue.</span></div>
+<div class="insight"><span class="ii">💡</span><span class="it"><strong>Dhanteras accounts for 18% of annual revenue in just 3 days</strong>, yet 28 stores were understocked last year. A festival pre-order system capturing intent 45 days early generates ₹21Cr in guaranteed revenue — zero walk-outs during peak.</span></div>
 </div>
 
 <!-- CITY EXPLORER -->
@@ -766,7 +716,7 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;gap:12px;flex-wrap:wrap">
 <div>
 <div style="font-size:18px;font-weight:700;color:var(--t0)">City Expansion Intelligence</div>
-<div style="font-size:12px;color:var(--t2);margin-top:2px">88 cities &middot; 15+ variables &middot; ML-ranked expansion priority</div>
+<div style="font-size:13px;color:var(--t2);margin-top:2px">88 cities · 15+ variables · ML-ranked expansion priority</div>
 </div>
 <div style="display:flex;gap:10px;flex-wrap:wrap">
 <button class="btn-export" onclick="exportCSV()">⬇ Export CSV</button>
@@ -774,178 +724,174 @@ tr:hover td{background:rgba(212,168,67,.04)}
 <select id="city-zone" onchange="filterCities()" style="background:var(--bgr);border:1px solid var(--gbrd);border-radius:8px;padding:8px 14px;color:var(--t0);font-size:13px;outline:none">
 <option value="">All Zones</option><option>North</option><option>South</option><option>East</option><option>West</option>
 </select>
-<select id="city-tier" onchange="filterCities()" style="background:var(--bgr);border:1px solid var(--gbrd);border-radius:8px;padding:8px 14px;color:var(--t0);font-size:12px;outline:none;font-family:inherit">
+<select id="city-tier" onchange="filterCities()" style="background:var(--bgr);border:1px solid var(--gbrd);border-radius:8px;padding:8px 14px;color:var(--t0);font-size:13px;outline:none">
 <option value="">All Tiers</option><option>Metro</option><option>Tier-1</option><option>Tier-2</option><option>Tier-3</option>
 </select>
 </div>
 </div>
-<div style="overflow-x:auto;border-radius:var(--r);border:1px solid var(--gbrd)">
+<div style="overflow-x:auto;border-radius:12px;border:1px solid var(--gbrd)">
 <table style="width:100%;border-collapse:collapse;font-size:12px" id="city-table">
-<thead><tr style="background:rgba(212,168,67,.08);color:var(--t1)">
+<thead><tr style="background:rgba(212,168,67,.12);color:var(--t1)">
 <th style="padding:10px 12px;text-align:left;white-space:nowrap">City</th>
 <th style="padding:10px 12px;text-align:left">Zone</th>
 <th style="padding:10px 12px;text-align:left">Tier</th>
 <th style="padding:10px 12px;text-align:right">Pop (L)</th>
-<th style="padding:10px 12px;text-align:right">Opportunity</th>
-<th style="padding:10px 12px;text-align:right">Demand</th>
+<th style="padding:10px 12px;text-align:right">Opportunity Score</th>
+<th style="padding:10px 12px;text-align:right">Demand Index</th>
 <th style="padding:10px 12px;text-align:right">Competition</th>
 <th style="padding:10px 12px;text-align:right">Bridal %</th>
-<th style="padding:10px 12px;text-align:right">Proj Rev</th>
-<th style="padding:10px 12px;text-align:right">Status</th>
+<th style="padding:10px 12px;text-align:right">Proj Rev (₹Cr)</th>
+<th style="padding:10px 12px;text-align:right">KISNA Present</th>
 </tr></thead>
 <tbody id="city-tbody"></tbody>
 </table>
 </div>
 <div style="margin-top:12px;display:flex;justify-content:space-between;align-items:center">
-<div style="font-size:11px;color:var(--t2)" id="city-count">Showing 88 cities</div>
-<div style="display:flex;gap:6px" id="city-pager"></div>
+<div style="font-size:12px;color:var(--t2)" id="city-count">Showing 88 cities</div>
+<div style="display:flex;gap:8px" id="city-pager"></div>
 </div>
 </div>
 
-</div><!-- content -->
-
-<!-- FOOTER -->
-<div class="footer">
-  <span><span class="fdot"></span> All systems operational</span>
-  <span>15 modules</span>
-  <span>88 cities</span>
-  <span>v2.0</span>
-  <span><kbd class="kbd">/</kbd> Search &nbsp; <kbd class="kbd">Esc</kbd> Home</span>
-</div>
-
-</div><!-- main -->
-</div><!-- app -->
+</div><!-- end main-content -->
+</div><!-- end layout -->
 
 <script>
 // ============================================================
-// KISNA RETAIL INTELLIGENCE PLATFORM v2.0
+// KISNA EXPANSION INTELLIGENCE — FULL JS ENGINE
 // ============================================================
 
 // ---- CITY DATA ----
-const CITIES=[
-{city:"Mumbai",zone:"West",tier:"Metro",pop:2050,opp:96,demand:94,comp:"High",bridal:42,rev:18.4,present:true},
-{city:"Delhi",zone:"North",tier:"Metro",pop:1890,opp:92,demand:91,comp:"High",bridal:45,rev:16.8,present:true},
-{city:"Bengaluru",zone:"South",tier:"Metro",pop:1310,opp:89,demand:88,comp:"High",bridal:38,rev:14.2,present:true},
-{city:"Surat",zone:"West",tier:"Tier-1",pop:720,opp:88,demand:92,comp:"Medium",bridal:48,rev:12.8,present:true},
-{city:"Ahmedabad",zone:"West",tier:"Tier-1",pop:810,opp:85,demand:87,comp:"Medium",bridal:44,rev:11.4,present:true},
-{city:"Pune",zone:"West",tier:"Tier-1",pop:680,opp:84,demand:83,comp:"Medium",bridal:40,rev:10.2,present:true},
-{city:"Hyderabad",zone:"South",tier:"Metro",pop:1010,opp:82,demand:85,comp:"High",bridal:39,rev:9.8,present:true},
-{city:"Jaipur",zone:"North",tier:"Tier-1",pop:380,opp:81,demand:86,comp:"Medium",bridal:52,rev:9.4,present:true},
-{city:"Chennai",zone:"South",tier:"Metro",pop:920,opp:79,demand:82,comp:"High",bridal:41,rev:8.8,present:true},
-{city:"Kolkata",zone:"East",tier:"Metro",pop:1490,opp:78,demand:80,comp:"High",bridal:43,rev:8.4,present:true},
-{city:"Lucknow",zone:"North",tier:"Tier-1",pop:360,opp:77,demand:81,comp:"Low",bridal:50,rev:7.8,present:false},
-{city:"Indore",zone:"West",tier:"Tier-1",pop:280,opp:76,demand:79,comp:"Low",bridal:46,rev:7.2,present:true},
-{city:"Coimbatore",zone:"South",tier:"Tier-1",pop:220,opp:75,demand:78,comp:"Low",bridal:44,rev:6.8,present:false},
-{city:"Bhopal",zone:"North",tier:"Tier-2",pop:240,opp:74,demand:77,comp:"Low",bridal:47,rev:6.4,present:false},
-{city:"Chandigarh",zone:"North",tier:"Tier-1",pop:120,opp:73,demand:76,comp:"Medium",bridal:48,rev:6.2,present:true},
-{city:"Vadodara",zone:"West",tier:"Tier-1",pop:250,opp:72,demand:75,comp:"Low",bridal:45,rev:5.9,present:true},
-{city:"Nagpur",zone:"West",tier:"Tier-1",pop:280,opp:71,demand:74,comp:"Low",bridal:43,rev:5.6,present:false},
-{city:"Visakhapatnam",zone:"South",tier:"Tier-1",pop:240,opp:70,demand:73,comp:"Low",bridal:40,rev:5.4,present:false},
-{city:"Patna",zone:"East",tier:"Tier-1",pop:230,opp:69,demand:76,comp:"Low",bridal:52,rev:5.2,present:false},
-{city:"Rajkot",zone:"West",tier:"Tier-1",pop:180,opp:68,demand:72,comp:"Low",bridal:49,rev:5.0,present:false},
-{city:"Ludhiana",zone:"North",tier:"Tier-1",pop:180,opp:67,demand:71,comp:"Medium",bridal:48,rev:4.8,present:false},
-{city:"Agra",zone:"North",tier:"Tier-2",pop:190,opp:66,demand:70,comp:"Low",bridal:51,rev:4.6,present:false},
-{city:"Amritsar",zone:"North",tier:"Tier-1",pop:150,opp:65,demand:69,comp:"Low",bridal:50,rev:4.4,present:false},
-{city:"Jodhpur",zone:"North",tier:"Tier-2",pop:140,opp:64,demand:68,comp:"Low",bridal:53,rev:4.2,present:false},
-{city:"Kochi",zone:"South",tier:"Tier-1",pop:230,opp:63,demand:67,comp:"Medium",bridal:42,rev:4.0,present:false},
-{city:"Bhubaneswar",zone:"East",tier:"Tier-1",pop:100,opp:62,demand:66,comp:"Low",bridal:44,rev:3.8,present:false},
-{city:"Guwahati",zone:"East",tier:"Tier-1",pop:130,opp:61,demand:65,comp:"Low",bridal:43,rev:3.6,present:false},
-{city:"Mysuru",zone:"South",tier:"Tier-2",pop:120,opp:60,demand:64,comp:"Low",bridal:41,rev:3.4,present:false},
-{city:"Thiruvananthapuram",zone:"South",tier:"Tier-1",pop:110,opp:59,demand:63,comp:"Low",bridal:38,rev:3.2,present:false},
-{city:"Nashik",zone:"West",tier:"Tier-2",pop:160,opp:58,demand:62,comp:"Low",bridal:45,rev:3.0,present:false},
-{city:"Meerut",zone:"North",tier:"Tier-2",pop:170,opp:57,demand:66,comp:"Low",bridal:49,rev:2.9,present:false},
-{city:"Raipur",zone:"East",tier:"Tier-2",pop:130,opp:56,demand:61,comp:"Low",bridal:46,rev:2.8,present:false},
-{city:"Jabalpur",zone:"North",tier:"Tier-2",pop:150,opp:55,demand:60,comp:"Low",bridal:47,rev:2.7,present:false},
-{city:"Varanasi",zone:"North",tier:"Tier-2",pop:170,opp:54,demand:64,comp:"Low",bridal:53,rev:2.6,present:false},
-{city:"Aurangabad",zone:"West",tier:"Tier-2",pop:120,opp:53,demand:59,comp:"Low",bridal:44,rev:2.5,present:false},
-{city:"Ranchi",zone:"East",tier:"Tier-2",pop:140,opp:52,demand:60,comp:"Low",bridal:45,rev:2.4,present:false},
-{city:"Bareilly",zone:"North",tier:"Tier-2",pop:140,opp:51,demand:58,comp:"Low",bridal:48,rev:2.3,present:false},
-{city:"Gwalior",zone:"North",tier:"Tier-2",pop:120,opp:50,demand:57,comp:"Low",bridal:46,rev:2.2,present:false},
-{city:"Aligarh",zone:"North",tier:"Tier-2",pop:110,opp:49,demand:56,comp:"Low",bridal:47,rev:2.1,present:false},
-{city:"Moradabad",zone:"North",tier:"Tier-2",pop:120,opp:48,demand:55,comp:"Low",bridal:48,rev:2.0,present:false},
-{city:"Tiruchirappalli",zone:"South",tier:"Tier-2",pop:100,opp:47,demand:54,comp:"Low",bridal:40,rev:1.9,present:false},
-{city:"Hubli-Dharwad",zone:"South",tier:"Tier-2",pop:100,opp:46,demand:53,comp:"Low",bridal:41,rev:1.8,present:false},
-{city:"Salem",zone:"South",tier:"Tier-2",pop:95,opp:45,demand:52,comp:"Low",bridal:39,rev:1.7,present:false},
-{city:"Jalandhar",zone:"North",tier:"Tier-2",pop:100,opp:44,demand:51,comp:"Low",bridal:47,rev:1.6,present:false},
-{city:"Bikaner",zone:"North",tier:"Tier-2",pop:80,opp:43,demand:50,comp:"Low",bridal:52,rev:1.5,present:false},
-{city:"Kota",zone:"North",tier:"Tier-2",pop:90,opp:42,demand:49,comp:"Low",bridal:50,rev:1.5,present:false},
-{city:"Warangal",zone:"South",tier:"Tier-2",pop:95,opp:41,demand:52,comp:"Low",bridal:42,rev:1.4,present:false},
-{city:"Guntur",zone:"South",tier:"Tier-2",pop:90,opp:40,demand:51,comp:"Low",bridal:41,rev:1.4,present:false},
-{city:"Bhilai",zone:"East",tier:"Tier-2",pop:85,opp:39,demand:48,comp:"Low",bridal:43,rev:1.3,present:false},
-{city:"Gorakhpur",zone:"North",tier:"Tier-2",pop:110,opp:38,demand:52,comp:"Low",bridal:49,rev:1.3,present:false},
-{city:"Mysore",zone:"South",tier:"Tier-2",pop:110,opp:37,demand:47,comp:"Low",bridal:40,rev:1.2,present:false},
-{city:"Udaipur",zone:"North",tier:"Tier-2",pop:75,opp:36,demand:46,comp:"Low",bridal:54,rev:1.2,present:false},
-{city:"Siliguri",zone:"East",tier:"Tier-2",pop:80,opp:35,demand:45,comp:"Low",bridal:42,rev:1.1,present:false},
-{city:"Jamshedpur",zone:"East",tier:"Tier-2",pop:110,opp:34,demand:46,comp:"Low",bridal:43,rev:1.1,present:false},
-{city:"Mangaluru",zone:"South",tier:"Tier-2",pop:80,opp:33,demand:44,comp:"Low",bridal:40,rev:1.0,present:false},
-{city:"Kolhapur",zone:"West",tier:"Tier-2",pop:65,opp:32,demand:43,comp:"Low",bridal:45,rev:1.0,present:false},
-{city:"Ajmer",zone:"North",tier:"Tier-2",pop:70,opp:31,demand:44,comp:"Low",bridal:51,rev:0.9,present:false},
-{city:"Dehradun",zone:"North",tier:"Tier-1",pop:90,opp:30,demand:43,comp:"Low",bridal:46,rev:0.9,present:false},
-{city:"Tirupati",zone:"South",tier:"Tier-2",pop:80,opp:29,demand:42,comp:"Low",bridal:39,rev:0.8,present:false},
-{city:"Kozhikode",zone:"South",tier:"Tier-2",pop:80,opp:28,demand:41,comp:"Low",bridal:38,rev:0.8,present:false},
-{city:"Jamnagar",zone:"West",tier:"Tier-2",pop:65,opp:27,demand:40,comp:"Low",bridal:47,rev:0.7,present:false},
-{city:"Bhavnagar",zone:"West",tier:"Tier-2",pop:65,opp:26,demand:39,comp:"Low",bridal:46,rev:0.7,present:false},
-{city:"Amravati",zone:"West",tier:"Tier-3",pop:75,opp:25,demand:38,comp:"Low",bridal:44,rev:0.7,present:false},
-{city:"Nellore",zone:"South",tier:"Tier-3",pop:70,opp:24,demand:37,comp:"Low",bridal:40,rev:0.6,present:false},
-{city:"Solapur",zone:"West",tier:"Tier-3",pop:80,opp:23,demand:36,comp:"Low",bridal:43,rev:0.6,present:false},
-{city:"Firozabad",zone:"North",tier:"Tier-3",pop:60,opp:22,demand:38,comp:"Low",bridal:49,rev:0.6,present:false},
-{city:"Mathura",zone:"North",tier:"Tier-3",pop:65,opp:21,demand:37,comp:"Low",bridal:51,rev:0.5,present:false},
-{city:"Sangli",zone:"West",tier:"Tier-3",pop:55,opp:20,demand:35,comp:"Low",bridal:44,rev:0.5,present:false},
-{city:"Durgapur",zone:"East",tier:"Tier-3",pop:75,opp:19,demand:34,comp:"Low",bridal:41,rev:0.5,present:false},
-{city:"Bokaro",zone:"East",tier:"Tier-3",pop:65,opp:18,demand:33,comp:"Low",bridal:42,rev:0.4,present:false},
-{city:"Bhagalpur",zone:"East",tier:"Tier-3",pop:80,opp:17,demand:36,comp:"Low",bridal:44,rev:0.4,present:false},
-{city:"Muzaffarpur",zone:"East",tier:"Tier-3",pop:75,opp:16,demand:35,comp:"Low",bridal:45,rev:0.4,present:false},
-{city:"Bijapur",zone:"South",tier:"Tier-3",pop:55,opp:15,demand:32,comp:"Low",bridal:42,rev:0.4,present:false},
-{city:"Rourkela",zone:"East",tier:"Tier-3",pop:60,opp:14,demand:31,comp:"Low",bridal:40,rev:0.3,present:false},
-{city:"Bhilwara",zone:"North",tier:"Tier-3",pop:45,opp:13,demand:34,comp:"Low",bridal:50,rev:0.3,present:false},
-{city:"Korba",zone:"East",tier:"Tier-3",pop:45,opp:12,demand:30,comp:"Low",bridal:41,rev:0.3,present:false},
-{city:"Bilaspur",zone:"East",tier:"Tier-3",pop:55,opp:11,demand:29,comp:"Low",bridal:42,rev:0.3,present:false},
-{city:"Cuttack",zone:"East",tier:"Tier-3",pop:75,opp:10,demand:32,comp:"Low",bridal:43,rev:0.3,present:false},
-{city:"Berhampur",zone:"East",tier:"Tier-3",pop:55,opp:9,demand:28,comp:"Low",bridal:41,rev:0.2,present:false},
-{city:"Rohtak",zone:"North",tier:"Tier-3",pop:55,opp:8,demand:30,comp:"Low",bridal:46,rev:0.2,present:false},
-{city:"Patiala",zone:"North",tier:"Tier-3",pop:50,opp:7,demand:29,comp:"Low",bridal:47,rev:0.2,present:false},
-{city:"Hisar",zone:"North",tier:"Tier-3",pop:45,opp:6,demand:28,comp:"Low",bridal:45,rev:0.2,present:false},
-{city:"Ambala",zone:"North",tier:"Tier-3",pop:40,opp:5,demand:27,comp:"Low",bridal:46,rev:0.2,present:false},
-{city:"Karnal",zone:"North",tier:"Tier-3",pop:38,opp:4,demand:26,comp:"Low",bridal:44,rev:0.1,present:false},
-{city:"Panipat",zone:"North",tier:"Tier-3",pop:38,opp:3,demand:25,comp:"Low",bridal:43,rev:0.1,present:false},
-{city:"Yamuna Nagar",zone:"North",tier:"Tier-3",pop:35,opp:3,demand:24,comp:"Low",bridal:42,rev:0.1,present:false},
-{city:"Faridabad",zone:"North",tier:"Tier-3",pop:36,opp:2,demand:23,comp:"Low",bridal:41,rev:0.1,present:false},
-{city:"Ghaziabad",zone:"North",tier:"Tier-3",pop:34,opp:1,demand:22,comp:"Low",bridal:40,rev:0.1,present:false}
+const CITIES = [
+  {city:"Mumbai",zone:"West",tier:"Metro",pop:2050,opp:96,demand:94,comp:"High",bridal:42,rev:18.4,present:true},
+  {city:"Delhi",zone:"North",tier:"Metro",pop:1890,opp:92,demand:91,comp:"High",bridal:45,rev:16.8,present:true},
+  {city:"Bengaluru",zone:"South",tier:"Metro",pop:1310,opp:89,demand:88,comp:"High",bridal:38,rev:14.2,present:true},
+  {city:"Surat",zone:"West",tier:"Tier-1",pop:720,opp:88,demand:92,comp:"Medium",bridal:48,rev:12.8,present:true},
+  {city:"Ahmedabad",zone:"West",tier:"Tier-1",pop:810,opp:85,demand:87,comp:"Medium",bridal:44,rev:11.4,present:true},
+  {city:"Pune",zone:"West",tier:"Tier-1",pop:680,opp:84,demand:83,comp:"Medium",bridal:40,rev:10.2,present:true},
+  {city:"Hyderabad",zone:"South",tier:"Metro",pop:1010,opp:82,demand:85,comp:"High",bridal:39,rev:9.8,present:true},
+  {city:"Jaipur",zone:"North",tier:"Tier-1",pop:380,opp:81,demand:86,comp:"Medium",bridal:52,rev:9.4,present:true},
+  {city:"Chennai",zone:"South",tier:"Metro",pop:920,opp:79,demand:82,comp:"High",bridal:41,rev:8.8,present:true},
+  {city:"Kolkata",zone:"East",tier:"Metro",pop:1490,opp:78,demand:80,comp:"High",bridal:43,rev:8.4,present:true},
+  {city:"Lucknow",zone:"North",tier:"Tier-1",pop:360,opp:77,demand:81,comp:"Low",bridal:50,rev:7.8,present:false},
+  {city:"Indore",zone:"West",tier:"Tier-1",pop:280,opp:76,demand:79,comp:"Low",bridal:46,rev:7.2,present:true},
+  {city:"Coimbatore",zone:"South",tier:"Tier-1",pop:220,opp:75,demand:78,comp:"Low",bridal:44,rev:6.8,present:false},
+  {city:"Bhopal",zone:"North",tier:"Tier-2",pop:240,opp:74,demand:77,comp:"Low",bridal:47,rev:6.4,present:false},
+  {city:"Chandigarh",zone:"North",tier:"Tier-1",pop:120,opp:73,demand:76,comp:"Medium",bridal:48,rev:6.2,present:true},
+  {city:"Vadodara",zone:"West",tier:"Tier-1",pop:250,opp:72,demand:75,comp:"Low",bridal:45,rev:5.9,present:true},
+  {city:"Nagpur",zone:"West",tier:"Tier-1",pop:280,opp:71,demand:74,comp:"Low",bridal:43,rev:5.6,present:false},
+  {city:"Visakhapatnam",zone:"South",tier:"Tier-1",pop:240,opp:70,demand:73,comp:"Low",bridal:40,rev:5.4,present:false},
+  {city:"Patna",zone:"East",tier:"Tier-1",pop:230,opp:69,demand:76,comp:"Low",bridal:52,rev:5.2,present:false},
+  {city:"Rajkot",zone:"West",tier:"Tier-1",pop:180,opp:68,demand:72,comp:"Low",bridal:49,rev:5.0,present:false},
+  {city:"Ludhiana",zone:"North",tier:"Tier-1",pop:180,opp:67,demand:71,comp:"Medium",bridal:48,rev:4.8,present:false},
+  {city:"Agra",zone:"North",tier:"Tier-2",pop:190,opp:66,demand:70,comp:"Low",bridal:51,rev:4.6,present:false},
+  {city:"Amritsar",zone:"North",tier:"Tier-1",pop:150,opp:65,demand:69,comp:"Low",bridal:50,rev:4.4,present:false},
+  {city:"Jodhpur",zone:"North",tier:"Tier-2",pop:140,opp:64,demand:68,comp:"Low",bridal:53,rev:4.2,present:false},
+  {city:"Kochi",zone:"South",tier:"Tier-1",pop:230,opp:63,demand:67,comp:"Medium",bridal:42,rev:4.0,present:false},
+  {city:"Bhubaneswar",zone:"East",tier:"Tier-1",pop:100,opp:62,demand:66,comp:"Low",bridal:44,rev:3.8,present:false},
+  {city:"Guwahati",zone:"East",tier:"Tier-1",pop:130,opp:61,demand:65,comp:"Low",bridal:43,rev:3.6,present:false},
+  {city:"Mysuru",zone:"South",tier:"Tier-2",pop:120,opp:60,demand:64,comp:"Low",bridal:41,rev:3.4,present:false},
+  {city:"Thiruvananthapuram",zone:"South",tier:"Tier-1",pop:110,opp:59,demand:63,comp:"Low",bridal:38,rev:3.2,present:false},
+  {city:"Nashik",zone:"West",tier:"Tier-2",pop:160,opp:58,demand:62,comp:"Low",bridal:45,rev:3.0,present:false},
+  {city:"Meerut",zone:"North",tier:"Tier-2",pop:170,opp:57,demand:66,comp:"Low",bridal:49,rev:2.9,present:false},
+  {city:"Raipur",zone:"East",tier:"Tier-2",pop:130,opp:56,demand:61,comp:"Low",bridal:46,rev:2.8,present:false},
+  {city:"Jabalpur",zone:"North",tier:"Tier-2",pop:150,opp:55,demand:60,comp:"Low",bridal:47,rev:2.7,present:false},
+  {city:"Varanasi",zone:"North",tier:"Tier-2",pop:170,opp:54,demand:64,comp:"Low",bridal:53,rev:2.6,present:false},
+  {city:"Aurangabad",zone:"West",tier:"Tier-2",pop:120,opp:53,demand:59,comp:"Low",bridal:44,rev:2.5,present:false},
+  {city:"Ranchi",zone:"East",tier:"Tier-2",pop:140,opp:52,demand:60,comp:"Low",bridal:45,rev:2.4,present:false},
+  {city:"Bareilly",zone:"North",tier:"Tier-2",pop:140,opp:51,demand:58,comp:"Low",bridal:48,rev:2.3,present:false},
+  {city:"Gwalior",zone:"North",tier:"Tier-2",pop:120,opp:50,demand:57,comp:"Low",bridal:46,rev:2.2,present:false},
+  {city:"Aligarh",zone:"North",tier:"Tier-2",pop:110,opp:49,demand:56,comp:"Low",bridal:47,rev:2.1,present:false},
+  {city:"Moradabad",zone:"North",tier:"Tier-2",pop:120,opp:48,demand:55,comp:"Low",bridal:48,rev:2.0,present:false},
+  {city:"Tiruchirappalli",zone:"South",tier:"Tier-2",pop:100,opp:47,demand:54,comp:"Low",bridal:40,rev:1.9,present:false},
+  {city:"Hubli-Dharwad",zone:"South",tier:"Tier-2",pop:100,opp:46,demand:53,comp:"Low",bridal:41,rev:1.8,present:false},
+  {city:"Salem",zone:"South",tier:"Tier-2",pop:95,opp:45,demand:52,comp:"Low",bridal:39,rev:1.7,present:false},
+  {city:"Jalandhar",zone:"North",tier:"Tier-2",pop:100,opp:44,demand:51,comp:"Low",bridal:47,rev:1.6,present:false},
+  {city:"Bikaner",zone:"North",tier:"Tier-2",pop:80,opp:43,demand:50,comp:"Low",bridal:52,rev:1.5,present:false},
+  {city:"Kota",zone:"North",tier:"Tier-2",pop:90,opp:42,demand:49,comp:"Low",bridal:50,rev:1.5,present:false},
+  {city:"Warangal",zone:"South",tier:"Tier-2",pop:95,opp:41,demand:52,comp:"Low",bridal:42,rev:1.4,present:false},
+  {city:"Guntur",zone:"South",tier:"Tier-2",pop:90,opp:40,demand:51,comp:"Low",bridal:41,rev:1.4,present:false},
+  {city:"Bhilai",zone:"East",tier:"Tier-2",pop:85,opp:39,demand:48,comp:"Low",bridal:43,rev:1.3,present:false},
+  {city:"Gorakhpur",zone:"North",tier:"Tier-2",pop:110,opp:38,demand:52,comp:"Low",bridal:49,rev:1.3,present:false},
+  {city:"Mysore",zone:"South",tier:"Tier-2",pop:110,opp:37,demand:47,comp:"Low",bridal:40,rev:1.2,present:false},
+  {city:"Udaipur",zone:"North",tier:"Tier-2",pop:75,opp:36,demand:46,comp:"Low",bridal:54,rev:1.2,present:false},
+  {city:"Siliguri",zone:"East",tier:"Tier-2",pop:80,opp:35,demand:45,comp:"Low",bridal:42,rev:1.1,present:false},
+  {city:"Jamshedpur",zone:"East",tier:"Tier-2",pop:110,opp:34,demand:46,comp:"Low",bridal:43,rev:1.1,present:false},
+  {city:"Mangaluru",zone:"South",tier:"Tier-2",pop:80,opp:33,demand:44,comp:"Low",bridal:40,rev:1.0,present:false},
+  {city:"Kolhapur",zone:"West",tier:"Tier-2",pop:65,opp:32,demand:43,comp:"Low",bridal:45,rev:1.0,present:false},
+  {city:"Ajmer",zone:"North",tier:"Tier-2",pop:70,opp:31,demand:44,comp:"Low",bridal:51,rev:0.9,present:false},
+  {city:"Dehradun",zone:"North",tier:"Tier-1",pop:90,opp:30,demand:43,comp:"Low",bridal:46,rev:0.9,present:false},
+  {city:"Tirupati",zone:"South",tier:"Tier-2",pop:80,opp:29,demand:42,comp:"Low",bridal:39,rev:0.8,present:false},
+  {city:"Kozhikode",zone:"South",tier:"Tier-2",pop:80,opp:28,demand:41,comp:"Low",bridal:38,rev:0.8,present:false},
+  {city:"Jamnagar",zone:"West",tier:"Tier-2",pop:65,opp:27,demand:40,comp:"Low",bridal:47,rev:0.7,present:false},
+  {city:"Bhavnagar",zone:"West",tier:"Tier-2",pop:65,opp:26,demand:39,comp:"Low",bridal:46,rev:0.7,present:false},
+  {city:"Amravati",zone:"West",tier:"Tier-3",pop:75,opp:25,demand:38,comp:"Low",bridal:44,rev:0.7,present:false},
+  {city:"Nellore",zone:"South",tier:"Tier-3",pop:70,opp:24,demand:37,comp:"Low",bridal:40,rev:0.6,present:false},
+  {city:"Solapur",zone:"West",tier:"Tier-3",pop:80,opp:23,demand:36,comp:"Low",bridal:43,rev:0.6,present:false},
+  {city:"Firozabad",zone:"North",tier:"Tier-3",pop:60,opp:22,demand:38,comp:"Low",bridal:49,rev:0.6,present:false},
+  {city:"Mathura",zone:"North",tier:"Tier-3",pop:65,opp:21,demand:37,comp:"Low",bridal:51,rev:0.5,present:false},
+  {city:"Sangli",zone:"West",tier:"Tier-3",pop:55,opp:20,demand:35,comp:"Low",bridal:44,rev:0.5,present:false},
+  {city:"Durgapur",zone:"East",tier:"Tier-3",pop:75,opp:19,demand:34,comp:"Low",bridal:41,rev:0.5,present:false},
+  {city:"Bokaro",zone:"East",tier:"Tier-3",pop:65,opp:18,demand:33,comp:"Low",bridal:42,rev:0.4,present:false},
+  {city:"Bhagalpur",zone:"East",tier:"Tier-3",pop:80,opp:17,demand:36,comp:"Low",bridal:44,rev:0.4,present:false},
+  {city:"Muzaffarpur",zone:"East",tier:"Tier-3",pop:75,opp:16,demand:35,comp:"Low",bridal:45,rev:0.4,present:false},
+  {city:"Bijapur",zone:"South",tier:"Tier-3",pop:55,opp:15,demand:32,comp:"Low",bridal:42,rev:0.4,present:false},
+  {city:"Rourkela",zone:"East",tier:"Tier-3",pop:60,opp:14,demand:31,comp:"Low",bridal:40,rev:0.3,present:false},
+  {city:"Bhilwara",zone:"North",tier:"Tier-3",pop:45,opp:13,demand:34,comp:"Low",bridal:50,rev:0.3,present:false},
+  {city:"Korba",zone:"East",tier:"Tier-3",pop:45,opp:12,demand:30,comp:"Low",bridal:41,rev:0.3,present:false},
+  {city:"Bilaspur",zone:"East",tier:"Tier-3",pop:55,opp:11,demand:29,comp:"Low",bridal:42,rev:0.3,present:false},
+  {city:"Cuttack",zone:"East",tier:"Tier-3",pop:75,opp:10,demand:32,comp:"Low",bridal:43,rev:0.3,present:false},
+  {city:"Berhampur",zone:"East",tier:"Tier-3",pop:55,opp:9,demand:28,comp:"Low",bridal:41,rev:0.2,present:false},
+  {city:"Rohtak",zone:"North",tier:"Tier-3",pop:55,opp:8,demand:30,comp:"Low",bridal:46,rev:0.2,present:false},
+  {city:"Patiala",zone:"North",tier:"Tier-3",pop:50,opp:7,demand:29,comp:"Low",bridal:47,rev:0.2,present:false},
+  {city:"Hisar",zone:"North",tier:"Tier-3",pop:45,opp:6,demand:28,comp:"Low",bridal:45,rev:0.2,present:false},
+  {city:"Ambala",zone:"North",tier:"Tier-3",pop:40,opp:5,demand:27,comp:"Low",bridal:46,rev:0.2,present:false},
+  {city:"Karnal",zone:"North",tier:"Tier-3",pop:38,opp:4,demand:26,comp:"Low",bridal:44,rev:0.1,present:false},
+  {city:"Panipat",zone:"North",tier:"Tier-3",pop:38,opp:3,demand:25,comp:"Low",bridal:43,rev:0.1,present:false},
+  {city:"Yamuna Nagar",zone:"North",tier:"Tier-3",pop:35,opp:3,demand:24,comp:"Low",bridal:42,rev:0.1,present:false},
+  {city:"Faridabad",zone:"North",tier:"Tier-3",pop:36,opp:2,demand:23,comp:"Low",bridal:41,rev:0.1,present:false},
+  {city:"Ghaziabad",zone:"North",tier:"Tier-3",pop:34,opp:1,demand:22,comp:"Low",bridal:40,rev:0.1,present:false}
 ];
 
-let cityPage=0;const perPage=15;
-let filteredCities=[...CITIES];
+let cityPage = 0; const perPage = 15;
+let filteredCities = [...CITIES];
 
 function filterCities(){
-  const s=document.getElementById('city-search').value.toLowerCase();
-  const z=document.getElementById('city-zone').value;
-  const t=document.getElementById('city-tier').value;
-  filteredCities=CITIES.filter(c=>(!s||c.city.toLowerCase().includes(s))&&(!z||c.zone===z)&&(!t||c.tier===t));
-  cityPage=0;renderCityTable();
+  const s = document.getElementById('city-search').value.toLowerCase();
+  const z = document.getElementById('city-zone').value;
+  const t = document.getElementById('city-tier').value;
+  filteredCities = CITIES.filter(c=>
+    (!s || c.city.toLowerCase().includes(s)) &&
+    (!z || c.zone===z) &&
+    (!t || c.tier===t)
+  );
+  cityPage=0; renderCityTable();
 }
 
 function renderCityTable(){
-  const tbody=document.getElementById('city-tbody');
-  const start=cityPage*perPage,end=Math.min(start+perPage,filteredCities.length);
-  const slice=filteredCities.slice(start,end);
-  tbody.innerHTML=slice.map(c=>{
-    const oc=c.opp>=80?'var(--green)':c.opp>=60?'var(--amber)':'var(--red)';
-    const cc=c.comp==='Low'?'var(--green)':c.comp==='Medium'?'var(--amber)':'var(--red)';
-    return `<tr><td style="padding:10px 12px;color:var(--t0);font-weight:600">${c.city}</td>
-<td style="padding:10px 12px;color:var(--t1)">${c.zone}</td>
-<td style="padding:10px 12px"><span style="font-size:10px;padding:2px 8px;border-radius:4px;background:var(--gdim);color:var(--g0)">${c.tier}</span></td>
-<td style="padding:10px 12px;text-align:right;color:var(--t1)">${c.pop}</td>
-<td style="padding:10px 12px;text-align:right"><span style="color:${oc};font-weight:700">${c.opp}</span></td>
-<td style="padding:10px 12px;text-align:right;color:var(--t1)">${c.demand}</td>
-<td style="padding:10px 12px;text-align:right"><span style="color:${cc}">${c.comp}</span></td>
-<td style="padding:10px 12px;text-align:right;color:var(--t1)">${c.bridal}%</td>
-<td style="padding:10px 12px;text-align:right;color:var(--g0);font-weight:600">\u20B9${c.rev}Cr</td>
-<td style="padding:10px 12px;text-align:right">${c.present?'<span style="color:var(--green);font-size:10px;font-weight:600">\u2713 Active</span>':'<span style="color:var(--amber);font-size:10px">\u2192 Opportunity</span>'}</td></tr>`;
+  const tbody = document.getElementById('city-tbody');
+  const start = cityPage*perPage, end = Math.min(start+perPage, filteredCities.length);
+  const slice = filteredCities.slice(start, end);
+  tbody.innerHTML = slice.map((c,i)=>{
+    const oppColor = c.opp>=80?'#2DB87A':c.opp>=60?'#F4A435':'#D94545';
+    const compColor = c.comp==='Low'?'#2DB87A':c.comp==='Medium'?'#F4A435':'#D94545';
+    return `<tr style="border-bottom:1px solid rgba(212,168,67,.08);transition:background .15s" onmouseover="this.style.background='rgba(212,168,67,.04)'" onmouseout="this.style.background='transparent'">
+      <td style="padding:10px 12px;color:var(--t0);font-weight:600">${c.city}</td>
+      <td style="padding:10px 12px;color:var(--t1)">${c.zone}</td>
+      <td style="padding:10px 12px"><span style="font-size:11px;padding:2px 8px;border-radius:4px;background:rgba(212,168,67,.12);color:var(--g0)">${c.tier}</span></td>
+      <td style="padding:10px 12px;text-align:right;color:var(--t1)">${c.pop}</td>
+      <td style="padding:10px 12px;text-align:right"><span style="color:${oppColor};font-weight:700">${c.opp}</span></td>
+      <td style="padding:10px 12px;text-align:right;color:var(--t1)">${c.demand}</td>
+      <td style="padding:10px 12px;text-align:right"><span style="color:${compColor}">${c.comp}</span></td>
+      <td style="padding:10px 12px;text-align:right;color:var(--t1)">${c.bridal}%</td>
+      <td style="padding:10px 12px;text-align:right;color:var(--g0);font-weight:600">₹${c.rev}Cr</td>
+      <td style="padding:10px 12px;text-align:right">${c.present?'<span style="color:#2DB87A;font-size:11px">✓ Active</span>':'<span style="color:#F4A435;font-size:11px">→ Opportunity</span>'}</td>
+    </tr>`;
   }).join('');
-  document.getElementById('city-count').textContent=`Showing ${start+1}\u2013${end} of ${filteredCities.length} cities`;
-  const pages=Math.ceil(filteredCities.length/perPage);
-  document.getElementById('city-pager').innerHTML=Array.from({length:pages},(_,i)=>
-    `<button onclick="cityPage=${i};renderCityTable()" style="padding:4px 10px;border-radius:6px;border:1px solid var(--gbrd);background:${i===cityPage?'var(--g0)':'transparent'};color:${i===cityPage?'#0B0806':'var(--t1)'};cursor:pointer;font-size:11px;font-family:inherit">${i+1}</button>`
+  document.getElementById('city-count').textContent = `Showing ${start+1}–${end} of ${filteredCities.length} cities`;
+  // pager
+  const pages = Math.ceil(filteredCities.length/perPage);
+  document.getElementById('city-pager').innerHTML = Array.from({length:pages},(_,i)=>
+    `<button onclick="cityPage=${i};renderCityTable()" style="padding:4px 10px;border-radius:6px;border:1px solid var(--gbrd);background:${i===cityPage?'var(--g0)':'transparent'};color:${i===cityPage?'#0B0806':'var(--t1)'};cursor:pointer;font-size:12px">${i+1}</button>`
   ).join('');
 }
 
@@ -964,39 +910,43 @@ Chart.defaults.animation.duration=600;
 Chart.defaults.animation.easing='easeOutQuart';
 const G='#D4A843',GA='rgba(212,168,67,.15)',RED='#F87171',GRN='#34D399',BLU='#60A5FA',PRP='#A78BFA',PNK='#F472B6',ORG='#FB923C',TEL='#2DD4BF',YLW='#FBBF24';
 
-const G='#D4A843',GA='rgba(212,168,67,.12)',RED='#F87171',GRN='#34D399',BLU='#60A5FA',PRP='#A78BFA',PNK='#F472B6',ORG='#FB923C',TEL='#2DD4BF',YLW='#FBBF24';
 const activeCharts={};
-
 function mk(id,config){
   if(activeCharts[id]){activeCharts[id].destroy();delete activeCharts[id];}
-  const canvas=document.getElementById(id);if(!canvas)return;
+  const canvas=document.getElementById(id);
+  if(!canvas)return;
   activeCharts[id]=new Chart(canvas,config);
 }
+
 function mkLine(id,labels,datasets,opts={}){
-  mk(id,{type:'line',data:{labels,datasets:datasets.map(d=>({tension:.4,pointRadius:2,pointHoverRadius:5,borderWidth:2,...d}))},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:datasets.length>1,labels:{boxWidth:8,padding:8,usePointStyle:true}},tooltip:{mode:'index',intersect:false,backgroundColor:'rgba(9,9,11,.9)',borderColor:'rgba(212,168,67,.2)',borderWidth:1,titleFont:{weight:600},padding:10,cornerRadius:8}},scales:{x:{grid:{color:'rgba(255,255,255,.03)'}},y:{grid:{color:'rgba(255,255,255,.03)'},...(opts.y||{})}}}});
+  mk(id,{type:'line',data:{labels,datasets:datasets.map(d=>({tension:.4,pointRadius:3,pointHoverRadius:5,...d}))},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:datasets.length>1,labels:{boxWidth:10,padding:10}},tooltip:{mode:'index',intersect:false}},scales:{x:{grid:{color:'rgba(212,168,67,.06)'}},y:{grid:{color:'rgba(212,168,67,.06)'},...(opts.y||{})}}}});
 }
 function mkBar(id,labels,datasets,opts={}){
-  mk(id,{type:'bar',data:{labels,datasets:datasets.map(d=>({borderRadius:4,borderSkipped:false,...d}))},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:datasets.length>1,labels:{boxWidth:8,padding:8,usePointStyle:true}},tooltip:{backgroundColor:'rgba(9,9,11,.9)',borderColor:'rgba(212,168,67,.2)',borderWidth:1,padding:10,cornerRadius:8}},scales:{x:{grid:{color:'rgba(255,255,255,.03)'},stacked:opts.stacked||false},y:{grid:{color:'rgba(255,255,255,.03)'},stacked:opts.stacked||false,...(opts.y||{})}}}});
+  mk(id,{type:'bar',data:{labels,datasets},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:datasets.length>1,labels:{boxWidth:10}}},scales:{x:{grid:{color:'rgba(212,168,67,.06)'},stacked:opts.stacked||false},y:{grid:{color:'rgba(212,168,67,.06)'},stacked:opts.stacked||false,...(opts.y||{})}}}});
 }
 function mkHBar(id,labels,datasets,opts={}){
-  mk(id,{type:'bar',data:{labels,datasets:datasets.map(d=>({borderRadius:4,borderSkipped:false,...d}))},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:datasets.length>1,labels:{boxWidth:8,padding:8}},tooltip:{backgroundColor:'rgba(9,9,11,.9)',borderColor:'rgba(212,168,67,.2)',borderWidth:1,padding:10,cornerRadius:8}},scales:{x:{grid:{color:'rgba(255,255,255,.03)'}},y:{grid:{display:false},...(opts.y||{})}}}});
+  mk(id,{type:'bar',data:{labels,datasets},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:datasets.length>1,labels:{boxWidth:10}}},scales:{x:{grid:{color:'rgba(212,168,67,.06)'}},y:{grid:{display:false},...(opts.y||{})}}}});
 }
-function mkDoughnut(id,labels,data,colors){
-  mk(id,{type:'doughnut',data:{labels,datasets:[{data,backgroundColor:colors,borderWidth:0,hoverOffset:8}]},options:{responsive:true,maintainAspectRatio:false,cutout:'65%',plugins:{legend:{position:'right',labels:{boxWidth:8,padding:8,usePointStyle:true}}}}});
+function mkDoughnut(id,labels,data,colors,opts={}){
+  mk(id,{type:'doughnut',data:{labels,datasets:[{data,backgroundColor:colors,borderWidth:0,hoverOffset:8}]},options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'right',labels:{boxWidth:10,padding:8}}}}});
 }
-function mkRadar(id,labels,datasets){
-  mk(id,{type:'radar',data:{labels,datasets},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{boxWidth:8,padding:8}}},scales:{r:{grid:{color:'rgba(212,168,67,.08)'},angleLines:{color:'rgba(212,168,67,.08)'},pointLabels:{font:{size:9}},ticks:{display:false},beginAtZero:true}}}});
+function mkRadar(id,labels,datasets,opts={}){
+  mk(id,{type:'radar',data:{labels,datasets},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{boxWidth:10}}},scales:{r:{grid:{color:'rgba(212,168,67,.1)'},angleLines:{color:'rgba(212,168,67,.1)'},pointLabels:{font:{size:10}},ticks:{display:false},beginAtZero:true}}}});
 }
 function mkScatter(id,datasets,opts={}){
-  mk(id,{type:'scatter',data:{datasets},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:datasets.length>1,labels:{boxWidth:8}},tooltip:{backgroundColor:'rgba(9,9,11,.9)',borderColor:'rgba(212,168,67,.2)',borderWidth:1,padding:10,cornerRadius:8}},scales:{x:{grid:{color:'rgba(255,255,255,.03)'},...(opts.x||{})},y:{grid:{color:'rgba(255,255,255,.03)'},...(opts.y||{})}}}});
+  mk(id,{type:'scatter',data:{datasets},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:datasets.length>1,labels:{boxWidth:10}}},scales:{x:{grid:{color:'rgba(212,168,67,.06)'},...(opts.x||{})},y:{grid:{color:'rgba(212,168,67,.06)'},...(opts.y||{})}}}});
+}
+function mkBubble(id,datasets,opts={}){
+  mk(id,{type:'bubble',data:{datasets},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:datasets.length>1,labels:{boxWidth:10}}},scales:{x:{grid:{color:'rgba(212,168,67,.06)'},...(opts.x||{})},y:{grid:{color:'rgba(212,168,67,.06)'},...(opts.y||{})}}}});
 }
 
+// ---- MONTHS / LABELS ----
 const MO=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const MO6=['Jul','Aug','Sep','Oct','Nov','Dec'];
 const Q=['Q1','Q2','Q3','Q4'];
 
 // ============================================================
-// MODULE RENDERERS (all 15 modules preserved)
+// MODULE 1: STONE-TO-STORE
 // ============================================================
 function updateStoneCity(city){
   // Re-render ch-s6 radar with city-specific mock data
@@ -1014,132 +964,555 @@ function updateStoneCity(city){
 }
 
 function renderStone(){
-  mkLine('ch-s1',MO,[{label:'Gold Rate (\u20B9/10g)',data:[58200,57800,59100,61200,60500,62300,64100,63800,65200,66400,65900,67200],borderColor:G,backgroundColor:GA,fill:true},{label:'Revenue Index',data:[82,78,88,94,90,96,91,87,93,98,95,100],borderColor:BLU,backgroundColor:'rgba(96,165,250,.08)'}]);
-  mkBar('ch-s2',['Rajasthan','Gujarat','Maharashtra','Tamil Nadu','Karnataka','West Bengal'],[{label:'Supply Volume (Kg)',data:[420,380,290,240,180,160],backgroundColor:[G,'#C8962F','#B38429','#9E7223','#89601D','#744E17']}]);
-  mkDoughnut('ch-s3',['22K Gold','18K Gold','14K Gold','Diamond','Solitaire'],[38,28,14,12,8],[G,'#C8962F','#9E7223','#BF40BF','rgba(212,168,67,.35)']);
-  mkLine('ch-s4',MO6,[{label:'Avg Lead Days',data:[18,22,19,24,21,17],borderColor:ORG,backgroundColor:'rgba(251,146,60,.08)',fill:true},{label:'Target',data:[14,14,14,14,14,14],borderColor:RED,borderDash:[5,5]}]);
-  mkHBar('ch-s5',['Jaipur Gems','Surat Diamonds','Mumbai Gold Co','Coimbatore Craft','Kolkata Silver','Delhi Stones'],[{label:'Score',data:[92,88,84,79,74,68],backgroundColor:[GRN,GRN,G,G,ORG,RED]}]);
-  mkBar('ch-s6',['Diamond','Ruby','Emerald','Sapphire','Pearl','Coral'],[{label:'Market Demand',data:[45,28,22,18,14,10],backgroundColor:'rgba(96,165,250,.6)'},{label:'Current Supply',data:[38,32,18,22,8,12],backgroundColor:'rgba(212,168,67,.6)'}]);
+  // ch-s1: Gold Rate vs Revenue correlation — line dual axis
+  mkLine('ch-s1',MO,[
+    {label:'Gold Rate (₹/10g)',data:[58200,57800,59100,61200,60500,62300,64100,63800,65200,66400,65900,67200],borderColor:G,backgroundColor:GA,fill:true},
+    {label:'Revenue Index',data:[82,78,88,94,90,96,91,87,93,98,95,100],borderColor:BLU,backgroundColor:'rgba(96,165,250,.1)'}
+  ]);
+  // ch-s2: Source State Supply — bar
+  mkBar('ch-s2',['Rajasthan','Gujarat','Maharashtra','Tamil Nadu','Karnataka','West Bengal'],[
+    {label:'Supply Volume (Kg)',data:[420,380,290,240,180,160],backgroundColor:[G,'#C8962F','#B38429','#9E7223','#89601D','#744E17']}
+  ]);
+  // ch-s3: Margin by Gold Type — doughnut
+  mkDoughnut('ch-s3',['22K Gold','18K Gold','14K Gold','Diamond','Solitaire'],
+    [38,28,14,12,8],[G,'#C8962F','#9E7223','#BF40BF','rgba(212,168,67,.35)']);
+  // ch-s4: Supply Lead Time Trend — line
+  mkLine('ch-s4',MO6,[
+    {label:'Avg Lead Days',data:[18,22,19,24,21,17],borderColor:ORG,backgroundColor:'rgba(251,146,60,.1)',fill:true},
+    {label:'Target',data:[14,14,14,14,14,14],borderColor:RED,borderDash:[5,5]}
+  ]);
+  // ch-s5: Vendor Performance Score — hbar
+  mkHBar('ch-s5',['Jaipur Gems','Surat Diamonds','Mumbai Gold Co','Coimbatore Craft','Kolkata Silver','Delhi Stones'],[
+    {label:'Score',data:[92,88,84,79,74,68],backgroundColor:[GRN,GRN,G,G,ORG,RED]}
+  ]);
+  // ch-s6: Stone Type Demand vs Supply — grouped bar
+  mkBar('ch-s6',['Diamond','Ruby','Emerald','Sapphire','Pearl','Coral'],[
+    {label:'Market Demand',data:[45,28,22,18,14,10],backgroundColor:'rgba(96,165,250,.7)'},
+    {label:'Current Supply',data:[38,32,18,22,8,12],backgroundColor:'rgba(212,168,67,.7)'}
+  ]);
 }
+
+// ============================================================
+// MODULE 2: DEMAND SIGNAL
+// ============================================================
 function renderDemand(){
-  mkHBar('ch-d1',['Surat','Jaipur','Mumbai','Delhi','Ahmedabad','Pune','Hyderabad','Chennai','Bengaluru','Kolkata'],[{label:'Demand Index',data:[92,88,87,85,83,81,79,78,76,74],backgroundColor:['#D4A843','#D4A843','#C8962F','#C8962F','#B38429','#B38429','#9E7223','#9E7223','#89601D','#89601D']}]);
-  mkLine('ch-d2',MO6,[{label:'Google Search Index',data:[62,68,74,82,78,88],borderColor:BLU,backgroundColor:'rgba(96,165,250,.08)',fill:true},{label:'In-Store Sales Index',data:[58,64,70,79,74,86],borderColor:G,backgroundColor:GA}]);
-  mkBar('ch-d3',Q,[{label:'Bridal',data:[38,42,36,48],backgroundColor:'rgba(212,168,67,.7)',stack:'a'},{label:'Daily Wear',data:[28,24,30,22],backgroundColor:'rgba(96,165,250,.6)',stack:'a'},{label:'Investment',data:[20,22,18,24],backgroundColor:'rgba(45,184,122,.6)',stack:'a'},{label:'Gifting',data:[14,12,16,6],backgroundColor:'rgba(251,146,60,.6)',stack:'a'}],{stacked:true});
-  mkScatter('ch-d4',CITIES.slice(0,30).map(c=>({label:c.city,data:[{x:c.demand,y:c.comp==='Low'?20:c.comp==='Medium'?50:80}],backgroundColor:c.present?G:BLU,pointRadius:5})),{x:{title:{display:true,text:'Demand Index'}},y:{title:{display:true,text:'Competition Score'}}});
-  mkLine('ch-d5',MO,[{label:'Demand Multiplier',data:[1.1,1.0,1.2,1.4,1.1,0.9,0.8,1.0,1.3,2.2,3.4,1.6],borderColor:G,backgroundColor:GA,fill:true}]);
-  mkBar('ch-d6',CITIES.filter(c=>!c.present).slice(0,10).map(c=>c.city),[{label:'Opportunity Score',data:CITIES.filter(c=>!c.present).slice(0,10).map(c=>c.opp),backgroundColor:G}]);
+  // ch-d1: Demand Heatmap simulation — top city demand scores bar
+  mkHBar('ch-d1',['Surat','Jaipur','Mumbai','Delhi','Ahmedabad','Pune','Hyderabad','Chennai','Bengaluru','Kolkata'],[
+    {label:'Demand Index',data:[92,88,87,85,83,81,79,78,76,74],
+     backgroundColor:['#D4A843','#D4A843','#C8962F','#C8962F','#B38429','#B38429','#9E7223','#9E7223','#89601D','#89601D']}
+  ]);
+  // ch-d2: Search Trend vs In-Store Sales — line
+  mkLine('ch-d2',MO6,[
+    {label:'Google Search Index',data:[62,68,74,82,78,88],borderColor:BLU,backgroundColor:'rgba(96,165,250,.1)',fill:true},
+    {label:'In-Store Sales Index',data:[58,64,70,79,74,86],borderColor:G,backgroundColor:GA}
+  ]);
+  // ch-d3: Category Demand Forecast — stacked bar
+  mkBar('ch-d3',Q,[
+    {label:'Bridal',data:[38,42,36,48],backgroundColor:'rgba(212,168,67,.8)',stack:'a'},
+    {label:'Daily Wear',data:[28,24,30,22],backgroundColor:'rgba(96,165,250,.7)',stack:'a'},
+    {label:'Investment',data:[20,22,18,24],backgroundColor:'rgba(45,184,122,.7)',stack:'a'},
+    {label:'Gifting',data:[14,12,16,6],backgroundColor:'rgba(251,146,60,.7)',stack:'a'}
+  ],{stacked:true});
+  // ch-d4: Demand vs Competition Score scatter
+  mkScatter('ch-d4',CITIES.slice(0,30).map(c=>({label:c.city,data:[{x:c.demand,y:c.comp==='Low'?20:c.comp==='Medium'?50:80}],
+    backgroundColor:c.present?G:BLU,pointRadius:5})),
+    {x:{title:{display:true,text:'Demand Index'}},y:{title:{display:true,text:'Competition Score'}}});
+  // ch-d5: Seasonal Demand Multiplier — line
+  mkLine('ch-d5',MO,[
+    {label:'Demand Multiplier',data:[1.1,1.0,1.2,1.4,1.1,0.9,0.8,1.0,1.3,2.2,3.4,1.6],borderColor:G,backgroundColor:GA,fill:true}
+  ]);
+  // ch-d6: New City Opportunity Score — top 10 bubble
+  mkBar('ch-d6',CITIES.filter(c=>!c.present).slice(0,10).map(c=>c.city),[
+    {label:'Opportunity Score',data:CITIES.filter(c=>!c.present).slice(0,10).map(c=>c.opp),
+     backgroundColor:G}
+  ]);
 }
+
+// ============================================================
+// MODULE 3: FRANCHISE FITNESS
+// ============================================================
 function renderFranchise(){
-  mkBar('ch-f1',['0-20','21-40','41-60','61-80','81-100'],[{label:'Stores',data:[4,10,24,32,12],backgroundColor:[RED,RED,ORG,G,GRN]}]);
-  mkRadar('ch-f2',['Revenue','Footfall','Conversion','Retention','Basket','Competition'],[{label:'Surat Central',data:[32,28,35,40,45,22],borderColor:RED,backgroundColor:'rgba(248,113,113,.12)'},{label:'Top Avg',data:[85,82,80,78,86,75],borderColor:GRN,backgroundColor:'rgba(52,211,153,.08)'}]);
-  mkLine('ch-f3',['Now','+15d','+30d','+45d','+60d','+75d','+90d'],[{label:'Surat Central',data:[8.2,7.9,7.4,6.8,6.2,5.5,4.8],borderColor:RED,backgroundColor:'rgba(248,113,113,.08)',fill:true},{label:'Delhi South',data:[6.4,6.2,5.9,5.6,5.2,4.8,4.4],borderColor:ORG,backgroundColor:'rgba(251,191,36,.06)',fill:true}]);
-  mkLine('ch-f4',MO6,[{label:'Bottom 5 Avg',data:[3.2,3.0,2.8,2.6,2.4,2.2],borderColor:RED,backgroundColor:'rgba(248,113,113,.08)',fill:true},{label:'Network Avg',data:[5.8,5.9,6.1,6.0,6.2,6.4],borderColor:G}]);
-  mkBar('ch-f5',['North','South','East','West'],[{label:'Avg Health Score',data:[68,74,62,79],backgroundColor:[BLU,GRN,RED,G]}]);
-  mkBar('ch-f6',['Surat Central','Delhi South','Kolkata North','Patna','Bhopal'],[{label:'Current Score',data:[32,38,44,47,49],backgroundColor:'rgba(248,113,113,.5)'},{label:'Post-Intervention',data:[62,65,68,70,72],backgroundColor:'rgba(52,211,153,.6)'}]);
+  // ch-f1: Health Score Distribution histogram
+  const bins=['0-20','21-40','41-60','61-80','81-100'];
+  mkBar('ch-f1',bins,[
+    {label:'Stores',data:[4,10,24,32,12],backgroundColor:[RED,RED,ORG,G,GRN]}
+  ]);
+  // ch-f2: 6-Axis Radar — Surat Central vs Top Avg
+  mkRadar('ch-f2',['Revenue','Footfall','Conversion','Retention','Basket','Competition'],[
+    {label:'Surat Central',data:[32,28,35,40,45,22],borderColor:RED,backgroundColor:'rgba(217,69,69,.15)'},
+    {label:'Top Avg',data:[85,82,80,78,86,75],borderColor:GRN,backgroundColor:'rgba(45,184,122,.12)'}
+  ]);
+  // ch-f3: 90-Day Revenue Prediction — Critical Stores
+  mkLine('ch-f3',['Now','+15d','+30d','+45d','+60d','+75d','+90d'],[
+    {label:'Surat Central',data:[8.2,7.9,7.4,6.8,6.2,5.5,4.8],borderColor:RED,backgroundColor:'rgba(217,69,69,.1)',fill:true},
+    {label:'Delhi South',data:[6.4,6.2,5.9,5.6,5.2,4.8,4.4],borderColor:ORG,backgroundColor:'rgba(244,164,53,.08)',fill:true}
+  ]);
+  // ch-f4: Monthly Revenue Trend — Bottom 5
+  mkLine('ch-f4',MO6,[
+    {label:'Bottom 5 Avg',data:[3.2,3.0,2.8,2.6,2.4,2.2],borderColor:RED,backgroundColor:'rgba(217,69,69,.1)',fill:true},
+    {label:'Network Avg',data:[5.8,5.9,6.1,6.0,6.2,6.4],borderColor:G}
+  ]);
+  // ch-f5: Health Score by Zone — bar
+  mkBar('ch-f5',['North','South','East','West'],[
+    {label:'Avg Health Score',data:[68,74,62,79],backgroundColor:[BLU,GRN,RED,G]}
+  ]);
+  // ch-f6: Intervention Impact Estimate
+  mkBar('ch-f6',['Surat Central','Delhi South','Kolkata North','Patna','Bhopal'],[
+    {label:'Current Score',data:[32,38,44,47,49],backgroundColor:'rgba(217,69,69,.6)'},
+    {label:'Post-Intervention',data:[62,65,68,70,72],backgroundColor:'rgba(45,184,122,.7)'}
+  ]);
 }
+
+// ============================================================
+// MODULE 4: FOOTFALL FORECAST
+// ============================================================
 function renderFootfall(){
   const days30=Array.from({length:30},(_,i)=>`D${i+1}`);
+  // ch-ff1: 30-Day Footfall Forecast — Mumbai West
   const actual=Array.from({length:20},(_,i)=>280+Math.round(Math.sin(i*.8)*40+Math.random()*20));
   const forecast=Array.from({length:30},(_,i)=>290+Math.round(Math.sin(i*.8)*42));
-  mkLine('ch-ff1',days30,[{label:'Actual',data:[...actual,...Array(10).fill(null)],borderColor:GRN,pointRadius:2},{label:'Forecast',data:forecast,borderColor:G,borderDash:[4,4],backgroundColor:GA,fill:true,pointRadius:0}]);
-  mkLine('ch-ff2',['9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],[{label:'Weekday',data:[18,32,48,55,42,50,68,84,92,76,58,30],borderColor:BLU,backgroundColor:'rgba(96,165,250,.08)',fill:true},{label:'Weekend',data:[28,52,78,92,80,88,112,128,140,118,92,55],borderColor:G,backgroundColor:GA,fill:true}]);
-  mkBar('ch-ff3',['Dhanteras','Akha Teej','Karwa Chauth','Navratri','Dussehra'],[{label:'Footfall Multiplier',data:[3.4,2.8,2.2,1.8,1.6],backgroundColor:[G,'#C8962F','#B38429','#9E7223','#89601D']}]);
-  mkLine('ch-ff4',MO6,[{label:'Mumbai Andheri',data:[8400,8600,8900,9200,10800,11400],borderColor:G,backgroundColor:GA,fill:false},{label:'Surat Main',data:[7200,7400,7100,7600,9200,9800],borderColor:BLU},{label:'Delhi Karol Bagh',data:[6800,7000,6900,7200,8600,9000],borderColor:GRN}]);
-  mkScatter('ch-ff5',[{label:'Stores',data:[{x:3200,y:4.8},{x:4500,y:5.2},{x:6200,y:4.1},{x:8400,y:5.8},{x:5100,y:6.2},{x:2800,y:7.1},{x:9200,y:3.8},{x:7400,y:4.4},{x:4200,y:5.9},{x:6800,y:3.2}],backgroundColor:G,pointRadius:6}],{x:{title:{display:true,text:'Monthly Footfall'}},y:{title:{display:true,text:'Conversion %'}}});
-  mkHBar('ch-ff6',['Mumbai Andheri','Surat Main','Delhi Karol Bagh','Pune FC Rd','Ahmedabad SG','Chennai T Nagar','Hyderabad Banjara','Jaipur MI Rd'],[{label:'This Month',data:[11400,9800,9000,8200,7800,7200,6900,6400],backgroundColor:G},{label:'Last Month',data:[10800,9200,8600,7900,7400,6800,6700,6100],backgroundColor:'rgba(212,168,67,.25)'}]);
+  mkLine('ch-ff1',days30,[
+    {label:'Actual',data:[...actual,...Array(10).fill(null)],borderColor:GRN,pointRadius:2},
+    {label:'Forecast',data:forecast,borderColor:G,borderDash:[4,4],backgroundColor:GA,fill:true,pointRadius:0}
+  ]);
+  // ch-ff2: Hourly Traffic
+  const hrs=['9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
+  mkLine('ch-ff2',hrs,[
+    {label:'Weekday',data:[18,32,48,55,42,50,68,84,92,76,58,30],borderColor:BLU,backgroundColor:'rgba(96,165,250,.1)',fill:true},
+    {label:'Weekend',data:[28,52,78,92,80,88,112,128,140,118,92,55],borderColor:G,backgroundColor:GA,fill:true}
+  ]);
+  // ch-ff3: Festival Surge
+  mkBar('ch-ff3',['Dhanteras','Akha Teej','Karwa Chauth','Navratri','Dussehra'],[
+    {label:'Footfall Multiplier',data:[3.4,2.8,2.2,1.8,1.6],backgroundColor:[G,'#C8962F','#B38429','#9E7223','#89601D']}
+  ]);
+  // ch-ff4: Monthly Footfall — Top 5
+  mkLine('ch-ff4',MO6,[
+    {label:'Mumbai Andheri',data:[8400,8600,8900,9200,10800,11400],borderColor:G,backgroundColor:GA,fill:false},
+    {label:'Surat Main',data:[7200,7400,7100,7600,9200,9800],borderColor:BLU},
+    {label:'Delhi Karol Bagh',data:[6800,7000,6900,7200,8600,9000],borderColor:GRN}
+  ]);
+  // ch-ff5: Footfall vs Conversion scatter
+  mkScatter('ch-ff5',[{
+    label:'Stores',
+    data:[{x:3200,y:4.8},{x:4500,y:5.2},{x:6200,y:4.1},{x:8400,y:5.8},{x:5100,y:6.2},{x:2800,y:7.1},{x:9200,y:3.8},{x:7400,y:4.4},{x:4200,y:5.9},{x:6800,y:3.2}],
+    backgroundColor:G,pointRadius:6
+  }],{x:{title:{display:true,text:'Monthly Footfall'}},y:{title:{display:true,text:'Conversion %'}}});
+  // ch-ff6: Store Footfall Ranking
+  mkHBar('ch-ff6',['Mumbai Andheri','Surat Main','Delhi Karol Bagh','Pune FC Rd','Ahmedabad SG','Chennai T Nagar','Hyderabad Banjara','Jaipur MI Rd'],[
+    {label:'This Month',data:[11400,9800,9000,8200,7800,7200,6900,6400],backgroundColor:G},
+    {label:'Last Month',data:[10800,9200,8600,7900,7400,6800,6700,6100],backgroundColor:'rgba(212,168,67,.3)'}
+  ]);
 }
+
+// ============================================================
+// MODULE 5: REPEAT BUYER
+// ============================================================
 function renderRepeat(){
+  // ch-r1: Repeat Decay Curve
   const daysx=Array.from({length:12},(_,i)=>i*15+' days');
-  mkLine('ch-r1',daysx,[{label:'Champions',data:[100,88,76,65,55,46,38,31,25,20,16,13],borderColor:G,backgroundColor:GA,fill:true},{label:'Loyal',data:[100,75,58,44,33,25,18,14,10,7,5,3],borderColor:BLU},{label:'At-Risk',data:[100,60,40,26,17,11,7,4,3,2,1,0],borderColor:RED}]);
-  mkDoughnut('ch-r2',['Champions','Loyal','Potential Loyal','At-Risk','Lost'],[18,24,28,20,10],[GRN,G,'#C8962F',ORG,RED]);
-  mkHBar('ch-r3',['Surat','Jaipur','Ahmedabad','Vadodara','Indore','Mumbai','Pune','Delhi'],[{label:'Repeat Rate %',data:[34,31,28,26,24,22,20,18],backgroundColor:[GRN,GRN,GRN,G,G,G,ORG,ORG]},{label:'National Avg',data:[22,22,22,22,22,22,22,22],backgroundColor:'transparent',borderColor:RED,type:'line',pointRadius:0}]);
-  mkBar('ch-r4',MO6,[{label:'Repeat Revenue',data:[14.2,15.1,14.8,16.2,18.4,19.8],backgroundColor:'rgba(212,168,67,.7)',stack:'a'},{label:'New Customer Rev',data:[8.4,8.2,8.6,8.8,9.2,9.6],backgroundColor:'rgba(96,165,250,.4)',stack:'a'}],{stacked:true});
-  mkBar('ch-r5',['Ring+Chain','Bangle+Earring','Necklace+Tikka','Ring+Earring','Chain+Pendant','Bangle+Ring'],[{label:'Avg Basket Lift \u20B9',data:[4200,3800,6200,3100,2800,2400],backgroundColor:[G,'#C8962F','#B38429','#9E7223','#89601D','#744E17']}]);
-  mkLine('ch-r6',['M1','M3','M6','M9','M12','M18','M24'],[{label:'Jan Cohort',data:[12000,18000,28000,38000,48000,64000,76000],borderColor:G,backgroundColor:GA,fill:true},{label:'Jul Cohort',data:[10000,16000,24000,33000,42000,56000,66000],borderColor:BLU},{label:'Oct Cohort',data:[14000,22000,34000,46000,58000,74000,88000],borderColor:GRN}]);
+  mkLine('ch-r1',daysx,[
+    {label:'Champions',data:[100,88,76,65,55,46,38,31,25,20,16,13],borderColor:G,backgroundColor:GA,fill:true},
+    {label:'Loyal',data:[100,75,58,44,33,25,18,14,10,7,5,3],borderColor:BLU},
+    {label:'At-Risk',data:[100,60,40,26,17,11,7,4,3,2,1,0],borderColor:RED}
+  ]);
+  // ch-r2: RFM Segments
+  mkDoughnut('ch-r2',['Champions','Loyal','Potential Loyal','At-Risk','Lost'],
+    [18,24,28,20,10],[GRN,G,'#C8962F',ORG,RED]);
+  // ch-r3: City Repeat Rate
+  mkHBar('ch-r3',['Surat','Jaipur','Ahmedabad','Vadodara','Indore','Mumbai','Pune','Delhi'],[
+    {label:'Repeat Rate %',data:[34,31,28,26,24,22,20,18],backgroundColor:[GRN,GRN,GRN,G,G,G,ORG,ORG]},
+    {label:'National Avg',data:[22,22,22,22,22,22,22,22],backgroundColor:'transparent',borderColor:RED,type:'line',pointRadius:0}
+  ]);
+  // ch-r4: Revenue split stacked — Repeat vs New
+  mkBar('ch-r4',MO6,[
+    {label:'Repeat Revenue',data:[14.2,15.1,14.8,16.2,18.4,19.8],backgroundColor:'rgba(212,168,67,.8)',stack:'a'},
+    {label:'New Customer Rev',data:[8.4,8.2,8.6,8.8,9.2,9.6],backgroundColor:'rgba(96,165,250,.5)',stack:'a'}
+  ],{stacked:true});
+  // ch-r5: Upsell Value
+  mkBar('ch-r5',['Ring+Chain','Bangle+Earring','Necklace+Tikka','Ring+Earring','Chain+Pendant','Bangle+Ring'],[
+    {label:'Avg Basket Lift ₹',data:[4200,3800,6200,3100,2800,2400],backgroundColor:[G,'#C8962F','#B38429','#9E7223','#89601D','#744E17']}
+  ]);
+  // ch-r6: LTV Cohort
+  mkLine('ch-r6',['M1','M3','M6','M9','M12','M18','M24'],[
+    {label:'Jan Cohort',data:[12000,18000,28000,38000,48000,64000,76000],borderColor:G,backgroundColor:GA,fill:true},
+    {label:'Jul Cohort',data:[10000,16000,24000,33000,42000,56000,66000],borderColor:BLU},
+    {label:'Oct Cohort',data:[14000,22000,34000,46000,58000,74000,88000],borderColor:GRN}
+  ]);
 }
+
+// ============================================================
+// MODULE 6: STORE PROFILER
+// ============================================================
 function renderProfiler(){
-  mkScatter('ch-p1',[{label:'Metro Flagship',data:[{x:92,y:88},{x:88,y:84},{x:85,y:90},{x:90,y:82}],backgroundColor:G,pointRadius:8},{label:'Tier-2 Perf',data:[{x:72,y:68},{x:68,y:72},{x:74,y:65},{x:70,y:70}],backgroundColor:BLU,pointRadius:7},{label:'Bridal Spec',data:[{x:78,y:54},{x:74,y:58},{x:80,y:50}],backgroundColor:PNK,pointRadius:7},{label:'Volume Runner',data:[{x:58,y:82},{x:54,y:86},{x:60,y:78}],backgroundColor:GRN,pointRadius:7},{label:'Underperformer',data:[{x:38,y:40},{x:34,y:36},{x:42,y:38}],backgroundColor:RED,pointRadius:7}],{x:{title:{display:true,text:'Revenue Score'}},y:{title:{display:true,text:'Footfall Score'}}});
-  mkBar('ch-p2',['Metro Flagship','Bridal Spec','Tier-2 Perf','Volume Runner','Underperformer'],[{label:'Avg Annual Revenue (\u20B9Cr)',data:[14.2,9.8,6.4,5.2,2.8],backgroundColor:[G,PNK,BLU,GRN,RED]}]);
-  mkRadar('ch-p3',['Revenue','Footfall','Conversion','Basket','Retention'],[{label:'Metro Flagship',data:[90,88,82,86,78],borderColor:G,backgroundColor:'rgba(212,168,67,.08)'},{label:'Bridal Spec',data:[72,54,80,94,82],borderColor:PNK,backgroundColor:'rgba(244,114,182,.06)'},{label:'Volume Runner',data:[58,86,64,42,56],borderColor:GRN,backgroundColor:'rgba(52,211,153,.06)'}]);
-  mkBar('ch-p4',['Revenue','Footfall','Conv','Basket','Retention','Comp'],[{label:'Mumbai Andheri',data:[95,92,88,90,84,78],backgroundColor:'rgba(212,168,67,.7)'},{label:'Pune FC Road',data:[78,72,82,76,80,68],backgroundColor:'rgba(96,165,250,.5)'},{label:'Surat Main',data:[88,86,76,84,72,62],backgroundColor:'rgba(52,211,153,.5)'}]);
-  mkScatter('ch-p5',[{label:'Stores',data:[{x:800,y:4.2},{x:1200,y:8.8},{x:600,y:3.4},{x:1800,y:14.2},{x:1400,y:10.8},{x:500,y:2.8},{x:2200,y:16.4},{x:900,y:5.6},{x:1100,y:7.2},{x:700,y:4.8}],backgroundColor:G,pointRadius:6}],{x:{title:{display:true,text:'Floor Area (sq.ft)'}},y:{title:{display:true,text:'Revenue \u20B9Cr'}}});
-  mkHBar('ch-p6',['Lucknow','Patna','Bhopal','Nagpur','Varanasi'],[{label:'Current Score',data:[52,48,45,50,43],backgroundColor:'rgba(96,165,250,.5)'},{label:'Potential Score',data:[76,72,68,74,66],backgroundColor:'rgba(212,168,67,.6)'}]);
+  // ch-p1: K-Means cluster scatter
+  const clusters=[
+    {label:'Metro Flagship',data:[{x:92,y:88},{x:88,y:84},{x:85,y:90},{x:90,y:82}],backgroundColor:G,pointRadius:8},
+    {label:'Tier-2 Performer',data:[{x:72,y:68},{x:68,y:72},{x:74,y:65},{x:70,y:70},{x:75,y:74}],backgroundColor:BLU,pointRadius:7},
+    {label:'Bridal Specialist',data:[{x:78,y:54},{x:74,y:58},{x:80,y:50}],backgroundColor:PNK,pointRadius:7},
+    {label:'Volume Runner',data:[{x:58,y:82},{x:54,y:86},{x:60,y:78}],backgroundColor:GRN,pointRadius:7},
+    {label:'Underperformer',data:[{x:38,y:40},{x:34,y:36},{x:42,y:38},{x:36,y:44}],backgroundColor:RED,pointRadius:7}
+  ];
+  mkScatter('ch-p1',[
+    {label:'Metro Flagship',data:[{x:92,y:88},{x:88,y:84},{x:85,y:90},{x:90,y:82}],backgroundColor:G,pointRadius:8},
+    {label:'Tier-2 Perf',data:[{x:72,y:68},{x:68,y:72},{x:74,y:65},{x:70,y:70}],backgroundColor:BLU,pointRadius:7},
+    {label:'Bridal Spec',data:[{x:78,y:54},{x:74,y:58},{x:80,y:50}],backgroundColor:PNK,pointRadius:7},
+    {label:'Volume Runner',data:[{x:58,y:82},{x:54,y:86},{x:60,y:78}],backgroundColor:GRN,pointRadius:7},
+    {label:'Underperformer',data:[{x:38,y:40},{x:34,y:36},{x:42,y:38}],backgroundColor:RED,pointRadius:7}
+  ],{x:{title:{display:true,text:'Revenue Score'}},y:{title:{display:true,text:'Footfall Score'}}});
+  // ch-p2: Revenue by archetype
+  mkBar('ch-p2',['Metro Flagship','Bridal Spec','Tier-2 Perf','Volume Runner','Underperformer'],[
+    {label:'Avg Annual Revenue (₹Cr)',data:[14.2,9.8,6.4,5.2,2.8],backgroundColor:[G,PNK,BLU,GRN,RED]}
+  ]);
+  // ch-p3: Radar — 5 Archetypes
+  mkRadar('ch-p3',['Revenue','Footfall','Conversion','Basket','Retention'],[
+    {label:'Metro Flagship',data:[90,88,82,86,78],borderColor:G,backgroundColor:'rgba(212,168,67,.12)'},
+    {label:'Bridal Spec',data:[72,54,80,94,82],borderColor:PNK,backgroundColor:'rgba(244,114,182,.1)'},
+    {label:'Volume Runner',data:[58,86,64,42,56],borderColor:GRN,backgroundColor:'rgba(45,184,122,.08)'}
+  ]);
+  // ch-p4: Heatmap simulation — grouped bar normalized
+  const axes=['Revenue','Footfall','Conv','Basket','Retention','Comp'];
+  mkBar('ch-p4',axes,[
+    {label:'Mumbai Andheri',data:[95,92,88,90,84,78],backgroundColor:'rgba(212,168,67,.8)'},
+    {label:'Pune FC Road',data:[78,72,82,76,80,68],backgroundColor:'rgba(96,165,250,.6)'},
+    {label:'Surat Main',data:[88,86,76,84,72,62],backgroundColor:'rgba(45,184,122,.6)'}
+  ]);
+  // ch-p5: Revenue vs Floor Area scatter
+  mkScatter('ch-p5',[{
+    label:'Stores',
+    data:[{x:800,y:4.2},{x:1200,y:8.8},{x:600,y:3.4},{x:1800,y:14.2},{x:1400,y:10.8},{x:500,y:2.8},{x:2200,y:16.4},{x:900,y:5.6},{x:1100,y:7.2},{x:700,y:4.8}],
+    backgroundColor:G,pointRadius:6
+  }],{x:{title:{display:true,text:'Floor Area (sq.ft)'}},y:{title:{display:true,text:'Revenue ₹Cr'}}});
+  // ch-p6: Archetype upgrade potential
+  mkHBar('ch-p6',['Lucknow','Patna','Bhopal','Nagpur','Varanasi'],[
+    {label:'Current Score',data:[52,48,45,50,43],backgroundColor:'rgba(96,165,250,.6)'},
+    {label:'Potential Score',data:[76,72,68,74,66],backgroundColor:'rgba(212,168,67,.7)'}
+  ]);
 }
+
+// ============================================================
+// MODULE 7: ASSORTMENT ENGINE
+// ============================================================
 function renderAssortment(){
+  // ch-a1: SKU Pareto
   const pctSKU=Array.from({length:20},(_,i)=>(i+1)*5+'%');
-  mkLine('ch-a1',pctSKU,[{label:'Cumulative Revenue %',data:[8,15,22,29,35,42,48,54,59,63,67,71,74,77,80,83,86,89,93,100],borderColor:G,backgroundColor:GA,fill:true},{label:'Ideal (Uniform)',data:pctSKU.map((_,i)=>(i+1)*5),borderColor:'rgba(96,165,250,.3)',borderDash:[5,5]}]);
-  mkDoughnut('ch-a2',['Wedding','Daily Wear','Bridal',"Men's",'Solitaire','Kids','Chains','Custom'],[28,22,18,12,8,5,4,3],[G,'#C8962F','#B38429',BLU,PRP,GRN,TEL,ORG]);
+  const cumRev=[8,15,22,29,35,42,48,54,59,63,67,71,74,77,80,83,86,89,93,100];
+  mkLine('ch-a1',pctSKU,[
+    {label:'Cumulative Revenue %',data:cumRev,borderColor:G,backgroundColor:GA,fill:true},
+    {label:'Ideal (Uniform)',data:pctSKU.map((_,i)=>(i+1)*5),borderColor:'rgba(96,165,250,.4)',borderDash:[5,5]}
+  ]);
+  // ch-a2: Category Revenue Doughnut
+  mkDoughnut('ch-a2',['Wedding','Daily Wear','Bridal',"Men's",'Solitaire','Kids','Chains','Custom'],
+    [28,22,18,12,8,5,4,3],[G,'#C8962F','#B38429',BLU,PRP,GRN,TEL,ORG]);
+  // ch-a3: City Demand vs Supply Gap
   const cats=['Wedding','Daily Wear','Bridal',"Men's",'Solitaire','Chains'];
-  mkBar('ch-a3',cats,[{label:'Market Demand',data:[85,78,72,42,38,44],backgroundColor:'rgba(96,165,250,.6)'},{label:'Current Supply',data:[78,62,68,48,42,38],backgroundColor:'rgba(212,168,67,.6)'}]);
-  mkDoughnut('ch-a4',['<\u20B950K','\u20B950-150K','\u20B9150-300K','\u20B9300K+'],[42,32,18,8],[GRN,G,ORG,RED]);
-  mkLine('ch-a5',MO6,[{label:'Daily Wear',data:[62,68,72,78,82,88],borderColor:G,backgroundColor:GA,fill:true},{label:'Solitaire',data:[44,48,52,58,62,68],borderColor:BLU},{label:'Wedding',data:[80,82,78,84,90,94],borderColor:PNK},{label:"Men's",data:[30,34,38,42,44,48],borderColor:ORG}]);
-  mkBar('ch-a6',['Lucknow','Patna','Bhopal','Nagpur','Varanasi','Coimbatore','Visakhapatnam','Kochi'],[{label:'Projected Units/Month',data:[480,420,380,360,340,310,290,270],backgroundColor:G}]);
+  mkBar('ch-a3',cats,[
+    {label:'Market Demand',data:[85,78,72,42,38,44],backgroundColor:'rgba(96,165,250,.7)'},
+    {label:'Current Supply',data:[78,62,68,48,42,38],backgroundColor:'rgba(212,168,67,.7)'}
+  ]);
+  // ch-a4: Price Band Distribution
+  mkDoughnut('ch-a4',['<₹50K','₹50-150K','₹150-300K','₹300K+'],
+    [42,32,18,8],[GRN,G,ORG,RED]);
+  // ch-a5: Trend Score by Category
+  mkLine('ch-a5',MO6,[
+    {label:'Daily Wear',data:[62,68,72,78,82,88],borderColor:G,backgroundColor:GA,fill:true},
+    {label:'Solitaire',data:[44,48,52,58,62,68],borderColor:BLU},
+    {label:'Wedding',data:[80,82,78,84,90,94],borderColor:PNK},
+    {label:"Men's",data:[30,34,38,42,44,48],borderColor:ORG}
+  ]);
+  // ch-a6: Recommended SKUs by city
+  mkBar('ch-a6',['Lucknow','Patna','Bhopal','Nagpur','Varanasi','Coimbatore','Visakhapatnam','Kochi'],[
+    {label:'Projected Units/Month',data:[480,420,380,360,340,310,290,270],backgroundColor:G}
+  ]);
 }
+
+// ============================================================
+// MODULE 8: REGIONAL SCORECARD
+// ============================================================
 function renderScorecard(){
-  mkBar('ch-sc1',Q,[{label:'North (\u20B9Cr)',data:[28,30,32,35],backgroundColor:BLU},{label:'South (\u20B9Cr)',data:[24,26,28,30],backgroundColor:GRN},{label:'East (\u20B9Cr)',data:[14,15,16,18],backgroundColor:ORG},{label:'West (\u20B9Cr)',data:[38,40,44,48],backgroundColor:G}]);
-  mkRadar('ch-sc2',['Revenue','Growth','Conversion','Repeat','Basket','Footfall'],[{label:'North',data:[72,68,74,78,70,66],borderColor:BLU,backgroundColor:'rgba(96,165,250,.06)'},{label:'South',data:[68,72,78,74,68,70],borderColor:GRN,backgroundColor:'rgba(52,211,153,.06)'},{label:'East',data:[52,58,62,64,56,60],borderColor:ORG,backgroundColor:'rgba(251,146,60,.06)'},{label:'West',data:[88,84,82,80,86,84],borderColor:G,backgroundColor:'rgba(212,168,67,.06)'}]);
-  mkLine('ch-sc3',['Q1 FY23','Q2 FY23','Q3 FY23','Q4 FY23','Q1 FY24','Q2 FY24','Q3 FY24','Q4 FY24'],[{label:'North',data:[8,10,12,14,16,14,18,20],borderColor:BLU},{label:'South',data:[6,8,10,12,14,16,18,22],borderColor:GRN},{label:'East',data:[4,6,8,6,10,12,14,16],borderColor:ORG},{label:'West',data:[12,14,16,18,20,22,24,26],borderColor:G,backgroundColor:GA,fill:true}]);
+  // ch-sc1: Regional Revenue Comparison
+  mkBar('ch-sc1',Q,[
+    {label:'North (₹Cr)',data:[28,30,32,35],backgroundColor:BLU},
+    {label:'South (₹Cr)',data:[24,26,28,30],backgroundColor:GRN},
+    {label:'East (₹Cr)',data:[14,15,16,18],backgroundColor:ORG},
+    {label:'West (₹Cr)',data:[38,40,44,48],backgroundColor:G}
+  ]);
+  // ch-sc2: Radar — Region Health
+  mkRadar('ch-sc2',['Revenue','Growth','Conversion','Repeat','Basket','Footfall'],[
+    {label:'North',data:[72,68,74,78,70,66],borderColor:BLU,backgroundColor:'rgba(96,165,250,.1)'},
+    {label:'South',data:[68,72,78,74,68,70],borderColor:GRN,backgroundColor:'rgba(45,184,122,.08)'},
+    {label:'East',data:[52,58,62,64,56,60],borderColor:ORG,backgroundColor:'rgba(251,146,60,.08)'},
+    {label:'West',data:[88,84,82,80,86,84],borderColor:G,backgroundColor:'rgba(212,168,67,.1)'}
+  ]);
+  // ch-sc3: YoY Growth by Zone
+  mkLine('ch-sc3',['Q1 FY23','Q2 FY23','Q3 FY23','Q4 FY23','Q1 FY24','Q2 FY24','Q3 FY24','Q4 FY24'],[
+    {label:'North',data:[8,10,12,14,16,14,18,20],borderColor:BLU},
+    {label:'South',data:[6,8,10,12,14,16,18,22],borderColor:GRN},
+    {label:'East',data:[4,6,8,6,10,12,14,16],borderColor:ORG},
+    {label:'West',data:[12,14,16,18,20,22,24,26],borderColor:G,backgroundColor:GA,fill:true}
+  ]);
+  // ch-sc4: City Revenue Top 20
   const top20=CITIES.filter(c=>c.present).sort((a,b)=>b.rev-a.rev).slice(0,12);
-  mkHBar('ch-sc4',top20.map(c=>c.city),[{label:'Annual Revenue (\u20B9Cr)',data:top20.map(c=>c.rev),backgroundColor:G}]);
-  mkDoughnut('ch-sc5',['KISNA West','KISNA North','KISNA South','KISNA East','Competitors'],[22,16,14,8,40],[G,BLU,GRN,ORG,'rgba(255,255,255,.06)']);
-  mkBar('ch-sc6',['Revenue vs Target','Footfall','Conversion','Repeat Rate','Basket Size','Gross Margin'],[{label:'North',data:[94,88,86,90,82,78],backgroundColor:'rgba(96,165,250,.6)'},{label:'South',data:[88,92,90,86,84,80],backgroundColor:'rgba(52,211,153,.6)'},{label:'East',data:[74,70,72,76,68,66],backgroundColor:'rgba(251,146,60,.6)'},{label:'West',data:[102,98,94,96,100,92],backgroundColor:'rgba(212,168,67,.7)'}]);
+  mkHBar('ch-sc4',top20.map(c=>c.city),[
+    {label:'Annual Revenue (₹Cr)',data:top20.map(c=>c.rev),backgroundColor:G}
+  ]);
+  // ch-sc5: Market Penetration
+  mkDoughnut('ch-sc5',['KISNA West','KISNA North','KISNA South','KISNA East','Competitors'],
+    [22,16,14,8,40],[G,BLU,GRN,ORG,'rgba(255,255,255,.1)']);
+  // ch-sc6: KPI Scorecard (grouped bars per zone)
+  mkBar('ch-sc6',['Revenue vs Target','Footfall','Conversion','Repeat Rate','Basket Size','Gross Margin'],[
+    {label:'North',data:[94,88,86,90,82,78],backgroundColor:'rgba(96,165,250,.7)'},
+    {label:'South',data:[88,92,90,86,84,80],backgroundColor:'rgba(45,184,122,.7)'},
+    {label:'East',data:[74,70,72,76,68,66],backgroundColor:'rgba(251,146,60,.7)'},
+    {label:'West',data:[102,98,94,96,100,92],backgroundColor:'rgba(212,168,67,.8)'}
+  ]);
 }
+
+// ============================================================
+// MODULE 9: INVENTORY RADAR
+// ============================================================
 function renderInventory(){
-  mkScatter('ch-i1',[{label:'Overstocked',data:[{x:40,y:80},{x:35,y:85},{x:45,y:78},{x:38,y:82}],backgroundColor:RED,pointRadius:7},{label:'Understocked',data:[{x:80,y:30},{x:85,y:35},{x:78,y:28},{x:82,y:32}],backgroundColor:ORG,pointRadius:7},{label:'Balanced',data:[{x:65,y:62},{x:70,y:68},{x:60,y:58},{x:72,y:70}],backgroundColor:GRN,pointRadius:7}],{x:{title:{display:true,text:'Demand Score'}},y:{title:{display:true,text:'Inventory Score'}}});
-  mkBar('ch-i2',['Bridal','Daily Wear','Wedding',"Men's",'Solitaire','Kids','Chains','Custom'],[{label:'Weeks of Stock',data:[18,8,14,6,22,10,4,12],backgroundColor:['#34D399','#FBBF24','#34D399','#F87171','#34D399','#FBBF24','#F87171','#34D399']}]);
-  mkHBar('ch-i3',['Surat\u2192Delhi','Mumbai\u2192Patna','Jaipur\u2192Kolkata','Ahmedabad\u2192Lucknow','Pune\u2192Bhopal'],[{label:'Transfer Value (\u20B9L)',data:[82,74,68,62,54],backgroundColor:G}]);
-  mkLine('ch-i4',MO6,[{label:'Bridal',data:[3.2,3.0,2.8,2.6,2.4,2.2],borderColor:RED,backgroundColor:'rgba(248,113,113,.08)',fill:true},{label:'Daily Wear',data:[6.8,7.0,7.2,6.8,7.4,7.8],borderColor:GRN},{label:'Wedding',data:[4.2,4.0,3.8,4.4,4.2,4.0],borderColor:G}]);
-  mkBar('ch-i5',['North','South','East','West'],[{label:'Overstock (\u20B9Cr)',data:[8.2,6.4,4.8,9.6],backgroundColor:'rgba(248,113,113,.6)'},{label:'Understock Gap (\u20B9Cr)',data:[4.2,3.8,5.4,3.2],backgroundColor:'rgba(251,146,60,.6)'}]);
-  mkHBar('ch-i6',['Chain 22K 18"','Ring 22K Sz8','Bangle Set 2.6','Earring Drop D','Necklace Bridal','Pendant Solitaire'],[{label:'Days Remaining',data:[4,6,8,3,5,7],backgroundColor:[RED,RED,ORG,RED,RED,ORG]}]);
+  // ch-i1: Demand vs Supply Mismatch scatter
+  mkScatter('ch-i1',[
+    {label:'Overstocked',data:[{x:40,y:80},{x:35,y:85},{x:45,y:78},{x:38,y:82}],backgroundColor:RED,pointRadius:7},
+    {label:'Understocked',data:[{x:80,y:30},{x:85,y:35},{x:78,y:28},{x:82,y:32}],backgroundColor:ORG,pointRadius:7},
+    {label:'Balanced',data:[{x:65,y:62},{x:70,y:68},{x:60,y:58},{x:72,y:70}],backgroundColor:GRN,pointRadius:7}
+  ],{x:{title:{display:true,text:'Demand Score'}},y:{title:{display:true,text:'Inventory Score'}}});
+  // ch-i2: Category Stock Weeks
+  mkBar('ch-i2',['Bridal','Daily Wear','Wedding',"Men's",'Solitaire','Kids','Chains','Custom'],[
+    {label:'Weeks of Stock',data:[18,8,14,6,22,10,4,12],
+     backgroundColor:['#2DB87A','#F4A435','#2DB87A','#D94545','#2DB87A','#F4A435','#D94545','#2DB87A']}
+  ]);
+  // ch-i3: Transfer Opportunity
+  mkHBar('ch-i3',['Surat→Delhi','Mumbai→Patna','Jaipur→Kolkata','Ahmedabad→Lucknow','Pune→Bhopal'],[
+    {label:'Transfer Value (₹L)',data:[82,74,68,62,54],backgroundColor:G}
+  ]);
+  // ch-i4: Stock Turnover Trend
+  mkLine('ch-i4',MO6,[
+    {label:'Bridal',data:[3.2,3.0,2.8,2.6,2.4,2.2],borderColor:RED,backgroundColor:'rgba(217,69,69,.1)',fill:true},
+    {label:'Daily Wear',data:[6.8,7.0,7.2,6.8,7.4,7.8],borderColor:GRN},
+    {label:'Wedding',data:[4.2,4.0,3.8,4.4,4.2,4.0],borderColor:G}
+  ]);
+  // ch-i5: Overstock vs Understock by Region
+  mkBar('ch-i5',['North','South','East','West'],[
+    {label:'Overstock (₹Cr)',data:[8.2,6.4,4.8,9.6],backgroundColor:'rgba(217,69,69,.7)'},
+    {label:'Understock Gap (₹Cr)',data:[4.2,3.8,5.4,3.2],backgroundColor:'rgba(251,146,60,.7)'}
+  ]);
+  // ch-i6: Reorder Alert
+  mkHBar('ch-i6',['Chain 22K 18"','Ring 22K Sz8','Bangle Set 2.6','Earring Drop D','Necklace Bridal','Pendant Solitaire'],[
+    {label:'Days Remaining',data:[4,6,8,3,5,7],backgroundColor:[RED,RED,ORG,RED,RED,ORG]}
+  ]);
 }
+
+// ============================================================
+// MODULE 10: DEAD STOCK
+// ============================================================
 function renderDeadstock(){
-  mkBar('ch-ds1',['90-180 Days','180-365 Days','365+ Days'],[{label:'Value (\u20B9Cr)',data:[12,20,16],backgroundColor:[ORG,RED,'#991B1B']}]);
-  mkDoughnut('ch-ds2',['Bridal','Wedding','Solitaire',"Men's",'Daily Wear','Kids'],[28,24,18,14,10,6],[RED,ORG,PRP,BLU,G,GRN]);
-  mkLine('ch-ds3',['60%','65%','70%','75%','80%'],[{label:'90-Day',data:[28.8,31.2,33.6,36.0,38.4],borderColor:ORG,backgroundColor:'rgba(251,146,60,.08)',fill:true},{label:'60-Day',data:[26.4,28.6,30.8,33.0,35.2],borderColor:RED},{label:'30-Day',data:[21.6,23.4,25.2,27.0,28.8],borderColor:'#991B1B'}]);
-  mkLine('ch-ds4',MO,[{label:'Dead Stock Value (\u20B9Cr)',data:[32,34,36,38,40,42,40,38,42,46,50,48],borderColor:RED,backgroundColor:'rgba(248,113,113,.1)',fill:true}]);
-  mkHBar('ch-ds5',['Surat Central','Delhi South','Kolkata North','Chennai West','Hyderabad East'],[{label:'Dead Stock (\u20B9Cr)',data:[6.2,5.8,4.4,3.8,3.2],backgroundColor:RED}]);
-  mkDoughnut('ch-ds6',['Trend Miss','Over-Buy','Wrong City','Wrong Price','No Promotion'],[32,28,20,12,8],[RED,ORG,YLW,BLU,PRP]);
+  // ch-ds1: Aging Buckets
+  mkBar('ch-ds1',['90-180 Days','180-365 Days','365+ Days'],[
+    {label:'Value (₹Cr)',data:[12,20,16],backgroundColor:[ORG,RED,'#8B0000']}
+  ]);
+  // ch-ds2: Category Composition
+  mkDoughnut('ch-ds2',['Bridal','Wedding','Solitaire',"Men's",'Daily Wear','Kids'],
+    [28,24,18,14,10,6],[RED,ORG,PRP,BLU,G,GRN]);
+  // ch-ds3: Liquidation Scenario
+  mkLine('ch-ds3',['60% Realisation','65% Realisation','70% Realisation','75% Realisation','80% Realisation'],[
+    {label:'90-Day Timeline',data:[28.8,31.2,33.6,36.0,38.4],borderColor:ORG,backgroundColor:'rgba(251,146,60,.1)',fill:true},
+    {label:'60-Day Timeline',data:[26.4,28.6,30.8,33.0,35.2],borderColor:RED},
+    {label:'30-Day Timeline',data:[21.6,23.4,25.2,27.0,28.8],borderColor:'#8B0000'}
+  ]);
+  // ch-ds4: Accumulation Trend
+  mkLine('ch-ds4',MO,[
+    {label:'Dead Stock Value (₹Cr)',data:[32,34,36,38,40,42,40,38,42,46,50,48],borderColor:RED,backgroundColor:'rgba(217,69,69,.15)',fill:true}
+  ]);
+  // ch-ds5: Store Concentration
+  mkHBar('ch-ds5',['Surat Central','Delhi South','Kolkata North','Chennai West','Hyderabad East'],[
+    {label:'Dead Stock (₹Cr)',data:[6.2,5.8,4.4,3.8,3.2],backgroundColor:RED}
+  ]);
+  // ch-ds6: Root Cause
+  mkDoughnut('ch-ds6',['Trend Miss','Over-Buy','Wrong City','Wrong Price','No Promotion'],
+    [32,28,20,12,8],[RED,ORG,YLW,BLU,PRP]);
 }
+
+// ============================================================
+// MODULE 11: CROSS-SELL ENGINE
+// ============================================================
 function renderCrossSell(){
-  mkHBar('ch-cs1',['Ring + Chain','Bangle + Earring','Necklace + Tikka','Ring + Earring','Chain + Pendant','Bangle + Ring','Nose Ring + Earring','Anklet + Bangle'],[{label:'Lift Score',data:[4.8,4.2,3.9,3.6,3.2,2.9,2.6,2.2],backgroundColor:[GRN,GRN,G,G,G,ORG,ORG,ORG]}]);
-  mkBar('ch-cs2',['Ring+Chain','Bangle+Earring','Necklace+Tikka','Ring+Earring','Chain+Pendant'],[{label:'Avg Uplift per Txn (\u20B9)',data:[4200,3800,6200,3100,2800],backgroundColor:G}]);
-  mkBar('ch-cs3',['Champions','Loyal','Potential','At-Risk','New'],[{label:'Avg Basket Uplift (\u20B9)',data:[6800,5200,3400,2100,1800],backgroundColor:[GRN,G,G,ORG,RED]}]);
-  mkLine('ch-cs4',MO,[{label:'Cross-Sell Revenue (\u20B9L)',data:[24,28,32,38,34,40,36,42,48,64,82,58],borderColor:G,backgroundColor:GA,fill:true}]);
-  mkScatter('ch-cs5',[{label:'Stores',data:[{x:12,y:38},{x:18,y:52},{x:24,y:68},{x:30,y:82},{x:36,y:94},{x:42,y:108},{x:28,y:76},{x:22,y:60}],backgroundColor:G,pointRadius:6}],{x:{title:{display:true,text:'Cross-Sell Rate %'}},y:{title:{display:true,text:'Revenue Uplift \u20B9L'}}});
-  mkBar('ch-cs6',['Wedding Bundle','Karwa Chauth',"Valentine's",'Birthday','Anniversary','Festival'],[{label:'Acceptance Rate %',data:[68,58,44,38,34,48],backgroundColor:'rgba(212,168,67,.6)'},{label:'Avg Value (\u20B9K)',data:[42,18,12,8,10,16],backgroundColor:'rgba(52,211,153,.5)'}]);
+  // ch-cs1: Association Rules — Lift scores
+  mkHBar('ch-cs1',['Ring + Chain','Bangle + Earring','Necklace + Tikka','Ring + Earring','Chain + Pendant','Bangle + Ring','Nose Ring + Earring','Anklet + Bangle'],[
+    {label:'Lift Score',data:[4.8,4.2,3.9,3.6,3.2,2.9,2.6,2.2],backgroundColor:[GRN,GRN,G,G,G,ORG,ORG,ORG]}
+  ]);
+  // ch-cs2: Basket Uplift by Rule
+  mkBar('ch-cs2',['Ring+Chain','Bangle+Earring','Necklace+Tikka','Ring+Earring','Chain+Pendant'],[
+    {label:'Avg Uplift per Txn (₹)',data:[4200,3800,6200,3100,2800],backgroundColor:G}
+  ]);
+  // ch-cs3: Uplift by Customer Segment
+  mkBar('ch-cs3',['Champions','Loyal','Potential','At-Risk','New'],[
+    {label:'Avg Basket Uplift (₹)',data:[6800,5200,3400,2100,1800],backgroundColor:[GRN,G,G,ORG,RED]}
+  ]);
+  // ch-cs4: Monthly Revenue Trend
+  mkLine('ch-cs4',MO,[
+    {label:'Cross-Sell Revenue (₹L)',data:[24,28,32,38,34,40,36,42,48,64,82,58],borderColor:G,backgroundColor:GA,fill:true}
+  ]);
+  // ch-cs5: Store Performance
+  mkScatter('ch-cs5',[{
+    label:'Stores',
+    data:[{x:12,y:38},{x:18,y:52},{x:24,y:68},{x:30,y:82},{x:36,y:94},{x:42,y:108},{x:28,y:76},{x:22,y:60}],
+    backgroundColor:G,pointRadius:6
+  }],{x:{title:{display:true,text:'Cross-Sell Rate %'}},y:{title:{display:true,text:'Revenue Uplift ₹L'}}});
+  // ch-cs6: Bundle Effectiveness
+  mkBar('ch-cs6',['Wedding Bundle','Karwa Chauth',"Valentine's",'Birthday','Anniversary','Festival'],[
+    {label:'Acceptance Rate %',data:[68,58,44,38,34,48],backgroundColor:'rgba(212,168,67,.7)'},
+    {label:'Avg Value (₹K)',data:[42,18,12,8,10,16],backgroundColor:'rgba(45,184,122,.6)'}
+  ]);
 }
+
+// ============================================================
+// MODULE 12: DEALER LEADERBOARD
+// ============================================================
 function renderLeaderboard(){
   const top15=CITIES.filter(c=>c.present).sort((a,b)=>b.rev-a.rev).slice(0,10);
-  mkHBar('ch-lb1',top15.map(c=>c.city),[{label:'Annual Revenue (\u20B9Cr)',data:top15.map(c=>c.rev),backgroundColor:G}]);
-  mkBar('ch-lb2',['0-20','21-35','36-50','51-65','66-80','81-100'],[{label:'# Franchises',data:[4,10,18,28,16,6],backgroundColor:[RED,RED,ORG,G,GRN,GRN]}]);
-  mkHBar('ch-lb3',['Pune Koregaon','Lucknow Main','Coimbatore','Bhopal','Nagpur','Delhi Janakpuri','Jaipur Vaishali','Chandigarh'],[{label:'YoY Growth %',data:[68,54,48,42,38,32,28,22],backgroundColor:[GRN,GRN,GRN,G,G,G,ORG,ORG]}]);
-  mkBar('ch-lb4',['Gold\u2192Gold','Silver\u2192Gold','Bronze\u2192Silver','Silver\u2192Bronze','Gold\u2192Silver'],[{label:'Franchises',data:[22,8,14,6,4],backgroundColor:[G,GRN,BLU,ORG,RED]}]);
-  mkScatter('ch-lb5',[{label:'Franchises',data:[{x:18,y:4.2},{x:24,y:6.8},{x:30,y:8.4},{x:36,y:10.2},{x:28,y:7.6},{x:22,y:5.4},{x:34,y:9.8},{x:40,y:14.2},{x:20,y:3.8},{x:32,y:8.8}],backgroundColor:G,pointRadius:6}],{x:{title:{display:true,text:'Retention Rate %'}},y:{title:{display:true,text:'Revenue \u20B9Cr'}}});
-  mkHBar('ch-lb6',['Bokaro','Berhampur','Hisar','Ambala','Karnal','Panipat','Yamuna Nagar','Rohtak'],[{label:'Risk Score',data:[88,82,76,72,68,64,60,58],backgroundColor:RED}]);
+  // ch-lb1: Top 15 Revenue
+  mkHBar('ch-lb1',top15.map(c=>c.city),[
+    {label:'Annual Revenue (₹Cr)',data:top15.map(c=>c.rev),backgroundColor:G}
+  ]);
+  // ch-lb2: Score Distribution Histogram
+  mkBar('ch-lb2',['0-20','21-35','36-50','51-65','66-80','81-100'],[
+    {label:'# Franchises',data:[4,10,18,28,16,6],backgroundColor:[RED,RED,ORG,G,GRN,GRN]}
+  ]);
+  // ch-lb3: Growth Rate Ranking
+  mkHBar('ch-lb3',['Pune Koregaon','Lucknow Main','Coimbatore','Bhopal','Nagpur','Delhi Janakpuri','Jaipur Vaishali','Chandigarh'],[
+    {label:'YoY Growth %',data:[68,54,48,42,38,32,28,22],backgroundColor:[GRN,GRN,GRN,G,G,G,ORG,ORG]}
+  ]);
+  // ch-lb4: Tier Movement — bar grouped
+  mkBar('ch-lb4',['Gold→Gold','Silver→Gold','Bronze→Silver','Silver→Bronze','Gold→Silver'],[
+    {label:'Franchises',data:[22,8,14,6,4],backgroundColor:[G,GRN,BLU,ORG,RED]}
+  ]);
+  // ch-lb5: Retention vs Revenue scatter
+  mkScatter('ch-lb5',[{
+    label:'Franchises',
+    data:[{x:18,y:4.2},{x:24,y:6.8},{x:30,y:8.4},{x:36,y:10.2},{x:28,y:7.6},{x:22,y:5.4},{x:34,y:9.8},{x:40,y:14.2},{x:20,y:3.8},{x:32,y:8.8}],
+    backgroundColor:G,pointRadius:6
+  }],{x:{title:{display:true,text:'Retention Rate %'}},y:{title:{display:true,text:'Revenue ₹Cr'}}});
+  // ch-lb6: Bottom 15 Risk Map
+  mkHBar('ch-lb6',['Bokaro','Berhampur','Hisar','Ambala','Karnal','Panipat','Yamuna Nagar','Rohtak'],[
+    {label:'Risk Score',data:[88,82,76,72,68,64,60,58],backgroundColor:RED}
+  ]);
 }
+
+// ============================================================
+// MODULE 13: CULTURAL DNA
+// ============================================================
 function renderCultural(){
-  mkDoughnut('ch-dna1',['Traditional Heavy','Bridal Maximalist','Modern Minimalist','Office Daily','Religious Motif','Investment Buyer'],[28,22,18,14,10,8],[G,'#C8962F',BLU,TEL,PRP,GRN]);
-  mkRadar('ch-dna2',['Gold Purity 22K','Stone Embellishment','Design Weight','Filigree Work','Modern Cut','Gifting Intent'],[{label:'North India',data:[70,65,72,60,58,78],borderColor:BLU,backgroundColor:'rgba(96,165,250,.06)'},{label:'South India',data:[92,58,80,75,42,64],borderColor:GRN,backgroundColor:'rgba(52,211,153,.06)'},{label:'West India',data:[68,72,68,55,72,82],borderColor:G,backgroundColor:'rgba(212,168,67,.06)'},{label:'East India',data:[62,80,74,68,48,70],borderColor:ORG,backgroundColor:'rgba(251,146,60,.06)'}]);
-  mkBar('ch-dna3',['Dhanteras','Navratri','Karwa Chauth','Akha Teej','Dussehra'],[{label:'Chains',data:[82,44,28,38,22],backgroundColor:'rgba(212,168,67,.7)',stack:'a'},{label:'Earrings',data:[24,72,56,44,48],backgroundColor:'rgba(244,114,182,.6)',stack:'a'},{label:'Bangles',data:[34,38,68,52,34],backgroundColor:'rgba(96,165,250,.5)',stack:'a'},{label:'Necklace',data:[18,28,36,82,28],backgroundColor:'rgba(52,211,153,.5)',stack:'a'}],{stacked:true});
-  mkBar('ch-dna4',['Tamil Nadu','Kerala','Andhra','Karnataka','Maharashtra','Rajasthan','Punjab','West Bengal'],[{label:'22K Preference %',data:[88,84,80,72,58,62,68,74],backgroundColor:G},{label:'18K Preference %',data:[8,12,16,24,36,32,26,22],backgroundColor:BLU},{label:'14K Preference %',data:[4,4,4,4,6,6,6,4],backgroundColor:ORG}]);
-  mkBar('ch-dna5',['Wedding','Religious Festival','Gifting','Personal Buy','Investment'],[{label:'Hindu',data:[44,32,12,8,4],backgroundColor:'rgba(212,168,67,.7)',stack:'a'},{label:'Muslim',data:[38,28,18,10,6],backgroundColor:'rgba(96,165,250,.6)',stack:'a'},{label:'Sikh',data:[52,22,14,8,4],backgroundColor:'rgba(52,211,153,.5)',stack:'a'},{label:'Christian',data:[36,18,28,12,6],backgroundColor:'rgba(244,114,182,.5)',stack:'a'}],{stacked:true});
-  mkHBar('ch-dna6',['Chennai vs Mumbai','Jaipur vs Delhi','Kolkata vs Pune','Kochi vs Bengaluru','Amritsar vs Chandigarh'],[{label:'Revenue Lift %',data:[34,28,24,22,18],backgroundColor:[GRN,GRN,G,G,ORG]}]);
+  // ch-dna1: Cultural Cluster Bar
+  mkDoughnut('ch-dna1',['Traditional Heavy','Bridal Maximalist','Modern Minimalist','Office Daily','Religious Motif','Investment Buyer'],
+    [28,22,18,14,10,8],[G,'#C8962F',BLU,TEL,PRP,GRN]);
+  // ch-dna2: Regional Style Radar
+  mkRadar('ch-dna2',['Gold Purity 22K','Stone Embellishment','Design Weight','Filigree Work','Modern Cut','Gifting Intent'],[
+    {label:'North India',data:[70,65,72,60,58,78],borderColor:BLU,backgroundColor:'rgba(96,165,250,.1)'},
+    {label:'South India',data:[92,58,80,75,42,64],borderColor:GRN,backgroundColor:'rgba(45,184,122,.1)'},
+    {label:'West India',data:[68,72,68,55,72,82],borderColor:G,backgroundColor:'rgba(212,168,67,.1)'},
+    {label:'East India',data:[62,80,74,68,48,70],borderColor:ORG,backgroundColor:'rgba(251,146,60,.08)'}
+  ]);
+  // ch-dna3: Festival-Product Affinity
+  mkBar('ch-dna3',['Dhanteras','Navratri','Karwa Chauth','Akha Teej','Dussehra'],[
+    {label:'Chains',data:[82,44,28,38,22],backgroundColor:'rgba(212,168,67,.8)',stack:'a'},
+    {label:'Earrings',data:[24,72,56,44,48],backgroundColor:'rgba(244,114,182,.7)',stack:'a'},
+    {label:'Bangles',data:[34,38,68,52,34],backgroundColor:'rgba(96,165,250,.6)',stack:'a'},
+    {label:'Necklace',data:[18,28,36,82,28],backgroundColor:'rgba(45,184,122,.6)',stack:'a'}
+  ],{stacked:true});
+  // ch-dna4: Gold Purity by State
+  mkBar('ch-dna4',['Tamil Nadu','Kerala','Andhra','Karnataka','Maharashtra','Rajasthan','Punjab','West Bengal'],[
+    {label:'22K Preference %',data:[88,84,80,72,58,62,68,74],backgroundColor:G},
+    {label:'18K Preference %',data:[8,12,16,24,36,32,26,22],backgroundColor:BLU},
+    {label:'14K Preference %',data:[4,4,4,4,6,6,6,4],backgroundColor:ORG}
+  ]);
+  // ch-dna5: Religion × Occasion
+  mkBar('ch-dna5',['Wedding','Religious Festival','Gifting','Personal Buy','Investment'],[
+    {label:'Hindu',data:[44,32,12,8,4],backgroundColor:'rgba(212,168,67,.8)',stack:'a'},
+    {label:'Muslim',data:[38,28,18,10,6],backgroundColor:'rgba(96,165,250,.7)',stack:'a'},
+    {label:'Sikh',data:[52,22,14,8,4],backgroundColor:'rgba(45,184,122,.6)',stack:'a'},
+    {label:'Christian',data:[36,18,28,12,6],backgroundColor:'rgba(244,114,182,.6)',stack:'a'}
+  ],{stacked:true});
+  // ch-dna6: Localisation ROI
+  mkHBar('ch-dna6',['Chennai vs Mumbai','Jaipur vs Delhi','Kolkata vs Pune','Kochi vs Bengaluru','Amritsar vs Chandigarh'],[
+    {label:'Revenue Lift %',data:[34,28,24,22,18],backgroundColor:[GRN,GRN,G,G,ORG]}
+  ]);
 }
+
+// ============================================================
+// MODULE 14: WEDDING GRAPH
+// ============================================================
 function renderWedding(){
-  mkLine('ch-w1',MO,[{label:'Bridal Revenue (\u20B9Cr)',data:[4.2,3.8,6.2,8.4,7.8,5.2,4.4,6.8,10.2,8.4,6.8,9.2],borderColor:PNK,backgroundColor:'rgba(244,114,182,.1)',fill:true},{label:'Non-Bridal (\u20B9Cr)',data:[8.4,8.0,8.8,9.2,8.6,9.0,9.4,9.8,10.2,10.8,11.2,12.4],borderColor:G}]);
-  mkDoughnut('ch-w2',['Necklace','Bangles','Earrings','Maang Tikka','Ring','Anklets','Nose Ring'],[32,22,18,12,8,5,3],[G,'#C8962F','#B38429',PNK,BLU,GRN,PRP]);
-  mkLine('ch-w3',['90d','75d','60d','45d','30d','15d','7d','3d','0d'],[{label:'Cumulative Purchase %',data:[4,10,22,45,68,82,90,96,100],borderColor:G,backgroundColor:GA,fill:true}]);
-  mkHBar('ch-w4',['Mumbai','Delhi','Jaipur','Surat','Pune','Hyderabad','Ahmedabad','Chennai'],[{label:'Bridal Revenue (\u20B9Cr)',data:[18.4,14.8,12.2,10.6,8.4,7.8,7.2,6.8],backgroundColor:PNK}]);
-  mkBar('ch-w5',MO6,[{label:'<\u20B92L',data:[28,24,22,26,28,32],backgroundColor:'rgba(52,211,153,.6)',stack:'a'},{label:'\u20B92-5L',data:[44,42,40,44,46,48],backgroundColor:'rgba(212,168,67,.6)',stack:'a'},{label:'\u20B95L+',data:[28,34,38,30,26,20],backgroundColor:'rgba(244,114,182,.6)',stack:'a'}],{stacked:true});
-  mkBar('ch-w6',['Mumbai Andheri','Jaipur MI Rd','Surat Main','Delhi Karol Bagh','Pune FC Rd'],[{label:'Referral Rate %',data:[48,52,42,38,34],backgroundColor:'rgba(212,168,67,.6)'},{label:'Referral Rev (\u20B9L)',data:[88,72,64,58,42],backgroundColor:'rgba(244,114,182,.5)'}]);
+  // ch-w1: Wedding Season Revenue Calendar
+  mkLine('ch-w1',MO,[
+    {label:'Bridal Revenue (₹Cr)',data:[4.2,3.8,6.2,8.4,7.8,5.2,4.4,6.8,10.2,8.4,6.8,9.2],borderColor:PNK,backgroundColor:'rgba(244,114,182,.15)',fill:true},
+    {label:'Non-Bridal (₹Cr)',data:[8.4,8.0,8.8,9.2,8.6,9.0,9.4,9.8,10.2,10.8,11.2,12.4],borderColor:G}
+  ]);
+  // ch-w2: Bridal Category Breakdown
+  mkDoughnut('ch-w2',['Necklace','Bangles','Earrings','Maang Tikka','Ring','Anklets','Nose Ring'],
+    [32,22,18,12,8,5,3],[G,'#C8962F','#B38429',PNK,BLU,GRN,PRP]);
+  // ch-w3: Pre-Wedding Purchase Timeline
+  const days=['90d','75d','60d','45d','30d','15d','7d','3d','0d'];
+  mkLine('ch-w3',days,[
+    {label:'Cumulative Purchase %',data:[4,10,22,45,68,82,90,96,100],borderColor:G,backgroundColor:GA,fill:true}
+  ]);
+  // ch-w4: City Bridal Revenue
+  const bCities=['Mumbai','Delhi','Jaipur','Surat','Pune','Hyderabad','Ahmedabad','Chennai'];
+  mkHBar('ch-w4',bCities,[
+    {label:'Bridal Revenue (₹Cr)',data:[18.4,14.8,12.2,10.6,8.4,7.8,7.2,6.8],backgroundColor:PNK}
+  ]);
+  // ch-w5: Budget Tier Distribution
+  mkBar('ch-w5',MO6,[
+    {label:'<₹2L',data:[28,24,22,26,28,32],backgroundColor:'rgba(45,184,122,.7)',stack:'a'},
+    {label:'₹2-5L',data:[44,42,40,44,46,48],backgroundColor:'rgba(212,168,67,.7)',stack:'a'},
+    {label:'₹5L+',data:[28,34,38,30,26,20],backgroundColor:'rgba(244,114,182,.7)',stack:'a'}
+  ],{stacked:true});
+  // ch-w6: Referral Chain
+  mkBar('ch-w6',['Mumbai Andheri','Jaipur MI Rd','Surat Main','Delhi Karol Bagh','Pune FC Rd'],[
+    {label:'Referral Rate %',data:[48,52,42,38,34],backgroundColor:'rgba(212,168,67,.7)'},
+    {label:'Referral Rev (₹L)',data:[88,72,64,58,42],backgroundColor:'rgba(244,114,182,.6)'}
+  ]);
 }
+
+// ============================================================
+// MODULE 15: FESTIVAL CALENDAR
+// ============================================================
 function renderFestival(){
-  mkBar('ch-fes1',MO,[{label:'Revenue (\u20B9Cr)',data:[12.4,11.8,14.2,16.8,15.2,12.8,11.4,13.8,18.4,28.2,24.6,20.8],backgroundColor:MO.map((_,i)=>[9,10].includes(i)?GRN:i===11?G:'rgba(212,168,67,.4)')}]);
-  mkBar('ch-fes2',['Dhanteras','Akha Teej','Navratri','Dussehra','Gudi Padwa'],[{label:'North',data:[3.8,2.4,2.0,1.8,1.2],backgroundColor:'rgba(96,165,250,.6)'},{label:'South',data:[2.2,3.2,1.6,1.4,2.8],backgroundColor:'rgba(52,211,153,.6)'},{label:'West',data:[3.4,2.8,2.2,2.0,3.4],backgroundColor:'rgba(212,168,67,.6)'},{label:'East',data:[2.8,2.0,1.8,1.6,1.2],backgroundColor:'rgba(251,146,60,.6)'}]);
-  mkBar('ch-fes3',['Dhanteras','Akha Teej','Dussehra','Navratri','Karwa Chauth'],[{label:'Demand Forecast',data:[100,80,70,65,60],backgroundColor:'rgba(96,165,250,.5)'},{label:'Inventory Readiness',data:[72,84,78,90,82],backgroundColor:'rgba(212,168,67,.6)'}]);
-  mkBar('ch-fes4',['Dhanteras','Navratri','Karwa Chauth','Akha Teej','Dussehra'],[{label:'Chains',data:[3.8,1.6,1.2,1.4,1.2],backgroundColor:'rgba(212,168,67,.7)',stack:'a'},{label:'Earrings',data:[1.4,2.8,2.4,1.6,2.0],backgroundColor:'rgba(244,114,182,.6)',stack:'a'},{label:'Bangles',data:[1.6,1.8,2.8,1.8,1.4],backgroundColor:'rgba(96,165,250,.5)',stack:'a'},{label:'Necklace',data:[1.2,1.4,1.6,3.2,1.4],backgroundColor:'rgba(52,211,153,.5)',stack:'a'}],{stacked:true});
-  mkLine('ch-fes5',['Dhanteras','Akha Teej','Navratri','Dussehra','Karwa Chauth'],[{label:'FY2022',data:[18.2,8.4,6.2,4.8,5.2],borderColor:'rgba(96,165,250,.4)'},{label:'FY2023',data:[22.4,10.8,7.8,6.2,6.8],borderColor:ORG},{label:'FY2024',data:[28.2,13.4,9.4,7.6,8.4],borderColor:G,backgroundColor:GA,fill:true}]);
-  mkBar('ch-fes6',['Dhanteras','Akha Teej','Navratri','Dussehra','Karwa Chauth'],[{label:'Current Staff Hours',data:[820,480,380,320,360],backgroundColor:'rgba(96,165,250,.5)'},{label:'Required Hours',data:[1240,680,520,440,480],backgroundColor:'rgba(212,168,67,.6)'}]);
+  // ch-fes1: Annual Revenue Waterfall
+  mkBar('ch-fes1',MO,[
+    {label:'Revenue (₹Cr)',data:[12.4,11.8,14.2,16.8,15.2,12.8,11.4,13.8,18.4,28.2,24.6,20.8],
+     backgroundColor:MO.map((_,i)=>[9,10].includes(i)?GRN:i===11?G:'rgba(212,168,67,.5)')}
+  ]);
+  // ch-fes2: Festival Multiplier by Region
+  mkBar('ch-fes2',['Dhanteras','Akha Teej','Navratri','Dussehra','Gudi Padwa'],[
+    {label:'North',data:[3.8,2.4,2.0,1.8,1.2],backgroundColor:'rgba(96,165,250,.7)'},
+    {label:'South',data:[2.2,3.2,1.6,1.4,2.8],backgroundColor:'rgba(45,184,122,.7)'},
+    {label:'West',data:[3.4,2.8,2.2,2.0,3.4],backgroundColor:'rgba(212,168,67,.7)'},
+    {label:'East',data:[2.8,2.0,1.8,1.6,1.2],backgroundColor:'rgba(251,146,60,.7)'}
+  ]);
+  // ch-fes3: Inventory Readiness
+  mkBar('ch-fes3',['Dhanteras','Akha Teej','Dussehra','Navratri','Karwa Chauth'],[
+    {label:'Demand Forecast (Index)',data:[100,80,70,65,60],backgroundColor:'rgba(96,165,250,.6)'},
+    {label:'Inventory Readiness',data:[72,84,78,90,82],backgroundColor:'rgba(212,168,67,.7)'}
+  ]);
+  // ch-fes4: Category Surge by Festival
+  mkBar('ch-fes4',['Dhanteras','Navratri','Karwa Chauth','Akha Teej','Dussehra'],[
+    {label:'Chains',data:[3.8,1.6,1.2,1.4,1.2],backgroundColor:'rgba(212,168,67,.8)',stack:'a'},
+    {label:'Earrings',data:[1.4,2.8,2.4,1.6,2.0],backgroundColor:'rgba(244,114,182,.7)',stack:'a'},
+    {label:'Bangles',data:[1.6,1.8,2.8,1.8,1.4],backgroundColor:'rgba(96,165,250,.6)',stack:'a'},
+    {label:'Necklace',data:[1.2,1.4,1.6,3.2,1.4],backgroundColor:'rgba(45,184,122,.6)',stack:'a'}
+  ],{stacked:true});
+  // ch-fes5: YoY Festival Revenue
+  mkLine('ch-fes5',['Dhanteras','Akha Teej','Navratri','Dussehra','Karwa Chauth'],[
+    {label:'FY2022',data:[18.2,8.4,6.2,4.8,5.2],borderColor:'rgba(96,165,250,.5)'},
+    {label:'FY2023',data:[22.4,10.8,7.8,6.2,6.8],borderColor:ORG},
+    {label:'FY2024',data:[28.2,13.4,9.4,7.6,8.4],borderColor:G,backgroundColor:GA,fill:true}
+  ]);
+  // ch-fes6: Staff Surge Requirement
+  mkBar('ch-fes6',['Dhanteras','Akha Teej','Navratri','Dussehra','Karwa Chauth'],[
+    {label:'Current Staff Hours',data:[820,480,380,320,360],backgroundColor:'rgba(96,165,250,.6)'},
+    {label:'Required Hours',data:[1240,680,520,440,480],backgroundColor:'rgba(212,168,67,.7)'}
+  ]);
 }
 
 // ============================================================
@@ -1184,15 +1557,11 @@ const VIEWS = {
   city:{fn:()=>renderCityTable(),title:'City Expansion Intelligence'}
 };
 
-let currentView='home';
-
 function nav(id){
-  if(!VIEWS[id])return;
-  currentView=id;
   document.querySelectorAll('.ni').forEach(n=>n.classList.remove('active'));
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   const navEl=document.querySelector('[data-view="'+id+'"]');
-  if(navEl)navEl.classList.add('active');
+  if(navEl) navEl.classList.add('active');
   const viewEl=document.getElementById('view-'+id);
   if(viewEl) viewEl.classList.add('active');
   const hdr=document.getElementById('tb-title');
@@ -1216,18 +1585,19 @@ function nav(id){
 
 function animateCounters(viewId){
   const view=document.getElementById('view-'+viewId);
-  if(!view)return;
+  if(!view) return;
   view.querySelectorAll('[data-count]').forEach(el=>{
     const target=parseFloat(el.dataset.count);
     const pre=el.dataset.pre||'';
     const suf=el.dataset.suf||'';
     const dec=parseInt(el.dataset.dec||0);
-    const dur=900,fps=60,steps=dur/1000*fps;
-    let step=0;
+    const dur=1100, fps=60, steps=dur/1000*fps;
+    let cur=0, step=0;
     const timer=setInterval(()=>{
       step++;
-      const ease=1-Math.pow(1-step/steps,3);
-      const cur=target*ease;
+      const prog=step/steps;
+      const ease=1-Math.pow(1-prog,3);
+      cur=target*ease;
       el.textContent=pre+(dec?cur.toFixed(dec):Math.round(cur))+suf;
       if(step>=steps){el.textContent=pre+(dec?target.toFixed(dec):target)+suf;clearInterval(timer);}
     },1000/fps);
@@ -1364,7 +1734,6 @@ document.addEventListener('DOMContentLoaded',()=>{
   renderCityTable();
   nav('home');
 });
-window.addEventListener('hashchange',handleHash);
 </script>
 </body>
 </html>
