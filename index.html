@@ -4,161 +4,91 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>KISNA · Retail Intelligence Platform</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#09090b;--bg1:#0c0c0f;--bgc:#111114;--bgr:#161619;--bgh:#1c1c20;
-  --g0:#D4A843;--g1:#C9972B;--gdim:rgba(212,168,67,.08);--gbrd:rgba(212,168,67,.18);
-  --t0:rgba(255,252,245,1);--t1:rgba(255,252,245,.72);--t2:rgba(255,252,245,.42);--t3:rgba(255,252,245,.2);
-  --brd:rgba(255,255,255,.06);--brdhi:rgba(255,255,255,.12);
+  --bg:#09090f;--bg1:#0d0d14;--bgc:#131319;--bgr:#1a1a24;--bgh:#22222e;
+  --g0:#D4A843;--g1:#C9972B;--gdim:rgba(212,168,67,.08);--gbrd:rgba(212,168,67,.2);
+  --glass:rgba(19,19,27,.6);--glass-brd:rgba(255,248,235,.07);
+  --t0:rgba(255,248,235,1);--t1:rgba(255,248,235,.72);--t2:rgba(255,248,235,.42);--t3:rgba(255,248,235,.2);
+  --brd:rgba(255,248,235,.06);--brdhi:rgba(255,248,235,.14);
   --green:#34D399;--grnd:rgba(52,211,153,.1);
   --red:#F87171;--redd:rgba(248,113,113,.1);
   --amber:#FBBF24;--amberd:rgba(251,191,36,.1);
   --blue:#60A5FA;--blued:rgba(96,165,250,.1);
-  --r:12px;--rs:8px;--rx:6px;--sw:260px;--sw-collapsed:64px;
-  --ease:cubic-bezier(.4,0,.2,1);
+  --r:16px;--rs:10px;--rx:6px;--sw:260px;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.2);
+  --shadow:0 2px 8px rgba(0,0,0,.25),0 4px 16px rgba(0,0,0,.15);
+  --shadow-lg:0 8px 24px rgba(0,0,0,.35),0 16px 48px rgba(0,0,0,.2);
 }
-html,body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t0);height:100%;overflow:hidden;-webkit-font-smoothing:antialiased;font-size:13px}
-::selection{background:rgba(212,168,67,.3);color:#fff}
-
-/* ===== SPLASH ===== */
-.splash{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s var(--ease),visibility .6s;pointer-events:all}
-.splash.hide{opacity:0;visibility:hidden;pointer-events:none}
-.splash-mark{width:72px;height:72px;border-radius:18px;background:linear-gradient(135deg,#D4A843 0%,#9A7020 60%,#D4A843 100%);background-size:200% 200%;animation:shimmer 2s ease infinite;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-weight:800;font-size:32px;color:#0B0806;box-shadow:0 0 60px rgba(212,168,67,.3),0 0 120px rgba(212,168,67,.1);margin-bottom:24px}
-@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-.splash-name{font-size:20px;font-weight:700;color:var(--t0);letter-spacing:1px;margin-bottom:6px}
-.splash-tag{font-size:11px;color:var(--t2);letter-spacing:2px;text-transform:uppercase;margin-bottom:32px}
-.splash-bar{width:200px;height:2px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
-.splash-fill{height:100%;width:0;background:linear-gradient(90deg,var(--g0),var(--g1));border-radius:2px;animation:loadBar 1.4s var(--ease) forwards}
-@keyframes loadBar{to{width:100%}}
-
-/* ===== APP LAYOUT ===== */
-.app{display:flex;height:100vh;opacity:0;transition:opacity .4s var(--ease) .2s}
-.app.show{opacity:1}
-
-/* ===== SIDEBAR ===== */
-.sb{width:var(--sw);min-width:var(--sw);height:100vh;background:var(--bg1);border-right:1px solid var(--brd);display:flex;flex-direction:column;overflow-y:auto;overflow-x:hidden;scrollbar-width:none;flex-shrink:0;transition:width .3s var(--ease),min-width .3s var(--ease);position:relative;z-index:50}
-.sb::-webkit-scrollbar{display:none}
-.sb.collapsed{width:var(--sw-collapsed);min-width:var(--sw-collapsed)}
-.sb.collapsed .sb-name,.sb.collapsed .sb-tag,.sb.collapsed .sb-lbl,.sb.collapsed .ni span:not(.ni-ic),.sb.collapsed .ni-badge{display:none}
-.sb.collapsed .sb-logo{justify-content:center;padding:16px 8px}
-.sb.collapsed .ni{justify-content:center;padding:8px;border-left:0}
-.sb.collapsed .ni.active{border-left:0;border-bottom:2px solid var(--g0);border-radius:var(--rs)}
-.sb.collapsed .ni-ic{margin:0}
-.sb.collapsed .sb-sec{padding:8px 4px 2px}
-.sb-logo{padding:18px 16px 14px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--brd);flex-shrink:0;position:relative}
-.sb-mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#D4A843,#9A7020);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;color:#0B0806;box-shadow:0 2px 12px rgba(212,168,67,.25);flex-shrink:0;transition:transform .2s}
-.sb-mark:hover{transform:scale(1.05)}
-.sb-name{font-size:14px;font-weight:700;color:var(--t0);white-space:nowrap}.sb-tag{font-size:9px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-top:2px;white-space:nowrap}
-.sb-toggle{position:absolute;right:-12px;top:24px;width:24px;height:24px;border-radius:50%;background:var(--bgr);border:1px solid var(--brd);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:10px;color:var(--t2);z-index:60;transition:all .2s;opacity:0}
-.sb:hover .sb-toggle{opacity:1}
-.sb-toggle:hover{background:var(--gdim);border-color:var(--gbrd);color:var(--g0)}
-.sb-sec{padding:10px 8px 2px;flex-shrink:0}
-.sb-lbl{font-size:9px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--t3);padding:0 8px 6px;white-space:nowrap}
-.ni{display:flex;align-items:center;gap:9px;padding:7px 10px;margin:1px 0;border-radius:var(--rs);cursor:pointer;font-size:12px;color:var(--t2);transition:all .15s var(--ease);border-left:3px solid transparent;white-space:nowrap}
-.ni:hover{background:rgba(255,255,255,.04);color:var(--t1)}
-.ni.active{background:rgba(212,168,67,.08);color:var(--g0);border-left-color:var(--g0);font-weight:600;box-shadow:0 0 20px rgba(212,168,67,.05)}
-.ni-ic{font-size:15px;width:18px;text-align:center;flex-shrink:0}
-.ni-badge{margin-left:auto;font-size:9px;font-weight:700;background:var(--redd);color:var(--red);padding:2px 6px;border-radius:10px;white-space:nowrap}
-
-/* ===== MAIN ===== */
-.main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0;position:relative}
-.main::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 600px 400px at 70% 20%,rgba(212,168,67,.03),transparent),radial-gradient(ellipse 400px 300px at 30% 80%,rgba(96,165,250,.02),transparent);pointer-events:none;z-index:0}
-
-/* ===== TOPBAR ===== */
-.topbar{height:54px;flex-shrink:0;background:rgba(9,9,11,.85);border-bottom:1px solid var(--brd);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);display:flex;align-items:center;padding:0 20px;gap:8px;position:relative;z-index:10}
-.tb-t{font-size:15px;font-weight:700;color:var(--t0);white-space:nowrap}.tb-sep{color:var(--t3);margin:0 2px;font-size:11px}.tb-s{font-size:11px;color:var(--t2);white-space:nowrap}
-.tb-sp{flex:1}
-.tb-search{position:relative;width:240px}
-.tb-search input{width:100%;padding:6px 12px 6px 32px;background:rgba(255,255,255,.04);border:1px solid var(--brd);border-radius:8px;color:var(--t0);font-size:11.5px;font-family:inherit;outline:none;transition:all .2s}
-.tb-search input:focus{border-color:var(--gbrd);background:rgba(255,255,255,.06);box-shadow:0 0 0 3px rgba(212,168,67,.08)}
-.tb-search input::placeholder{color:var(--t3)}
-.tb-search-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:12px;color:var(--t3);pointer-events:none}
-.tb-search-results{position:absolute;top:100%;left:0;right:0;margin-top:4px;background:var(--bgr);border:1px solid var(--brd);border-radius:var(--rs);max-height:240px;overflow-y:auto;display:none;z-index:100;box-shadow:0 12px 40px rgba(0,0,0,.5)}
-.tb-search-results.show{display:block}
-.tb-sr{padding:8px 12px;cursor:pointer;font-size:11.5px;color:var(--t1);display:flex;align-items:center;gap:8px;transition:background .1s}
-.tb-sr:hover{background:rgba(212,168,67,.08);color:var(--g0)}
-.tb-sr-ic{font-size:13px;width:18px;text-align:center;flex-shrink:0}
-.tb-btn{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;color:var(--t2);transition:all .15s;position:relative;border:1px solid transparent}
-.tb-btn:hover{background:rgba(255,255,255,.05);border-color:var(--brd);color:var(--t0)}
-.tb-notif-count{position:absolute;top:4px;right:4px;width:16px;height:16px;border-radius:50%;background:var(--red);color:#fff;font-size:8px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid var(--bg)}
-.tb-pill{display:flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;background:var(--gdim);border:1px solid var(--gbrd);font-size:10px;color:var(--g0);font-weight:600;white-space:nowrap}
+html,body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--t0);height:100%;overflow:hidden;-webkit-font-smoothing:antialiased;font-size:13px;line-height:1.5}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 15% 50%,rgba(212,168,67,.04) 0%,transparent 50%),radial-gradient(ellipse at 85% 15%,rgba(96,165,250,.03) 0%,transparent 45%);pointer-events:none;z-index:0}
+.app{display:flex;height:100vh;position:relative;z-index:1}
+/* SIDEBAR */
+.sb{width:var(--sw);min-width:var(--sw);height:100vh;background:var(--bg1);border-right:1px solid var(--brd);display:flex;flex-direction:column;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:rgba(212,168,67,.15) transparent;flex-shrink:0;transition:transform .3s cubic-bezier(.4,0,.2,1),opacity .3s;z-index:100}
+.sb::-webkit-scrollbar{width:3px}.sb::-webkit-scrollbar-thumb{background:rgba(212,168,67,.2);border-radius:2px}
+.sb-logo{padding:20px 16px 16px;display:flex;align-items:center;gap:11px;border-bottom:1px solid var(--brd);flex-shrink:0}
+.sb-mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#D4A843 0%,#9A7020 100%);display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-weight:800;font-size:17px;color:#0B0806;box-shadow:0 2px 12px rgba(212,168,67,.3);flex-shrink:0}
+.sb-name{font-size:15px;font-weight:700;color:var(--t0);letter-spacing:-.02em}.sb-tag{font-size:9px;color:var(--t3);letter-spacing:.8px;text-transform:uppercase;margin-top:2px}
+.sb-sec{padding:14px 8px 2px;flex-shrink:0}
+.sb-lbl{font-size:9px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--t3);padding:0 8px 8px}
+.ni{display:flex;align-items:center;gap:9px;padding:8px 10px;margin:1px 0;border-radius:var(--rs);cursor:pointer;font-size:12.5px;color:var(--t2);transition:all .2s cubic-bezier(.4,0,.2,1);border-left:3px solid transparent;position:relative}
+.ni:hover{background:rgba(212,168,67,.07);color:var(--t1)}
+.ni.active{background:rgba(212,168,67,.1);color:var(--g0);border-left-color:var(--g0);font-weight:600}
+.ni.active::after{content:'';position:absolute;left:-3px;top:25%;bottom:25%;width:3px;background:var(--g0);border-radius:0 2px 2px 0;box-shadow:0 0 8px rgba(212,168,67,.5)}
+.ni-ic{font-size:14px;width:18px;text-align:center;flex-shrink:0}
+.ni-badge{margin-left:auto;font-size:9px;font-weight:700;background:rgba(248,113,113,.15);color:var(--red);padding:2px 7px;border-radius:10px;animation:pulse-badge 2s infinite}
+@keyframes pulse-badge{0%,100%{opacity:1}50%{opacity:.6}}
+/* MOBILE MENU */
+.menu-toggle{display:none;position:fixed;top:12px;left:12px;z-index:200;width:40px;height:40px;border-radius:10px;background:var(--bgc);border:1px solid var(--gbrd);color:var(--g0);font-size:18px;cursor:pointer;align-items:center;justify-content:center;backdrop-filter:blur(12px)}
+.sb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:99;backdrop-filter:blur(4px)}
+/* MAIN */
+.main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
+.topbar{height:56px;flex-shrink:0;background:rgba(9,9,15,.85);border-bottom:1px solid var(--brd);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);display:flex;align-items:center;padding:0 26px;gap:10px;z-index:50}
+.tb-t{font-size:16px;font-weight:700;color:var(--t0);letter-spacing:-.02em}.tb-sep{color:var(--t3);margin:0 2px}.tb-s{font-size:11.5px;color:var(--t2)}.tb-sp{flex:1}
+.tb-search{display:flex;align-items:center;gap:8px;padding:6px 14px;border-radius:8px;background:rgba(255,255,255,.04);border:1px solid var(--brd);color:var(--t2);font-size:12px;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;white-space:nowrap}
+.tb-search:hover{border-color:var(--gbrd);color:var(--t1);background:rgba(255,255,255,.06)}
+.tb-search kbd{font-size:10px;padding:1px 5px;border-radius:4px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--t3);font-family:'Inter',sans-serif}
+.tb-pill{display:flex;align-items:center;gap:6px;padding:5px 13px;border-radius:20px;background:var(--gdim);border:1px solid var(--gbrd);font-size:11px;color:var(--g0);font-weight:500}
 .tb-dot{width:5px;height:5px;border-radius:50%;background:var(--green);animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-.tb-date{font-size:10.5px;color:var(--t3);white-space:nowrap}
-.tb-avatar{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,rgba(212,168,67,.2),rgba(212,168,67,.1));border:1px solid var(--gbrd);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--g0);cursor:pointer}
-
-/* ===== CONTENT ===== */
-.content{flex:1;overflow-y:auto;overflow-x:hidden;padding:20px 24px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.04) transparent;position:relative;z-index:1}
-.content::-webkit-scrollbar{width:4px}.content::-webkit-scrollbar-thumb{background:rgba(255,255,255,.06);border-radius:2px}
-
-/* ===== VIEWS ===== */
-.view{display:none}.view.active{display:block}
-.view.active .hc{animation:cardIn .4s var(--ease) backwards}
-.view.active .hc:nth-child(1){animation-delay:0s}
-.view.active .hc:nth-child(2){animation-delay:.06s}
-.view.active .hc:nth-child(3){animation-delay:.12s}
-.view.active .hc:nth-child(4){animation-delay:.18s}
-.view.active .card{animation:cardIn .5s var(--ease) backwards;animation-delay:.2s}
-@keyframes cardIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-
-/* ===== WELCOME BANNER ===== */
-.welcome{border-radius:var(--r);padding:24px 28px;margin-bottom:20px;position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(212,168,67,.08) 0%,rgba(9,9,11,.9) 50%,rgba(96,165,250,.04) 100%);border:1px solid rgba(212,168,67,.12)}
-.welcome::before{content:'';position:absolute;top:-50%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(212,168,67,.08),transparent 70%);pointer-events:none}
-.welcome-row{display:flex;justify-content:space-between;align-items:center}
-.welcome h2{font-size:20px;font-weight:700;color:var(--t0);margin-bottom:4px}
-.welcome p{font-size:12px;color:var(--t2);max-width:500px;line-height:1.5}
-.welcome-stats{display:flex;gap:24px}
-.welcome-stat{text-align:center}
-.welcome-stat-num{font-size:22px;font-weight:800;color:var(--g0);line-height:1}
-.welcome-stat-lbl{font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:.8px;margin-top:4px}
-
-/* ===== QUICK ACTIONS ===== */
-.quick-actions{display:flex;gap:8px;margin-bottom:20px}
-.qa{flex:1;display:flex;align-items:center;gap:10px;padding:12px 14px;background:rgba(255,255,255,.02);border:1px solid var(--brd);border-radius:var(--rs);cursor:pointer;transition:all .2s var(--ease)}
-.qa:hover{background:rgba(212,168,67,.06);border-color:var(--gbrd);transform:translateY(-1px)}
-.qa-ic{font-size:18px;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:var(--gdim);flex-shrink:0}
-.qa-t{font-size:11.5px;font-weight:600;color:var(--t0)}.qa-s{font-size:10px;color:var(--t3);margin-top:1px}
-
-/* ===== HERO CARDS ===== */
-.hrow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}
-.hc{background:rgba(17,17,20,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--brd);border-radius:var(--r);padding:16px 18px;position:relative;overflow:hidden;transition:all .25s var(--ease)}
-.hc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--ac,var(--g0)),transparent);opacity:.5}
-.hc:hover{border-color:rgba(212,168,67,.15);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.3),0 0 20px rgba(212,168,67,.04)}
-.hc-num{font-size:28px;font-weight:800;color:var(--ac,var(--g0));line-height:1;margin-bottom:2px;letter-spacing:-.5px}
-.hc-lbl{font-size:10px;color:var(--t2);letter-spacing:.3px;text-transform:uppercase;font-weight:500}
-.hc-sub{font-size:9.5px;color:var(--t3);margin-top:2px}
-.hc-spark{position:absolute;bottom:12px;right:14px;opacity:.35}
-.hc-trend{display:inline-flex;align-items:center;gap:2px;font-size:9.5px;font-weight:600;margin-left:6px}
-.hc-trend.up{color:var(--green)}.hc-trend.down{color:var(--red)}
-
-/* ===== CARDS ===== */
-.card{background:var(--bgc);border:1px solid var(--brd);border-radius:var(--r);padding:16px;margin-bottom:14px;transition:border-color .2s}
-.card:hover{border-color:var(--brdhi)}
-.card-hd{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px}
-.card-t{font-size:12.5px;font-weight:600;color:var(--t0)}.card-d{font-size:10px;color:var(--t2);margin-top:2px;line-height:1.4}
-.ctag{font-size:8px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:3px 8px;border-radius:20px;flex-shrink:0;white-space:nowrap}
-.cml{background:rgba(52,211,153,.08);color:#34D399}.cmis{background:rgba(96,165,250,.08);color:#60A5FA}
+.content{flex:1;overflow-y:auto;overflow-x:hidden;padding:24px 26px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.06) transparent;scroll-behavior:smooth}
+.content::-webkit-scrollbar{width:4px}.content::-webkit-scrollbar-thumb{background:rgba(255,255,255,.09);border-radius:2px}
+/* VIEWS */
+.view{display:none}.view.active{display:block;animation:fadeUp .35s cubic-bezier(.4,0,.2,1)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+/* HERO KPI CARDS */
+.hrow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}
+.hc{background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--glass-brd);border-radius:var(--r);padding:18px 20px;position:relative;overflow:hidden;transition:all .3s cubic-bezier(.4,0,.2,1)}
+.hc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--ac,var(--g0)) 0%,transparent 80%);opacity:.8}
+.hc::after{content:'';position:absolute;top:0;right:0;width:80px;height:80px;background:radial-gradient(circle,var(--ac,rgba(212,168,67,.06)) 0%,transparent 70%);pointer-events:none}
+.hc:hover{border-color:var(--brdhi);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.hc-num{font-family:'Inter',sans-serif;font-size:30px;font-weight:800;color:var(--ac,var(--g0));line-height:1;margin-bottom:6px;letter-spacing:-.03em}
+.hc-lbl{font-size:10.5px;color:var(--t2);letter-spacing:.5px;text-transform:uppercase;font-weight:500}.hc-sub{font-size:10px;color:var(--t3);margin-top:3px}
+/* CARDS */
+.card{background:var(--glass);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--glass-brd);border-radius:var(--r);padding:18px;margin-bottom:16px;transition:border-color .2s,box-shadow .3s}
+.card:hover{border-color:var(--brdhi);box-shadow:0 4px 16px rgba(0,0,0,.15)}
+.card-hd{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px}
+.card-t{font-size:13px;font-weight:600;color:var(--t0);letter-spacing:-.01em}.card-d{font-size:10.5px;color:var(--t2);margin-top:3px;line-height:1.5}
+.ctag{font-size:8.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:3px 9px;border-radius:20px;flex-shrink:0;white-space:nowrap}
+.cml{background:rgba(0,229,160,.08);color:#00E5A0}.cmis{background:rgba(96,165,250,.08);color:#60A5FA}
 .csal{background:rgba(192,132,252,.08);color:#C084FC}.ccre{background:rgba(251,146,60,.08);color:#FB923C}
-
-/* ===== GRIDS ===== */
-.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-.g21{display:grid;grid-template-columns:2fr 1fr;gap:14px;margin-bottom:14px}
-.g12{display:grid;grid-template-columns:1fr 2fr;gap:14px;margin-bottom:14px}
-
-/* ===== TABLE ===== */
+/* CHART GRIDS */
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.g21{display:grid;grid-template-columns:2fr 1fr;gap:16px;margin-bottom:16px}
+.g12{display:grid;grid-template-columns:1fr 2fr;gap:16px;margin-bottom:16px}
+/* TABLE */
 .tw{overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:12px}
 thead{border-bottom:1px solid var(--brd)}
-th{padding:8px 10px;text-align:left;font-size:9.5px;font-weight:600;color:var(--t2);letter-spacing:.5px;text-transform:uppercase;cursor:pointer;white-space:nowrap}
+th{padding:8px 10px;text-align:left;font-size:10px;font-weight:600;color:var(--t2);letter-spacing:.5px;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:color .15s}
 th:hover{color:var(--g0)}
-td{padding:8px 10px;border-bottom:1px solid rgba(255,255,255,.03);color:var(--t1);white-space:nowrap}
-tr:hover td{background:rgba(212,168,67,.03)}
-
-/* ===== BADGES ===== */
+td{padding:8px 10px;border-bottom:1px solid rgba(255,248,235,.04);color:var(--t1);white-space:nowrap}
+tr:hover td{background:rgba(212,168,67,.04)}
+/* BADGES */
 .b{display:inline-flex;align-items:center;padding:2px 7px;border-radius:5px;font-size:10px;font-weight:600}
 .bg{background:var(--grnd);color:var(--green)}.br{background:var(--redd);color:var(--red)}
 .ba{background:var(--amberd);color:var(--amber)}.bb{background:var(--blued);color:#60A5FA}
@@ -169,24 +99,21 @@ tr:hover td{background:rgba(212,168,67,.03)}
 .pn{font-size:11px;color:var(--t1)}.pv{font-size:11px;font-weight:600;color:var(--t0)}
 .pb{height:4px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden}
 .pf{height:100%;border-radius:3px}
-
-/* ===== INSIGHT ===== */
-.insight{background:rgba(212,168,67,.05);border:1px solid rgba(212,168,67,.12);border-radius:var(--rs);padding:12px 14px;margin-top:12px;display:flex;gap:8px}
-.ii{font-size:14px;flex-shrink:0;margin-top:1px}.it{font-size:11px;color:var(--t1);line-height:1.65}.it strong{color:var(--g0)}
-
-/* ===== ALERT ===== */
-.alert{border-radius:var(--rs);padding:10px 12px;margin-bottom:6px;display:flex;gap:8px;align-items:flex-start;transition:transform .15s}
-.alert:hover{transform:translateX(2px)}
-.alr{background:var(--redd);border:1px solid rgba(248,113,113,.15)}.ala{background:var(--amberd);border:1px solid rgba(251,191,36,.15)}
-.alg{background:var(--grnd);border:1px solid rgba(52,211,153,.15)}
-.a-ic{font-size:12px;flex-shrink:0;margin-top:2px}.a-t{font-size:11px;font-weight:600;color:var(--t0)}.a-s{font-size:10px;color:var(--t2);margin-top:1px}
-
-/* ===== FLOW ===== */
-.flow{display:flex;align-items:center;gap:9px;padding:8px 12px;background:var(--bgr);border-radius:var(--rs);margin-bottom:5px;border-left:3px solid var(--ac,var(--g0))}
-.fl{flex:1;font-size:11px;color:var(--t1)}.fa{color:var(--t3);font-size:10.5px}.fv{font-size:12px;font-weight:600;color:var(--ac,var(--g0));flex-shrink:0}
-
-/* ===== SEARCH ===== */
-.sb-in{width:100%;padding:8px 12px;background:var(--bgr);border:1px solid var(--brd);border-radius:var(--rs);color:var(--t0);font-size:12px;font-family:inherit;outline:none;margin-bottom:12px;transition:border-color .2s}
+/* INSIGHT */
+.insight{background:rgba(212,168,67,.06);border:1px solid rgba(212,168,67,.14);border-radius:var(--rs);padding:12px 14px;margin-top:14px;display:flex;gap:9px;transition:transform .2s}
+.insight:hover{transform:translateX(4px)}
+.ii{font-size:14px;flex-shrink:0;margin-top:1px}.it{font-size:11.5px;color:var(--t1);line-height:1.65}.it strong{color:var(--g0);font-weight:600}
+/* ALERT */
+.alert{border-radius:var(--rs);padding:11px 13px;margin-bottom:8px;display:flex;gap:8px;align-items:flex-start;transition:transform .2s}
+.alert:hover{transform:translateX(4px)}
+.alr{background:var(--redd);border:1px solid rgba(248,113,113,.2)}.ala{background:var(--amberd);border:1px solid rgba(251,191,36,.2)}
+.alg{background:var(--grnd);border:1px solid rgba(52,211,153,.2)}
+.a-ic{font-size:13px;flex-shrink:0;margin-top:1px}.a-t{font-size:11.5px;font-weight:600;color:var(--t0)}.a-s{font-size:10.5px;color:var(--t2);margin-top:2px;line-height:1.5}
+/* FLOW */
+.flow{display:flex;align-items:center;gap:9px;padding:9px 12px;background:var(--bgr);border-radius:var(--rs);margin-bottom:6px;border-left:3px solid var(--ac,var(--g0))}
+.fl{flex:1;font-size:11.5px;color:var(--t1)}.fa{color:var(--t3);font-size:11px}.fv{font-size:12px;font-weight:600;color:var(--ac,var(--g0));flex-shrink:0}
+/* SEARCH */
+.sb-in{width:100%;padding:8px 12px;background:var(--bgr);border:1px solid var(--brd);border-radius:var(--rs);color:var(--t0);font-size:12.5px;font-family:'Inter',sans-serif;outline:none;margin-bottom:12px;transition:border-color .2s}
 .sb-in:focus{border-color:var(--gbrd)}.sb-in::placeholder{color:var(--t3)}
 
 /* ===== PAGINATION ===== */
@@ -200,91 +127,152 @@ tr:hover td{background:rgba(212,168,67,.03)}
 .kc{background:var(--bgr);border-radius:var(--rs);padding:10px}
 .kh{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--t2);margin-bottom:8px;display:flex;justify-content:space-between}
 .ki{background:var(--bgc);border:1px solid var(--brd);border-radius:var(--rx);padding:6px 8px;margin-bottom:4px}
-.ki-n{font-size:10px;color:var(--t1);font-weight:500}.ki-s{font-size:9px;color:var(--t3);margin-top:1px}
-
-/* ===== ARCH CARD ===== */
-.acard{background:var(--bgr);border-radius:var(--rs);padding:10px;border-left:3px solid var(--ac,var(--g0));margin-bottom:6px}
-.acard-n{font-size:11.5px;font-weight:600;color:var(--t0);margin-bottom:3px}.acard-s{font-size:10px;color:var(--t2);margin-bottom:2px}
-
-/* ===== FEST CARD ===== */
-.fcard{background:var(--bgr);border:1px solid var(--brd);border-radius:var(--rs);padding:12px;text-align:center;transition:all .2s}
-.fcard:hover{border-color:var(--gbrd);transform:translateY(-2px)}
-.fcard-ic{font-size:24px;margin-bottom:6px}.fcard-nm{font-size:11.5px;font-weight:600;color:var(--t0);margin-bottom:2px}
-.fcard-dt{font-size:10px;color:var(--t2);margin-bottom:6px}.fcard-mult{font-size:20px;font-weight:700}.fcard-lbl{font-size:9px;color:var(--t3)}
-
-/* ===== STAT BLOCK ===== */
-.sblock{padding:8px 0;border-bottom:1px solid var(--brd);display:flex}
-.sblock:last-child{border-bottom:0}.sbl{flex:1;font-size:11px;color:var(--t2)}.sbv{font-size:11.5px;font-weight:600;color:var(--t0)}
-
-/* ===== SELECT ===== */
-.sel{padding:5px 9px;background:var(--bgr);border:1px solid var(--brd);border-radius:var(--rs);color:var(--t1);font-size:11px;cursor:pointer;outline:none;font-family:inherit}
-
-/* ===== MODULE HOME GRID ===== */
-.mgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.mc{background:rgba(17,17,20,.6);backdrop-filter:blur(8px);border:1px solid var(--brd);border-radius:var(--r);padding:14px 13px;cursor:pointer;transition:all .25s var(--ease);position:relative;overflow:hidden}
-.mc:hover{border-color:rgba(212,168,67,.2);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
-.mc::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(212,168,67,.04),transparent);transition:left .5s var(--ease)}
-.mc:hover::before{left:100%}
-.mc-ic{font-size:20px;margin-bottom:6px}
-.mc-nm{font-size:11px;font-weight:600;color:var(--t0);margin-bottom:3px}
-.mc-big{font-size:17px;font-weight:800;line-height:1;margin-bottom:2px;letter-spacing:-.3px}
-.mc-hook{font-size:9px;color:var(--t3);line-height:1.4}
-.mc-go{font-size:9.5px;color:var(--ac,var(--g0));margin-top:6px;opacity:.6;font-weight:500}
-
-/* ===== ALERTS SECTION ===== */
-.home-alerts{margin-top:18px}
-.home-alerts-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--t3);margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.home-alerts-title::after{content:'';flex:1;height:1px;background:var(--brd)}
-
-/* ===== FOOTER ===== */
-.footer{height:32px;flex-shrink:0;background:rgba(9,9,11,.9);border-top:1px solid var(--brd);display:flex;align-items:center;justify-content:center;padding:0 20px;gap:16px;font-size:10px;color:var(--t3);position:relative;z-index:1}
-.footer span{display:flex;align-items:center;gap:4px}
-.footer .fdot{width:4px;height:4px;border-radius:50%;background:var(--green)}
-
-/* ===== KBD HINTS ===== */
-.kbd{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;padding:0 4px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:4px;font-size:9px;font-family:inherit;color:var(--t3)}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:1200px){
-  .sb{width:var(--sw-collapsed);min-width:var(--sw-collapsed)}
-  .sb .sb-name,.sb .sb-tag,.sb .sb-lbl,.sb .ni span:not(.ni-ic),.sb .ni-badge{display:none}
-  .sb .sb-logo{justify-content:center;padding:16px 8px}
-  .sb .ni{justify-content:center;padding:8px;border-left:0}
-  .sb .ni.active{border-left:0}
-  .sb .sb-sec{padding:8px 4px 2px}
-  .sb .sb-toggle{display:none}
+.ki-n{font-size:10.5px;color:var(--t1);font-weight:500}.ki-s{font-size:9.5px;color:var(--t3);margin-top:1px}
+/* ARCH CARD */
+.acard{background:var(--bgr);border-radius:var(--rs);padding:11px;border-left:3px solid var(--ac,var(--g0));margin-bottom:7px}
+.acard-n{font-size:12px;font-weight:600;color:var(--t0);margin-bottom:4px}.acard-s{font-size:10.5px;color:var(--t2);margin-bottom:2px}
+/* FEST CARD */
+.fcard{background:var(--bgr);border:1px solid var(--brd);border-radius:var(--rs);padding:12px;text-align:center}
+.fcard-ic{font-size:24px;margin-bottom:6px}.fcard-nm{font-size:12px;font-weight:600;color:var(--t0);margin-bottom:2px}
+.fcard-dt{font-size:10px;color:var(--t2);margin-bottom:7px}.fcard-mult{font-size:20px;font-weight:700}.fcard-lbl{font-size:9.5px;color:var(--t3)}
+/* STAT BLOCK */
+.sblock{padding:9px 0;border-bottom:1px solid var(--brd);display:flex}
+.sblock:last-child{border-bottom:0}.sbl{flex:1;font-size:11.5px;color:var(--t2)}.sbv{font-size:12px;font-weight:600;color:var(--t0)}
+/* SELECT */
+.sel{padding:5px 9px;background:var(--bgr);border:1px solid var(--brd);border-radius:var(--rs);color:var(--t1);font-size:11.5px;cursor:pointer;outline:none;font-family:'Inter',sans-serif}
+/* MODULE HOME */
+.mgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.mc{background:var(--glass);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--glass-brd);border-radius:var(--r);padding:16px 14px;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden}
+.mc:hover{border-color:rgba(255,255,255,.12);transform:translateY(-4px) scale(1.01);box-shadow:0 12px 32px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.05)}
+.mc::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--ac,var(--g0)),transparent);opacity:0;transition:opacity .3s}
+.mc:hover::before{opacity:.8}
+.mc::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 120%,var(--ac,rgba(212,168,67,.06)) 0%,transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.mc:hover::after{opacity:1}
+.mc-ic{font-size:24px;margin-bottom:8px}.mc-nm{font-size:11.5px;font-weight:600;color:var(--t0);margin-bottom:4px;letter-spacing:-.01em}
+.mc-big{font-size:18px;font-weight:800;line-height:1;margin-bottom:3px;letter-spacing:-.03em}.mc-hook{font-size:9.5px;color:var(--t3);line-height:1.45}
+.mc-go{font-size:10px;color:var(--ac,var(--g0));margin-top:8px;opacity:0;transform:translateX(-4px);transition:all .25s}
+.mc:hover .mc-go{opacity:1;transform:translateX(0)}
+/* COMMAND PALETTE */
+.cmd-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:1000;display:none;align-items:flex-start;justify-content:center;padding-top:min(20vh,180px)}
+.cmd-overlay.open{display:flex}
+.cmd-modal{width:520px;max-width:92vw;background:var(--bgc);border:1px solid var(--gbrd);border-radius:16px;box-shadow:var(--shadow-lg),0 0 0 1px rgba(212,168,67,.08);overflow:hidden;animation:cmdIn .2s cubic-bezier(.4,0,.2,1)}
+@keyframes cmdIn{from{opacity:0;transform:scale(.96) translateY(-8px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.cmd-input{width:100%;padding:16px 20px;background:transparent;border:none;border-bottom:1px solid var(--brd);color:var(--t0);font-size:15px;font-family:'Inter',sans-serif;outline:none}
+.cmd-input::placeholder{color:var(--t3)}
+.cmd-results{max-height:340px;overflow-y:auto;padding:8px;scrollbar-width:thin;scrollbar-color:rgba(212,168,67,.15) transparent}
+.cmd-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;cursor:pointer;transition:background .15s;color:var(--t1);font-size:13px}
+.cmd-item:hover,.cmd-item.selected{background:rgba(212,168,67,.1);color:var(--t0)}
+.cmd-item-ic{font-size:16px;width:22px;text-align:center;flex-shrink:0}
+.cmd-item-section{font-size:10px;margin-left:auto;color:var(--t3);text-transform:uppercase;letter-spacing:.5px}
+.cmd-empty{padding:24px;text-align:center;color:var(--t3);font-size:13px}
+.cmd-hint{padding:10px 16px;border-top:1px solid var(--brd);display:flex;gap:16px;font-size:10.5px;color:var(--t3)}
+.cmd-hint kbd{font-size:9px;padding:1px 5px;border-radius:3px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+/* TOAST */
+.toast-wrap{position:fixed;bottom:24px;right:24px;z-index:900;display:flex;flex-direction:column;gap:8px;pointer-events:none;max-width:380px}
+.toast{padding:12px 16px;border-radius:12px;background:var(--bgc);border:1px solid var(--gbrd);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:var(--shadow-lg);display:flex;gap:10px;align-items:flex-start;pointer-events:auto;animation:toastIn .4s cubic-bezier(.4,0,.2,1);font-size:12px;color:var(--t1);line-height:1.55}
+.toast.out{animation:toastOut .3s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes toastIn{from{opacity:0;transform:translateY(12px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes toastOut{to{opacity:0;transform:translateY(-8px) scale(.95)}}
+.toast-ic{font-size:16px;flex-shrink:0}.toast strong{color:var(--g0)}
+.toast-close{margin-left:auto;background:none;border:none;color:var(--t3);cursor:pointer;font-size:14px;padding:0 0 0 8px;flex-shrink:0}
+/* EXPORT BTN */
+.btn-export{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:8px;background:rgba(212,168,67,.1);border:1px solid var(--gbrd);color:var(--g0);font-size:12px;font-weight:500;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
+.btn-export:hover{background:rgba(212,168,67,.18);box-shadow:0 0 12px rgba(212,168,67,.15)}
+/* STAGGER ANIMATION */
+.stagger > *{opacity:0;animation:fadeUp .4s cubic-bezier(.4,0,.2,1) forwards}
+.stagger > *:nth-child(1){animation-delay:.05s}
+.stagger > *:nth-child(2){animation-delay:.1s}
+.stagger > *:nth-child(3){animation-delay:.15s}
+.stagger > *:nth-child(4){animation-delay:.2s}
+.stagger > *:nth-child(5){animation-delay:.25s}
+.stagger > *:nth-child(6){animation-delay:.3s}
+.stagger > *:nth-child(7){animation-delay:.35s}
+.stagger > *:nth-child(8){animation-delay:.4s}
+.stagger > *:nth-child(9){animation-delay:.45s}
+.stagger > *:nth-child(10){animation-delay:.5s}
+.stagger > *:nth-child(n+11){animation-delay:.55s}
+/* RESPONSIVE */
+@media(max-width:1280px){
   .mgrid{grid-template-columns:repeat(3,1fr)}
-  .hrow{grid-template-columns:repeat(2,1fr)}
   .g3{grid-template-columns:1fr 1fr}
+  .kan{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:1024px){
+  .sb{position:fixed;left:0;top:0;bottom:0;transform:translateX(-100%);opacity:0;box-shadow:4px 0 24px rgba(0,0,0,.4)}
+  .sb.open{transform:translateX(0);opacity:1}
+  .sb-overlay.open{display:block}
+  .menu-toggle{display:flex}
+  .topbar{padding-left:60px}
+  .content{padding:20px}
+  .hrow{grid-template-columns:repeat(2,1fr)}
+  .mgrid{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:1fr}
 }
 @media(max-width:768px){
-  .mgrid{grid-template-columns:repeat(2,1fr)}
-  .g3,.g2{grid-template-columns:1fr}
-  .g21,.g12{grid-template-columns:1fr}
-  .kan{grid-template-columns:repeat(2,1fr)}
-  .tb-search{width:140px}
-  .tb-date,.tb-pill{display:none}
+  .hrow{grid-template-columns:1fr 1fr;gap:10px}
+  .mgrid{grid-template-columns:1fr 1fr;gap:10px}
+  .g3,.g2,.g21,.g12{grid-template-columns:1fr;gap:12px}
+  .kan{grid-template-columns:1fr 1fr}
+  .content{padding:16px}
+  .hc-num{font-size:24px}
+  .mc-big{font-size:16px}
+  .tb-s{display:none}.tb-sep{display:none}
+  .cmd-modal{margin:0 12px}
+  .toast-wrap{left:12px;right:12px;max-width:none}
 }
-
-/* ===== PRINT ===== */
-@media print{
-  .sb,.topbar,.footer,.splash,.tb-search,.tb-btn,.sb-toggle{display:none!important}
-  .main{margin:0}.content{padding:10px;overflow:visible}
-  .view{display:block!important;page-break-after:always}
-  .hc,.card{break-inside:avoid;border:1px solid #ddd}
-  body{background:#fff;color:#111;font-size:11px}
-  .hc-num,.mc-big{color:#111}
+@media(max-width:480px){
+  .hrow{grid-template-columns:1fr;gap:8px}
+  .mgrid{grid-template-columns:1fr;gap:8px}
+  .kan{grid-template-columns:1fr}
+  .topbar{padding-left:52px;padding-right:12px;gap:6px}
+  .tb-pill{display:none}
+  .content{padding:12px}
+  .mc{padding:12px 10px}
+  .card{padding:14px}
 }
 </style>
 </head>
 <body>
+<!-- Command Palette -->
+<div class="cmd-overlay" id="cmdOverlay" onclick="if(event.target===this)closeCmd()">
+<div class="cmd-modal">
+<input class="cmd-input" id="cmdInput" placeholder="Search modules, cities, insights..." oninput="searchCmd(this.value)" onkeydown="cmdKey(event)">
+<div class="cmd-results" id="cmdResults"></div>
+<div class="cmd-hint"><span><kbd>↑↓</kbd> navigate</span><span><kbd>↵</kbd> open</span><span><kbd>esc</kbd> close</span></div>
+</div>
+</div>
+<!-- Toast Container -->
+<div class="toast-wrap" id="toastWrap"></div>
+<!-- Mobile Menu -->
+<button class="menu-toggle" id="menuToggle" onclick="toggleMobile()">☰</button>
+<div class="sb-overlay" id="sbOverlay" onclick="toggleMobile()"></div>
 
-<!-- SPLASH SCREEN -->
-<div class="splash" id="splash">
-  <div class="splash-mark">K</div>
-  <div class="splash-name">KISNA</div>
-  <div class="splash-tag">Retail Intelligence Platform</div>
-  <div class="splash-bar"><div class="splash-fill"></div></div>
+<div class="app">
+<div class="sb" id="sidebar">
+<div class="sb-logo"><div class="sb-mark">K</div><div><div class="sb-name">KISNA</div><div class="sb-tag">Intelligence Platform</div></div></div>
+<div class="sb-sec"><div class="sb-lbl">Overview</div>
+  <div class="ni active" data-view="home" onclick="nav('home')"><span class="ni-ic">🏠</span>Dashboard</div></div>
+<div class="sb-sec"><div class="sb-lbl">ML Intelligence</div>
+  <div class="ni" data-view="stone" onclick="nav('stone')"><span class="ni-ic">💎</span>Stone-to-Store</div>
+  <div class="ni" data-view="demand" onclick="nav('demand')"><span class="ni-ic">🌊</span>Demand Pulse</div>
+  <div class="ni" data-view="franchise" onclick="nav('franchise')"><span class="ni-ic">📡</span>Franchise Health<span class="ni-badge">12</span></div>
+  <div class="ni" data-view="footfall" onclick="nav('footfall')"><span class="ni-ic">👁</span>Footfall Predictor</div>
+  <div class="ni" data-view="repeat" onclick="nav('repeat')"><span class="ni-ic">🔁</span>Repeat Buyer</div>
+  <div class="ni" data-view="profiler" onclick="nav('profiler')"><span class="ni-ic">🏪</span>Store Profiler</div>
+  <div class="ni" data-view="assortment" onclick="nav('assortment')"><span class="ni-ic">📐</span>Assortment Engine</div></div>
+<div class="sb-sec"><div class="sb-lbl">MIS Operations</div>
+  <div class="ni" data-view="scorecard" onclick="nav('scorecard')"><span class="ni-ic">📋</span>Regional Scorecard</div>
+  <div class="ni" data-view="inventory" onclick="nav('inventory')"><span class="ni-ic">🚨</span>Inventory Radar<span class="ni-badge">23</span></div>
+  <div class="ni" data-view="deadstock" onclick="nav('deadstock')"><span class="ni-ic">📦</span>Dead Stock</div></div>
+<div class="sb-sec"><div class="sb-lbl">Sales Strategy</div>
+  <div class="ni" data-view="crosssell" onclick="nav('crosssell')"><span class="ni-ic">🎁</span>Cross-Sell Playbook</div>
+  <div class="ni" data-view="leaderboard" onclick="nav('leaderboard')"><span class="ni-ic">🏆</span>Dealer Leaderboard</div></div>
+<div class="sb-sec"><div class="sb-lbl">Creative Intel</div>
+  <div class="ni" data-view="cultural" onclick="nav('cultural')"><span class="ni-ic">🎭</span>Cultural DNA</div>
+  <div class="ni" data-view="wedding" onclick="nav('wedding')"><span class="ni-ic">👰</span>Wedding Graph</div>
+  <div class="ni" data-view="festival" onclick="nav('festival')"><span class="ni-ic">🌙</span>Festival Calendar</div></div>
+<div class="sb-sec"><div class="sb-lbl">Tools</div>
+  <div class="ni" data-view="city" onclick="nav('city')"><span class="ni-ic">🔍</span>City Explorer</div></div>
 </div>
 
 <!-- APP -->
@@ -328,16 +316,8 @@ tr:hover td{background:rgba(212,168,67,.03)}
   <div class="tb-t" id="tb-title">KISNA Intelligence</div><span class="tb-sep">/</span>
   <div class="tb-s" id="tb-sub">Dashboard</div>
   <div class="tb-sp"></div>
-  <div class="tb-search">
-    <span class="tb-search-icon">&#x1F50D;</span>
-    <input type="text" id="global-search" placeholder="Search modules, cities..." autocomplete="off">
-    <div class="tb-search-results" id="search-results"></div>
-  </div>
-  <div class="tb-btn" id="notif-btn" title="Notifications">&#x1F514;<span class="tb-notif-count">3</span></div>
-  <div class="tb-btn" onclick="window.print()" title="Print this view">&#x1F5A8;</div>
-  <div class="tb-pill"><div class="tb-dot"></div>88 Cities</div>
-  <div class="tb-date" id="tb-date"></div>
-  <div class="tb-avatar">VK</div>
+  <button class="tb-search" onclick="openCmd()">Search modules... <kbd>⌘K</kbd></button>
+  <div class="tb-pill"><div class="tb-dot"></div>88 Cities · Live</div>
 </div>
 
 <div class="content" id="content-area">
@@ -357,48 +337,23 @@ tr:hover td{background:rgba(212,168,67,.03)}
     </div>
   </div>
 </div>
-
-<div class="quick-actions">
-  <div class="qa" onclick="nav('franchise')"><div class="qa-ic">&#x1F6A8;</div><div><div class="qa-t">View Alerts</div><div class="qa-s">12 franchise alerts</div></div></div>
-  <div class="qa" onclick="nav('city')"><div class="qa-ic">&#x1F50D;</div><div><div class="qa-t">City Explorer</div><div class="qa-s">88 cities mapped</div></div></div>
-  <div class="qa" onclick="nav('inventory')"><div class="qa-ic">&#x1F4E6;</div><div><div class="qa-t">Inventory Radar</div><div class="qa-s">23 reorder alerts</div></div></div>
-  <div class="qa" onclick="nav('crosssell')"><div class="qa-ic">&#x1F4C8;</div><div><div class="qa-t">Top Reports</div><div class="qa-s">Cross-sell insights</div></div></div>
-</div>
-
-<div class="hrow">
-  <div class="hc"><div class="hc-num" data-count="88">0</div><div class="hc-lbl">Cities Mapped</div><svg class="hc-spark" width="48" height="20" data-spark="62,68,72,78,82,85,88"></svg></div>
-  <div class="hc"><div class="hc-num" data-count="15">0</div><div class="hc-lbl">Intelligence Modules</div><svg class="hc-spark" width="48" height="20" data-spark="8,10,11,12,13,14,15"></svg></div>
-  <div class="hc"><div class="hc-num" data-count="90">0</div><div class="hc-lbl">Live Charts</div><svg class="hc-spark" width="48" height="20" data-spark="40,52,60,68,75,82,90"></svg></div>
-  <div class="hc"><div class="hc-num" data-count="247" data-pre="&#x20B9;" data-suf="Cr">&#x20B9;0Cr</div><div class="hc-lbl">Revenue Tracked</div><svg class="hc-spark" width="48" height="20" data-spark="120,148,172,195,218,234,247"></svg></div>
-</div>
-
-<div class="mgrid">
-  <div class="mc" style="--ac:#34D399" onclick="nav('stone')"><div class="mc-ic">&#x1F48E;</div><div class="mc-nm">Stone-to-Store</div><div class="mc-big" style="color:#34D399">&#x20B9;47Cr</div><div class="mc-hook">Category-city matching via gradient boost</div><div class="mc-go">&#x2192; Open</div></div>
-  <div class="mc" style="--ac:#60A5FA" onclick="nav('demand')"><div class="mc-ic">&#x1F30A;</div><div class="mc-nm">Demand Pulse</div><div class="mc-big" style="color:#60A5FA">&#x20B9;890Cr</div><div class="mc-hook">12-month LSTM forecast + anomaly alerts</div><div class="mc-go">&#x2192; Open</div></div>
-  <div class="mc" style="--ac:#F87171" onclick="nav('franchise')"><div class="mc-ic">&#x1F4E1;</div><div class="mc-nm">Franchise Health</div><div class="mc-big" style="color:#F87171">12 &#x1F6A8;</div><div class="mc-hook">6-axis vital signs &middot; 90-day lookahead</div><div class="mc-go">&#x2192; Open</div></div>
-  <div class="mc" style="--ac:#A78BFA" onclick="nav('footfall')"><div class="mc-ic">&#x1F441;</div><div class="mc-nm">Footfall Predictor</div><div class="mc-big" style="color:#A78BFA">87%</div><div class="mc-hook">XGBoost &middot; festival surge modeled</div><div class="mc-go">&#x2192; Open</div></div>
-  <div class="mc" style="--ac:#F472B6" onclick="nav('repeat')"><div class="mc-ic">&#x1F501;</div><div class="mc-nm">Repeat Buyer</div><div class="mc-big" style="color:#F472B6">3.2x</div><div class="mc-hook">RFM scoring &middot; upsell mapping</div><div class="mc-go">&#x2192; Open</div></div>
-  <div class="mc" style="--ac:#34D399" onclick="nav('profiler')"><div class="mc-ic">&#x1F3EA;</div><div class="mc-nm">Store Profiler</div><div class="mc-big" style="color:#34D399">4 DNA</div><div class="mc-hook">K-Means archetype cloning</div><div class="mc-go">&#x2192; Open</div></div>
-  <div class="mc" style="--ac:#FBBF24" onclick="nav('assortment')"><div class="mc-ic">&#x1F4D0;</div><div class="mc-nm">Assortment Engine</div><div class="mc-big" style="color:#FBBF24">+15%</div><div class="mc-hook">LP-optimized SKU mix per city</div><div class="mc-go">&#x2192; Open</div></div>
-  <div class="mc" style="--ac:#60A5FA" onclick="nav('scorecard')"><div class="mc-ic">&#x1F4CB;</div><div class="mc-nm">Regional Scorecard</div><div class="mc-big" style="color:#60A5FA">94/100</div><div class="mc-hook">29 states &middot; target vs actual</div><div class="mc-go">&#x2192; Open</div></div>
-  <div class="mc" style="--ac:#E879F9" onclick="nav('inventory')"><div class="mc-ic">&#x1F6A8;</div><div class="mc-nm">Inventory Radar</div><div class="mc-big" style="color:#E879F9">&#x20B9;8.5Cr</div><div class="mc-hook">Z-score mismatch &middot; rebalancing engine</div><div class="mc-go">&#x2192; Open</div></div>
-  <div class="mc" style="--ac:#F87171" onclick="nav('deadstock')"><div class="mc-ic">&#x1F4E6;</div><div class="mc-nm">Dead Stock</div><div class="mc-big" style="color:#F87171">&#x20B9;47Cr</div><div class="mc-hook">Survival analysis &middot; 5-action board</div><div class="mc-go">&#x2192; Open</div></div>
-  <div class="mc" style="--ac:#4ADE80" onclick="nav('crosssell')"><div class="mc-ic">&#x1F381;</div><div class="mc-nm">Cross-Sell Playbook</div><div class="mc-big" style="color:#4ADE80">2.3x</div><div class="mc-hook">Apriori association rules + scripts</div><div class="mc-go">&#x2192; Open</div></div>
-  <div class="mc" style="--ac:#FBBF24" onclick="nav('leaderboard')"><div class="mc-ic">&#x1F3C6;</div><div class="mc-nm">Dealer Leaderboard</div><div class="mc-big" style="color:#FBBF24">82</div><div class="mc-hook">ELO-style live rankings + badges</div><div class="mc-go">&#x2192; Open</div></div>
-  <div class="mc" style="--ac:#C084FC" onclick="nav('cultural')"><div class="mc-ic">&#x1F3AD;</div><div class="mc-nm">Cultural DNA</div><div class="mc-big" style="color:#C084FC">5 &#x1F9EC;</div><div class="mc-hook">Cosine clustering &middot; 12 ad templates</div><div class="mc-go">&#x2192; Open</div></div>
-  <div class="mc" style="--ac:#F9A8D4" onclick="nav('wedding')"><div class="mc-ic">&#x1F470;</div><div class="mc-nm">Wedding Graph</div><div class="mc-big" style="color:#F9A8D4">&#x20B9;1200Cr</div><div class="mc-hook">Wedding economy &middot; city x month</div><div class="mc-go">&#x2192; Open</div></div>
-  <div class="mc" style="--ac:#FCD34D" onclick="nav('festival')"><div class="mc-ic">&#x1F319;</div><div class="mc-nm">Festival Calendar</div><div class="mc-big" style="color:#FCD34D">47 &#x1F389;</div><div class="mc-hook">90-day promo planning &middot; zone impact</div><div class="mc-go">&#x2192; Open</div></div>
-</div>
-
-<div class="home-alerts">
-  <div class="home-alerts-title">Priority Alerts</div>
-  <div class="alert alr"><span class="a-ic">&#x1F534;</span><div><div class="a-t">Surat Central — Score 32/100</div><div class="a-s">Revenue -18% &middot; Footfall -22% &middot; &#x20B9;8.2Cr at risk in 90 days</div></div></div>
-  <div class="alert ala"><span class="a-ic">&#x1F7E1;</span><div><div class="a-t">Inventory Mismatch — 23 stores need rebalancing</div><div class="a-s">&#x20B9;28Cr demand-supply gap detected across North and East zones</div></div></div>
-  <div class="alert alg"><span class="a-ic">&#x1F7E2;</span><div><div class="a-t">Pune Koregaon — 68% YoY growth, fastest riser</div><div class="a-s">Recommend increasing inventory allocation and expanding floor area</div></div></div>
-</div>
-</div>
-
-<!-- MODULE 1: STONE-TO-STORE -->
+<div class="mgrid stagger">
+  <div class="mc" style="--ac:#00E5A0" onclick="nav('stone')"><div class="mc-ic">💎</div><div class="mc-nm">Stone-to-Store</div><div class="mc-big" style="color:#00E5A0">₹47Cr</div><div class="mc-hook">Category-city matching via gradient boost</div><div class="mc-go">→ Open</div></div>
+  <div class="mc" style="--ac:#00B4D8" onclick="nav('demand')"><div class="mc-ic">🌊</div><div class="mc-nm">Demand Pulse</div><div class="mc-big" style="color:#00B4D8">₹890Cr</div><div class="mc-hook">12-month LSTM forecast + anomaly alerts</div><div class="mc-go">→ Open</div></div>
+  <div class="mc" style="--ac:#FF6B35" onclick="nav('franchise')"><div class="mc-ic">📡</div><div class="mc-nm">Franchise Health</div><div class="mc-big" style="color:#FF6B35">12 🚨</div><div class="mc-hook">6-axis vital signs · 90-day lookahead</div><div class="mc-go">→ Open</div></div>
+  <div class="mc" style="--ac:#A78BFA" onclick="nav('footfall')"><div class="mc-ic">👁</div><div class="mc-nm">Footfall Predictor</div><div class="mc-big" style="color:#A78BFA">87%</div><div class="mc-hook">XGBoost · festival surge modeled</div><div class="mc-go">→ Open</div></div>
+  <div class="mc" style="--ac:#F472B6" onclick="nav('repeat')"><div class="mc-ic">🔁</div><div class="mc-nm">Repeat Buyer</div><div class="mc-big" style="color:#F472B6">3.2×</div><div class="mc-hook">RFM scoring · upsell mapping</div><div class="mc-go">→ Open</div></div>
+  <div class="mc" style="--ac:#34D399" onclick="nav('profiler')"><div class="mc-ic">🏪</div><div class="mc-nm">Store Profiler</div><div class="mc-big" style="color:#34D399">4 DNA</div><div class="mc-hook">K-Means archetype cloning</div><div class="mc-go">→ Open</div></div>
+  <div class="mc" style="--ac:#FBBF24" onclick="nav('assortment')"><div class="mc-ic">📐</div><div class="mc-nm">Assortment Engine</div><div class="mc-big" style="color:#FBBF24">+15%</div><div class="mc-hook">LP-optimized SKU mix per city</div><div class="mc-go">→ Open</div></div>
+  <div class="mc" style="--ac:#60A5FA" onclick="nav('scorecard')"><div class="mc-ic">📋</div><div class="mc-nm">Regional Scorecard</div><div class="mc-big" style="color:#60A5FA">94/100</div><div class="mc-hook">29 states · target vs actual</div><div class="mc-go">→ Open</div></div>
+  <div class="mc" style="--ac:#EF4444" onclick="nav('inventory')"><div class="mc-ic">🚨</div><div class="mc-nm">Inventory Radar</div><div class="mc-big" style="color:#EF4444">₹8.5Cr</div><div class="mc-hook">Z-score mismatch · rebalancing engine</div><div class="mc-go">→ Open</div></div>
+  <div class="mc" style="--ac:#F97316" onclick="nav('deadstock')"><div class="mc-ic">📦</div><div class="mc-nm">Dead Stock</div><div class="mc-big" style="color:#F97316">₹47Cr</div><div class="mc-hook">Survival analysis · 5-action board</div><div class="mc-go">→ Open</div></div>
+  <div class="mc" style="--ac:#C084FC" onclick="nav('crosssell')"><div class="mc-ic">🎁</div><div class="mc-nm">Cross-Sell Playbook</div><div class="mc-big" style="color:#C084FC">2.3×</div><div class="mc-hook">Apriori association rules + scripts</div><div class="mc-go">→ Open</div></div>
+  <div class="mc" style="--ac:#FCD34D" onclick="nav('leaderboard')"><div class="mc-ic">🏆</div><div class="mc-nm">Dealer Leaderboard</div><div class="mc-big" style="color:#FCD34D">82</div><div class="mc-hook">ELO-style live rankings + badges</div><div class="mc-go">→ Open</div></div>
+  <div class="mc" style="--ac:#FB923C" onclick="nav('cultural')"><div class="mc-ic">🎭</div><div class="mc-nm">Cultural DNA</div><div class="mc-big" style="color:#FB923C">5 🧬</div><div class="mc-hook">Cosine clustering · 12 ad templates</div><div class="mc-go">→ Open</div></div>
+  <div class="mc" style="--ac:#F9A8D4" onclick="nav('wedding')"><div class="mc-ic">👰</div><div class="mc-nm">Wedding Graph</div><div class="mc-big" style="color:#F9A8D4">₹1200Cr</div><div class="mc-hook">Wedding economy · city × month</div><div class="mc-go">→ Open</div></div>
+  <div class="mc" style="--ac:#818CF8" onclick="nav('festival')"><div class="mc-ic">🌙</div><div class="mc-nm">Festival Calendar</div><div class="mc-big" style="color:#818CF8">47 🎉</div><div class="mc-hook">90-day promo planning · zone impact</div><div class="mc-go">→ Open</div></div>
+</div></div>
 <div class="view" id="view-stone">
 <div class="hrow">
 <div class="hc" style="--ac:#34D399"><div class="hc-num" style="color:#34D399" data-count="88">0</div><div class="hc-lbl">Cities Mapped</div><svg class="hc-spark" width="48" height="20" data-spark="60,65,70,75,80,84,88"></svg></div>
@@ -705,9 +660,10 @@ tr:hover td{background:rgba(212,168,67,.03)}
 <div style="font-size:18px;font-weight:700;color:var(--t0)">City Expansion Intelligence</div>
 <div style="font-size:12px;color:var(--t2);margin-top:2px">88 cities &middot; 15+ variables &middot; ML-ranked expansion priority</div>
 </div>
-<div style="display:flex;gap:8px;flex-wrap:wrap">
-<input id="city-search" onkeyup="filterCities()" placeholder="Search city..." style="background:var(--bgr);border:1px solid var(--gbrd);border-radius:8px;padding:8px 14px;color:var(--t0);font-size:12px;outline:none;width:180px;font-family:inherit">
-<select id="city-zone" onchange="filterCities()" style="background:var(--bgr);border:1px solid var(--gbrd);border-radius:8px;padding:8px 14px;color:var(--t0);font-size:12px;outline:none;font-family:inherit">
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<button class="btn-export" onclick="exportCSV()">⬇ Export CSV</button>
+<input id="city-search" onkeyup="filterCities()" placeholder="Search city..." style="background:var(--bgr);border:1px solid var(--gbrd);border-radius:8px;padding:8px 14px;color:var(--t0);font-size:13px;outline:none;width:180px;font-family:Inter,sans-serif">
+<select id="city-zone" onchange="filterCities()" style="background:var(--bgr);border:1px solid var(--gbrd);border-radius:8px;padding:8px 14px;color:var(--t0);font-size:13px;outline:none">
 <option value="">All Zones</option><option>North</option><option>South</option><option>East</option><option>West</option>
 </select>
 <select id="city-tier" onchange="filterCities()" style="background:var(--bgr);border:1px solid var(--gbrd);border-radius:8px;padding:8px 14px;color:var(--t0);font-size:12px;outline:none;font-family:inherit">
@@ -885,12 +841,20 @@ function renderCityTable(){
   ).join('');
 }
 
-// ---- CHART ENGINE ----
-Chart.defaults.color='rgba(255,252,245,.45)';
-Chart.defaults.borderColor='rgba(255,255,255,.05)';
+// ---- CHART GLOBALS ----
+Chart.defaults.color='rgba(255,248,235,.45)';
+Chart.defaults.borderColor='rgba(212,168,67,.08)';
 Chart.defaults.font.family="'Inter',system-ui,sans-serif";
-Chart.defaults.font.size=10;
-Chart.defaults.animation={duration:800,easing:'easeOutQuart'};
+Chart.defaults.font.size=11;
+Chart.defaults.plugins.tooltip.backgroundColor='rgba(19,19,27,.92)';
+Chart.defaults.plugins.tooltip.borderColor='rgba(212,168,67,.2)';
+Chart.defaults.plugins.tooltip.borderWidth=1;
+Chart.defaults.plugins.tooltip.cornerRadius=10;
+Chart.defaults.plugins.tooltip.padding=10;
+Chart.defaults.plugins.tooltip.titleFont={weight:'600'};
+Chart.defaults.animation.duration=600;
+Chart.defaults.animation.easing='easeOutQuart';
+const G='#D4A843',GA='rgba(212,168,67,.15)',RED='#F87171',GRN='#34D399',BLU='#60A5FA',PRP='#A78BFA',PNK='#F472B6',ORG='#FB923C',TEL='#2DD4BF',YLW='#FBBF24';
 
 const G='#D4A843',GA='rgba(212,168,67,.12)',RED='#F87171',GRN='#34D399',BLU='#60A5FA',PRP='#A78BFA',PNK='#F472B6',ORG='#FB923C',TEL='#2DD4BF',YLW='#FBBF24';
 const activeCharts={};
@@ -926,6 +890,21 @@ const Q=['Q1','Q2','Q3','Q4'];
 // ============================================================
 // MODULE RENDERERS (all 15 modules preserved)
 // ============================================================
+function updateStoneCity(city){
+  // Re-render ch-s6 radar with city-specific mock data
+  const profiles={
+    'Mumbai':[88,82,74,90,72,68,86,78,84,92,70,66],
+    'Surat':[92,78,88,84,68,72,76,90,82,74,86,64],
+    'Jaipur':[86,90,72,78,92,84,68,74,80,70,76,88],
+    'Kochi':[74,68,82,72,78,86,64,80,70,76,88,90],
+    'Delhi NCR':[90,86,78,92,74,70,84,76,88,82,72,68],
+    'Bangalore':[80,76,90,78,84,72,88,82,74,86,68,70]
+  };
+  const data=profiles[city]||profiles['Mumbai'];
+  mkRadar('ch-s6',['Bangles','Chains','Rings','Earrings','Necklaces','Anklets','Solitaire','Bridal Set','Nose Ring','Pendant','Tikka','Custom'],
+    [{label:city,data:data,borderColor:GRN,backgroundColor:'rgba(52,211,153,.12)'}]);
+}
+
 function renderStone(){
   mkLine('ch-s1',MO,[{label:'Gold Rate (\u20B9/10g)',data:[58200,57800,59100,61200,60500,62300,64100,63800,65200,66400,65900,67200],borderColor:G,backgroundColor:GA,fill:true},{label:'Revenue Index',data:[82,78,88,94,90,96,91,87,93,98,95,100],borderColor:BLU,backgroundColor:'rgba(96,165,250,.08)'}]);
   mkBar('ch-s2',['Rajasthan','Gujarat','Maharashtra','Tamil Nadu','Karnataka','West Bengal'],[{label:'Supply Volume (Kg)',data:[420,380,290,240,180,160],backgroundColor:[G,'#C8962F','#B38429','#9E7223','#89601D','#744E17']}]);
@@ -1089,16 +1068,24 @@ function nav(id){
   const navEl=document.querySelector('[data-view="'+id+'"]');
   if(navEl)navEl.classList.add('active');
   const viewEl=document.getElementById('view-'+id);
-  if(viewEl)viewEl.classList.add('active');
-  document.getElementById('tb-title').textContent=VIEWS[id].title;
-  document.getElementById('tb-sub').textContent=VIEWS[id].sub;
-  document.getElementById('content-area').scrollTop=0;
-  window.location.hash=id;
-  setTimeout(()=>{
-    VIEWS[id].fn();
-    animateCounters(id);
-    renderSparklines(viewEl);
-  },60);
+  if(viewEl) viewEl.classList.add('active');
+  const hdr=document.getElementById('tb-title');
+  if(hdr && VIEWS[id]) hdr.textContent=VIEWS[id].title;
+  // Close mobile sidebar on nav
+  const sb=document.getElementById('sidebar');
+  if(sb&&sb.classList.contains('open'))toggleMobile();
+  // Scroll content to top
+  const ct=document.querySelector('.content');
+  if(ct)ct.scrollTop=0;
+  // Double rAF ensures DOM layout is complete before Chart.js measures canvas (fixes Safari)
+  requestAnimationFrame(()=>{
+    requestAnimationFrame(()=>{
+      if(VIEWS[id]) VIEWS[id].fn();
+      animateCounters(id);
+      // Force resize all active charts after render
+      Object.values(activeCharts).forEach(c=>{try{c.resize()}catch(e){}});
+    });
+  });
 }
 
 function animateCounters(viewId){
@@ -1121,93 +1108,135 @@ function animateCounters(viewId){
   });
 }
 
-// ---- SPARKLINES ----
-function renderSparklines(container){
-  if(!container)return;
-  container.querySelectorAll('svg[data-spark]').forEach(svg=>{
-    if(svg.querySelector('polyline'))return;
-    const pts=svg.dataset.spark.split(',').map(Number);
-    const w=parseFloat(svg.getAttribute('width')),h=parseFloat(svg.getAttribute('height'));
-    const mn=Math.min(...pts),mx=Math.max(...pts),range=mx-mn||1;
-    const coords=pts.map((v,i)=>`${(i/(pts.length-1))*w},${h-((v-mn)/range)*h*.8-h*.1}`).join(' ');
-    const poly=document.createElementNS('http://www.w3.org/2000/svg','polyline');
-    poly.setAttribute('points',coords);
-    poly.setAttribute('fill','none');
-    poly.setAttribute('stroke','rgba(212,168,67,.5)');
-    poly.setAttribute('stroke-width','1.5');
-    poly.setAttribute('stroke-linecap','round');
-    poly.setAttribute('stroke-linejoin','round');
-    svg.appendChild(poly);
-  });
-}
-
-// ---- SIDEBAR TOGGLE ----
-document.getElementById('sb-toggle').addEventListener('click',()=>{
-  const sb=document.getElementById('sidebar');
-  sb.classList.toggle('collapsed');
-  document.getElementById('sb-toggle').innerHTML=sb.classList.contains('collapsed')?'&#9654;':'&#9664;';
-});
-
-// ---- GLOBAL SEARCH ----
-const searchInput=document.getElementById('global-search');
-const searchResults=document.getElementById('search-results');
-const SEARCH_INDEX=[
-  ...NAV_ORDER.filter(k=>VIEWS[k]).map(k=>({id:k,label:VIEWS[k].title,icon:document.querySelector('[data-view="'+k+'"] .ni-ic')?.textContent||''})),
-  ...CITIES.map(c=>({id:'city',label:c.city,icon:'\uD83D\uDD0D',sub:c.zone+' \u00B7 '+c.tier}))
+// ============================================================
+// INIT
+// ============================================================
+// ============================================================
+// COMMAND PALETTE
+// ============================================================
+const CMD_ITEMS=[
+  {id:'home',icon:'🏠',name:'Dashboard',section:'Overview'},
+  {id:'stone',icon:'💎',name:'Stone-to-Store Intelligence',section:'ML Intelligence'},
+  {id:'demand',icon:'🌊',name:'Demand Pulse Engine',section:'ML Intelligence'},
+  {id:'franchise',icon:'📡',name:'Franchise Health Monitor',section:'ML Intelligence'},
+  {id:'footfall',icon:'👁',name:'Footfall Predictor',section:'ML Intelligence'},
+  {id:'repeat',icon:'🔁',name:'Repeat Buyer Intelligence',section:'ML Intelligence'},
+  {id:'profiler',icon:'🏪',name:'Store Profiler',section:'ML Intelligence'},
+  {id:'assortment',icon:'📐',name:'Assortment Engine',section:'ML Intelligence'},
+  {id:'scorecard',icon:'📋',name:'Regional Scorecard',section:'MIS Operations'},
+  {id:'inventory',icon:'🚨',name:'Inventory Radar',section:'MIS Operations'},
+  {id:'deadstock',icon:'📦',name:'Dead Stock Liquidator',section:'MIS Operations'},
+  {id:'crosssell',icon:'🎁',name:'Cross-Sell Playbook',section:'Sales Strategy'},
+  {id:'leaderboard',icon:'🏆',name:'Dealer Leaderboard',section:'Sales Strategy'},
+  {id:'cultural',icon:'🎭',name:'Cultural DNA',section:'Creative Intel'},
+  {id:'wedding',icon:'👰',name:'Wedding Graph',section:'Creative Intel'},
+  {id:'festival',icon:'🌙',name:'Festival Calendar',section:'Creative Intel'},
+  {id:'city',icon:'🔍',name:'City Explorer',section:'Tools'}
 ];
+let cmdSel=0;
+function openCmd(){
+  const o=document.getElementById('cmdOverlay');
+  o.classList.add('open');
+  const inp=document.getElementById('cmdInput');
+  inp.value='';
+  cmdSel=0;
+  searchCmd('');
+  setTimeout(()=>inp.focus(),50);
+}
+function closeCmd(){document.getElementById('cmdOverlay').classList.remove('open')}
+function searchCmd(q){
+  const results=q?CMD_ITEMS.filter(i=>i.name.toLowerCase().includes(q.toLowerCase())||i.section.toLowerCase().includes(q.toLowerCase())):CMD_ITEMS;
+  cmdSel=Math.min(cmdSel,results.length-1);
+  if(cmdSel<0)cmdSel=0;
+  const el=document.getElementById('cmdResults');
+  if(!results.length){el.innerHTML='<div class="cmd-empty">No results found</div>';return;}
+  el.innerHTML=results.map((r,i)=>
+    `<div class="cmd-item${i===cmdSel?' selected':''}" onclick="closeCmd();nav('${r.id}')" onmouseenter="cmdSel=${i};searchCmd(document.getElementById('cmdInput').value)">
+      <span class="cmd-item-ic">${r.icon}</span>${r.name}<span class="cmd-item-section">${r.section}</span>
+    </div>`
+  ).join('');
+}
+function cmdKey(e){
+  const items=document.querySelectorAll('.cmd-item');
+  if(e.key==='ArrowDown'){e.preventDefault();cmdSel=Math.min(cmdSel+1,items.length-1);searchCmd(document.getElementById('cmdInput').value);}
+  else if(e.key==='ArrowUp'){e.preventDefault();cmdSel=Math.max(cmdSel-1,0);searchCmd(document.getElementById('cmdInput').value);}
+  else if(e.key==='Enter'){e.preventDefault();if(items[cmdSel])items[cmdSel].click();}
+  else if(e.key==='Escape'){closeCmd();}
+}
 
-searchInput.addEventListener('input',()=>{
-  const q=searchInput.value.toLowerCase().trim();
-  if(!q){searchResults.classList.remove('show');return;}
-  const matches=SEARCH_INDEX.filter(s=>s.label.toLowerCase().includes(q)).slice(0,8);
-  if(!matches.length){searchResults.classList.remove('show');return;}
-  searchResults.innerHTML=matches.map(m=>`<div class="tb-sr" onclick="nav('${m.id}');searchInput.value='';searchResults.classList.remove('show')"><span class="tb-sr-ic">${m.icon}</span><span>${m.label}${m.sub?' <span style=\\"color:var(--t3);font-size:10px\\">\u00B7 '+m.sub+'</span>':''}</span></div>`).join('');
-  searchResults.classList.add('show');
-});
-searchInput.addEventListener('blur',()=>setTimeout(()=>searchResults.classList.remove('show'),200));
+// ============================================================
+// TOAST NOTIFICATIONS
+// ============================================================
+const INSIGHTS_POOL=[
+  {ic:'💡',msg:'<strong>Surat solitaires are 41% under-allocated</strong> — reallocating adds ₹2.1Cr/month.'},
+  {ic:'📈',msg:'<strong>Saturday footfall is 2.5× weekday average</strong> — uniform staffing loses ₹12L/year.'},
+  {ic:'🔔',msg:'<strong>₹28Cr is frozen in misallocated inventory</strong> right now. Smart transfers pay for themselves in <60 days.'},
+  {ic:'🎯',msg:'<strong>45-day follow-up window</strong> is make-or-break. WhatsApp at day 40 → 2.8× return rate.'},
+  {ic:'💰',msg:'<strong>Ring + Chain pair fires 840×/month</strong> — training all stores on this one rule adds ₹4.2Cr/year.'},
+  {ic:'🚀',msg:'<strong>East Zone is chronically under-invested</strong> — fastest expansion ROI is East region.'},
+  {ic:'👰',msg:'<strong>₹22Cr in bridal prospects</strong> go to competitors. A bridal CRM pipeline converts 28% of walk-aways.'},
+  {ic:'🎪',msg:'<strong>Dhanteras = 18% of annual revenue in 3 days</strong> — 28 stores were understocked last year.'}
+];
+let toastIdx=0;
+function showToast(ic,msg){
+  const wrap=document.getElementById('toastWrap');
+  const t=document.createElement('div');
+  t.className='toast';
+  t.innerHTML=`<span class="toast-ic">${ic}</span><span>${msg}</span><button class="toast-close" onclick="this.parentElement.remove()">✕</button>`;
+  wrap.appendChild(t);
+  setTimeout(()=>{t.classList.add('out');setTimeout(()=>t.remove(),300)},8000);
+}
+// Show first insight after 5s, then every 45s
+setTimeout(()=>{
+  const ins=INSIGHTS_POOL[0];showToast(ins.ic,ins.msg);toastIdx=1;
+},5000);
+setInterval(()=>{
+  const ins=INSIGHTS_POOL[toastIdx%INSIGHTS_POOL.length];
+  showToast(ins.ic,ins.msg);
+  toastIdx++;
+},45000);
 
-// ---- KEYBOARD NAV ----
+// ============================================================
+// CSV EXPORT
+// ============================================================
+function exportCSV(){
+  const headers=['City','Zone','Tier','Population(L)','Opportunity Score','Demand Index','Competition','Bridal %','Projected Revenue (₹Cr)','KISNA Present'];
+  const rows=filteredCities.map(c=>[c.city,c.zone,c.tier,c.pop,c.opp,c.demand,c.comp,c.bridal,c.rev,c.present?'Yes':'No']);
+  const csv=[headers,...rows].map(r=>r.join(',')).join('\n');
+  const blob=new Blob([csv],{type:'text/csv'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download='kisna-city-intelligence.csv';a.click();
+  URL.revokeObjectURL(url);
+  showToast('✅','Exported '+filteredCities.length+' cities to CSV');
+}
+
+// ============================================================
+// MOBILE SIDEBAR TOGGLE
+// ============================================================
+function toggleMobile(){
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('sbOverlay').classList.toggle('open');
+}
+
+// ============================================================
+// KEYBOARD SHORTCUTS
+// ============================================================
 document.addEventListener('keydown',e=>{
-  if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT'||e.target.tagName==='TEXTAREA'){
-    if(e.key==='Escape')e.target.blur();
-    return;
+  // Cmd/Ctrl+K → Command Palette
+  if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();openCmd();}
+  // Escape → Close command palette or go home
+  if(e.key==='Escape'){
+    if(document.getElementById('cmdOverlay').classList.contains('open')){closeCmd();}
   }
-  if(e.key==='/'){e.preventDefault();searchInput.focus();return;}
-  if(e.key==='Escape'){nav('home');return;}
-  const idx=NAV_ORDER.indexOf(currentView);
-  if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();nav(NAV_ORDER[(idx+1)%NAV_ORDER.length]);}
-  if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();nav(NAV_ORDER[(idx-1+NAV_ORDER.length)%NAV_ORDER.length]);}
-  if(e.key>='1'&&e.key<='9'){const i=parseInt(e.key);if(NAV_ORDER[i])nav(NAV_ORDER[i]);}
 });
 
-// ---- DATE + GREETING ----
-function updateDate(){
-  const now=new Date();
-  const opts={weekday:'short',month:'short',day:'numeric'};
-  document.getElementById('tb-date').textContent=now.toLocaleDateString('en-IN',opts);
-  const h=now.getHours();
-  const g=h<12?'morning':h<17?'afternoon':'evening';
-  const el=document.getElementById('greeting-time');
-  if(el)el.textContent=g;
-}
-updateDate();
-
-// ---- HASH ROUTING ----
-function handleHash(){
-  const h=window.location.hash.slice(1);
-  if(h&&VIEWS[h])nav(h);else nav('home');
-}
-
-// ---- SPLASH + INIT ----
+// ============================================================
+// INIT
+// ============================================================
 document.addEventListener('DOMContentLoaded',()=>{
   renderCityTable();
-  setTimeout(()=>{
-    document.getElementById('splash').classList.add('hide');
-    document.getElementById('app').classList.add('show');
-    setTimeout(()=>{
-      handleHash();
-    },300);
-  },1600);
+  nav('home');
 });
 window.addEventListener('hashchange',handleHash);
 </script>
